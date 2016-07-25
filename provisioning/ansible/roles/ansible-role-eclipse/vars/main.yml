@@ -13,10 +13,6 @@ eclipse_defaults:
       SHOW_WORKSPACE_SELECTION_DIALOG: "false"
       RECENT_WORKSPACES: ""
   distros:
-    mars:
-      version: 4.5
-      latest_service_release: 2
-      packages: [jee]
     neon:
       version: 4.6
       latest_service_release: R
@@ -24,7 +20,7 @@ eclipse_defaults:
   plugins:
     subclipse:
       repositories:
-        - http://subclipse.tigris.org/update_1.10.x
+        - http://subclipse.tigris.org/update_1.12.x
       install_units:
         - org.tigris.subversion.subclipse.feature.group
         - org.tigris.subversion.clientadapter.feature.feature.group
