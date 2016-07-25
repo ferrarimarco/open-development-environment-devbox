@@ -4,7 +4,7 @@
     autoremove: yes
     cache_valid_time: 3600
     pkg: "{{ item }}"
-    state: installed
+    state: present
     update_cache: yes
   become: yes
   with_items:
@@ -17,6 +17,16 @@
     - virtualbox-guest-utils
     - virtualbox-guest-x11
     - xubuntu-desktop
+
+- name: Remove light-locker package to avoid login issues
+  apt:
+    autoremove: yes
+    pkg: "{{ item }}"
+    purge: yes
+    state: absent
+  become: yes
+  with_items:
+    - light-locker
 
 - name: Setup running GUI as non-privileged user
   become: yes
