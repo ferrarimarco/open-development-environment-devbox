@@ -10,16 +10,17 @@
       {{ '-p2.arch ' ~ ansible_architecture if ansible_architecture }}"
   tags: [eclipse_plugins]
 
+#Subclipse
 - name: Install JavaHL for subclipse
+  become: yes
   package:
     name:  "{{ item }}"
     state: present
   with_items:
     - libsvn-java
-  when: (ansible_distribution == 'Debian') and ('subclipse' in eclipse_plugins_install)
+  when: (ansible_os_family == 'Debian') and ('subclipse' in eclipse_defaults.plugins)
   tags: [eclipse_plugins]
 
-# all plugins
 - name: Install eclipse plugins
   command: "{{ plugin_install_command }} \
     -repository \
@@ -29,6 +30,6 @@
     -tag ansible_install_plugin_{{ item }}"
   args:
     creates: "{{ eclipse_unpack_dir}}/features/{{ eclipse_defaults.plugins[item].creates_feature }}*"
-  with_items: '{{ eclipse_plugins_install }}'
+  with_items: '{{ eclipse_defaults.plugins }}'
   when: (eclipse_defaults.plugins[item] is defined)
   tags: [eclipse_plugins]
