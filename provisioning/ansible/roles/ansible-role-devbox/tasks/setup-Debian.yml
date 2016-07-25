@@ -18,7 +18,7 @@
     - virtualbox-guest-x11
     - xubuntu-desktop
 
-- name: Run GUI as non-privileged user
+- name: Setup running GUI as non-privileged user
   become: yes
   template: src=Xwrapper.config.j2 dest=/etc/X11/Xwrapper.config
 
