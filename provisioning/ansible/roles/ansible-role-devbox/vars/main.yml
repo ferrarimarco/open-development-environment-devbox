@@ -1,2 +1,0 @@
----
-packages_to_install: ['bzip2', 'curl', 'git', 'language-pack-en']
