@@ -11,4 +11,5 @@
         alternatives: name=java path=/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
     roles:
       - { role: geerlingguy.java, become: yes, java_packages: ['openjdk-8-jdk'] }
+      - { role: ansible-role-devbox }
       - { role: ansible-role-eclipse }

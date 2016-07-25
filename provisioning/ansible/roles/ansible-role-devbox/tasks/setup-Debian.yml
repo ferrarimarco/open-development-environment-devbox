@@ -1,0 +1,38 @@
+---
+- name: Ensure required apt packages are installed
+  apt:
+    autoremove: yes
+    cache_valid_time: 3600
+    pkg: "{{ item }}"
+    state: installed
+    update_cache: yes
+  become: yes
+  with_items:
+    - bzip2
+    - curl
+    - git
+    - language-pack-en
+    - subversion
+    - virtualbox-guest-dkms
+    - virtualbox-guest-utils
+    - virtualbox-guest-x11
+    - xubuntu-desktop
+
+- name: Run GUI as non-privileged user
+  become: yes
+  template: src=Xwrapper.config.j2 dest=/etc/X11/Xwrapper.config
+
+- name: Set locale
+  set_fact:
+    default_locale: "en_US.UTF-8"
+
+- name: Generate locales
+  locale_gen: name={{ default_locale }} state=present
+
+- name: Set default locale
+  become: yes
+  template: src=locale.j2 dest=/etc/default/locale
+
+- name: Reconfigure locale package
+  become: yes
+  command: dpkg-reconfigure -f noninteractive locales
