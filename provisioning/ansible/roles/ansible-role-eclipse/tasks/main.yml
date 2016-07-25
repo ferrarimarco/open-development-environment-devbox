@@ -1,0 +1,21 @@
+---
+- include: set_vars.yml
+  tags: [eclipse]
+
+- include: download_to_master.yml
+
+- include: eclipse.yml
+  tags: [eclipse]
+
+- name: configure eclipse.ini
+  include: eclipseini.yml
+  tags: [eclipse]
+
+- name: set vm from java-oracle role
+  include: eclipseinijavavm.yml
+  tags: [eclipse]
+
+- include: plugins.yml
+  tags: [eclipse]
+
+- include: config.yml

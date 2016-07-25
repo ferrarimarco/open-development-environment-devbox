@@ -1,0 +1,34 @@
+---
+# http://help.eclipse.org/juno/index.jsp?topic=/org.eclipse.platform.doc.isv/guide/p2_director.html
+- name: create plugins install command
+  set_fact:
+    plugin_install_command: "{{ eclipse_unpack_dir }}/eclipse -nosplash \
+      -application org.eclipse.equinox.p2.director \
+      -destination {{ eclipse_unpack_dir}} \
+      {{ '-p2.os '   ~ eclipse_os  if eclipse_os  }} \
+      {{ '-p2.ws '   ~ eclipse_gui if eclipse_gui }} \
+      {{ '-p2.arch ' ~ ansible_architecture if ansible_architecture }}"
+  tags: [eclipse_plugins]
+
+- name: Install JavaHL for subclipse
+  package:
+    name:  "{{ item }}"
+    state: present
+  with_items:
+    - libsvn-java
+  when: (ansible_distribution == 'Debian') and ('subclipse' in eclipse_plugins_install)
+  tags: [eclipse_plugins]
+
+# all plugins
+- name: Install eclipse plugins
+  command: "{{ plugin_install_command }} \
+    -repository \
+    {{ (['http://download.eclipse.org/releases/' + eclipse_distro] + eclipse_defaults.plugins[item].repositories) | join(',') }} \
+    -installIU \
+    {{ eclipse_defaults.plugins[item].install_units | join(',') }} \
+    -tag ansible_install_plugin_{{ item }}"
+  args:
+    creates: "{{ eclipse_unpack_dir}}/features/{{ eclipse_defaults.plugins[item].creates_feature }}*"
+  with_items: '{{ eclipse_plugins_install }}'
+  when: (eclipse_defaults.plugins[item] is defined)
+  tags: [eclipse_plugins]

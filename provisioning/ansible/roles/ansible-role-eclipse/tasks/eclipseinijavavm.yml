@@ -1,0 +1,24 @@
+---
+- name: Configure eclipse ini -vm option from java-oracle role
+  lineinfile:
+    dest: "{{ eclipse_ini_path }}"
+    state: present
+    regexp: "^-vm$"
+    insertbefore: "^-vmargs$"
+    line: "-vm"
+    backup: yes
+  when: eclipse_ini_overwrite and
+        (java_unpack_dir is defined) and
+        (eclipse_ini_flags_next_line["-vm"] is undefined)
+
+- name: Configure eclipse ini -vm option from java-oracle role
+  lineinfile:
+    dest: "{{ eclipse_ini_path }}"
+    state: present
+    regexp: "^{{ java_unpack_dir }}/bin/java$"
+    insertafter: "^-vm$"
+    line: "{{ java_unpack_dir }}/bin/java"
+    backup: yes
+  when: eclipse_ini_overwrite and
+        (java_unpack_dir is defined) and
+        (eclipse_ini_flags_next_line["-vm"] is undefined)

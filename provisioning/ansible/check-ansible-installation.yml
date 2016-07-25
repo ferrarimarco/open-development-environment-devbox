@@ -1,0 +1,7 @@
+---
+  - hosts: all
+    gather_facts: no
+    tasks:
+    - name: check installed Ansible version
+      debug: msg="Installed Ansible version {{ ansible_version.string }}"
+      changed_when: false

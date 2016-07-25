@@ -1,0 +1,38 @@
+---
+- name: Configure eclipse ini next line parameters option
+  lineinfile:
+    dest: "{{ eclipse_ini_path }}"
+    state: present
+    regexp: "^{{ item.key | regex_escape() }}$"
+    insertbefore: "^-vmargs$"
+    line: "{{ item.key }}"
+    backup: yes
+  when: eclipse_ini_overwrite
+  with_dict: "{{ eclipse_ini_flags_next_line }}"
+
+- name: Configure eclipse ini next line parameters value
+  lineinfile:
+    dest: "{{ eclipse_ini_path }}"
+    state: present
+    regexp: "^{{ item.value | regex_escape() }}$"
+    insertafter: "^{{ item.key }}$"
+    line: "{{ item.value }}"
+    backup: yes
+  when: eclipse_ini_overwrite
+  with_dict: "{{ eclipse_ini_flags_next_line }}"
+
+- name: change splash
+  replace:
+    dest: "{{ eclipse_ini_path }}"
+    regexp: "/^.*-showSplash.*$/"
+    replace: "-noSplash"
+  when: eclipse_ini_overwrite
+
+- name: change vmargs
+  replace:
+    dest: "{{ eclipse_ini_path }}"
+    regexp: "^{{ item.key | regex_escape }}.*$"
+    replace: "{{ item.key }}{{ item.value }}"
+    backup: yes
+  with_dict: "{{ eclipse_ini_flags_vmargs }}"
+  when: eclipse_ini_overwrite

@@ -1,0 +1,13 @@
+---
+  - hosts: all
+    gather_facts: yes
+    pre_tasks:
+      - name: installing repo for Java 8
+        apt_repository: repo='ppa:openjdk-r/ppa'
+        become: yes
+    post_tasks:
+      - name: select java 8 as default java
+        alternatives: name=java path=/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+    roles:
+      - { role: geerlingguy.java, become: yes, java_packages: ['openjdk-8-jdk'] }
+      - { role: ansible-role-eclipse }

@@ -1,0 +1,25 @@
+---
+eclipse_distro: neon
+eclipse_package: jee
+
+# the name of all plugins that should be installed
+# a complete list can be found in vars/main.yml
+eclipse_plugins_install: ['subclipse']
+
+# optional
+# service release - the latest known is used when not set - depending on the distro can be 'SR2' (<=luna) or just '2' (>=mars)
+#eclipse_service_release: R
+
+# manipulate eclipse.ini
+eclipse_ini_overwrite: false
+eclipse_ini_flags_next_line: {}
+#  "-vm": /opt/bin/java
+#  #default is 256m
+#  "--launcher.XXMaxPermSize": 256m
+eclipse_ini_flags_vmargs: {}
+#  #default is 256m
+#  "-XX:MaxPermSize=": "1024m"
+#  #default is -Xms40m
+#  "-Xms": "512m"
+#  #default is -Xmx512m
+#  "-Xmx": "2048m"

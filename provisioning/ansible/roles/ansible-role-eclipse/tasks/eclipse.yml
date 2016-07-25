@@ -1,0 +1,19 @@
+---
+- name: Create install directory
+  file:
+    dest: "{{ eclipse_install_dir }}"
+    state: directory
+  tags: [eclipse]
+
+- name: set name of unpacked eclipse directory
+  set_fact:
+    eclipse_unpack_dir: "{{ eclipse_install_dir ~ '/eclipse' }}"
+    eclipse_ini_path:   "{{ eclipse_install_dir ~ '/eclipse/eclipse.ini' }}"
+
+- name: unpack archive from master
+  unarchive:
+    src:     "{{ master_download_folder ~ '/' ~ eclipse_file_tar }}"
+    dest:    "{{ eclipse_install_dir }}"
+    creates: "{{ eclipse_ini_path }}"
+#    extra_opts: ["--strip-components=1"]
+  tags: [eclipse]

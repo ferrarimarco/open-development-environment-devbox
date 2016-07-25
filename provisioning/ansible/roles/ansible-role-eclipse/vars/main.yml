@@ -1,0 +1,34 @@
+---
+eclipse_defaults:
+  url: "http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release"
+  archmap:
+    x86_64: "x86_64"
+  osmap:
+    Linux: linux
+  guimap:
+    Linux: "gtk"
+  ui_id_prefs:
+    filename: "configuration/.settings/org.eclipse.ui.ide.prefs"
+    settings:
+      SHOW_WORKSPACE_SELECTION_DIALOG: "false"
+      RECENT_WORKSPACES: ""
+  distros:
+    mars:
+      version: 4.5
+      latest_service_release: 2
+      packages: [jee]
+    neon:
+      version: 4.6
+      latest_service_release: R
+      packages: [jee]
+  plugins:
+    subclipse:
+      repositories:
+        - http://subclipse.tigris.org/update_1.10.x
+      install_units:
+        - org.tigris.subversion.subclipse.feature.group
+        - org.tigris.subversion.clientadapter.feature.feature.group
+        - org.tigris.subversion.clientadapter.svnkit.feature.feature.group
+        - org.tigris.subversion.clientadapter.javahl.feature.feature.group
+        - org.tigris.subversion.subclipse.graph.feature.feature.group
+      creates_feature: org.tigris.subversion.subclipse
