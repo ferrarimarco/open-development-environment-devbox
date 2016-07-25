@@ -18,9 +18,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     v.gui = true
   end
 
-
-#  config.vm.provision "shell", path: "provisioning/scripts/setup.sh"
-
   # Copy Ansible provisioning playbooks
   #config.vm.provision "file", source: "provisioning/ansible", destination: "/tmp/provisioning/ansible"
 
