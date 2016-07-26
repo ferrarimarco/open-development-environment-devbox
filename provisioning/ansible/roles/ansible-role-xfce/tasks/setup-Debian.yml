@@ -1,0 +1,29 @@
+---
+- name: Ensure required apt packages are installed
+  apt:
+    autoremove: yes
+    cache_valid_time: 3600
+    pkg: "{{ item }}"
+    state: present
+    update_cache: yes
+  become: yes
+  with_items:
+    - xfce
+
+- name: Remove light-locker package to avoid login issues
+  apt:
+    autoremove: yes
+    pkg: "{{ item }}"
+    purge: yes
+    state: absent
+  become: yes
+  with_items:
+    - light-locker
+
+- name: Setup running GUI as non-privileged user
+  become: yes
+  template: src=Xwrapper.config.j2 dest=/etc/X11/Xwrapper.config
+
+- name: Set locale
+  set_fact:
+    default_locale: "en_US.UTF-8"
