@@ -5,6 +5,7 @@ eclipse_service_release: R
 
 # manipulate eclipse.ini
 eclipse_ini_overwrite: false
+
 eclipse_ini_flags_next_line: {}
 #  "-vm": /opt/bin/java
 #  #default is 256m

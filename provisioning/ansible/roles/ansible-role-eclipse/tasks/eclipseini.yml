@@ -21,13 +21,6 @@
   when: eclipse_ini_overwrite
   with_dict: "{{ eclipse_ini_flags_next_line }}"
 
-- name: change splash
-  replace:
-    dest: "{{ eclipse_ini_path }}"
-    regexp: "/^.*-showSplash.*$/"
-    replace: "-noSplash"
-  when: eclipse_ini_overwrite
-
 - name: change vmargs
   replace:
     dest: "{{ eclipse_ini_path }}"
