@@ -21,7 +21,7 @@
   when: eclipse_ini_overwrite
   with_dict: "{{ eclipse_ini_flags_next_line }}"
 
-- name: change vmargs
+- name: Configure eclipse ini vmargs
   replace:
     dest: "{{ eclipse_ini_path }}"
     regexp: "^{{ item.key | regex_escape }}.*$"
