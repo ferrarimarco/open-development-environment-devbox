@@ -1,25 +1,21 @@
 ---
-- name: Ensure required apt packages are installed
-  apt:
-    autoremove: yes
-    cache_valid_time: 3600
-    pkg: "{{ item }}"
-    state: present
-    update_cache: yes
+- name: Install XFCE packages
+  apt: name={{ item }} state=present
   become: yes
   with_items:
     - xfce4
+    - xfce4-goodies
+    - gnome-icon-theme-full
+    - lightdm
 
-- name: Remove light-locker package to avoid login issues
-  apt:
-    autoremove: yes
-    pkg: "{{ item }}"
-    purge: yes
-    state: absent
+- name: set default session in lightdm to xfce
+  copy: src=../files/50-unity-greeter.conf dest=/usr/share/lightdm/lightdm.conf.d/50-unity-greeter.conf backup=yes
   become: yes
-  with_items:
-    - light-locker
+
+- name: start lightdm
+  service: name=lightdm state=started
+  become: yes
 
 - name: Setup running GUI as non-privileged user
-  become: yes
   template: src=Xwrapper.config.j2 dest=/etc/X11/Xwrapper.config
+  become: yes
