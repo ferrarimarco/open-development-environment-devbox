@@ -35,3 +35,4 @@ eclipse_defaults:
       install_units:
         - org.polarion.eclipse.team.svn.connector.svnkit18.feature.group
       creates_feature: org.polarion.eclipse.team.svn.connector.svnkit18
+lombok_download_url: https://projectlombok.org/downloads/lombok.jar

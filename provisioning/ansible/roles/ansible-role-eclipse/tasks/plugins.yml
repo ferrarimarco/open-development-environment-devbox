@@ -22,3 +22,7 @@
   with_items: '{{ eclipse_defaults.plugins }}'
   when: (eclipse_defaults.plugins[item] is defined)
   tags: [eclipse_plugins]
+
+- name: Copy Lombok jar to Eclipse root
+  copy: src={{ master_download_folder ~ '/' ~ lombok_file_jar }} dest={{ eclipse_unpack_dir ~ '/' ~ lombok_file_jar }} backup=yes
+  become: yes

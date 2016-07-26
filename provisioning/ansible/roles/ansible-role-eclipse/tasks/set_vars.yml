@@ -12,6 +12,10 @@
   set_fact:
     eclipse_file_tar:    "eclipse-{{ eclipse_package }}-{{ eclipse_distro }}-{{ eclipse_update }}-{{ eclipse_os }}{{ '-' ~ eclipse_gui if eclipse_gui }}{{ '-' ~ eclipse_arch if eclipse_arch }}.tar.gz"
 
+- name: set name of lombok jar file
+  set_fact:
+    lombok_file_jar:    "lombok.jar"
+
 - name: set java download url and install dir
   set_fact:
     eclipse_install_dir:  "{{ eclipse_install_dir | default( ansible_env.HOME ~ '/sw/eclipse/' ~  eclipse_defaults.distros[eclipse_distro].version ) }}"
