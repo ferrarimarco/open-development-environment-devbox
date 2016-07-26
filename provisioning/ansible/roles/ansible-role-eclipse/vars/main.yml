@@ -18,13 +18,20 @@ eclipse_defaults:
       latest_service_release: R
       packages: [jee]
   plugins:
-    subclipse:
+    subversive:
       repositories:
-        - http://subclipse.tigris.org/update_1.12.x
+        - http://download.eclipse.org/releases/neon
       install_units:
-        - org.tigris.subversion.subclipse.feature.group
-        - org.tigris.subversion.clientadapter.feature.feature.group
-        - org.tigris.subversion.clientadapter.svnkit.feature.feature.group
-        - org.tigris.subversion.clientadapter.javahl.feature.feature.group
-        - org.tigris.subversion.subclipse.graph.feature.feature.group
-      creates_feature: org.tigris.subversion.subclipse
+        - org.eclipse.team.svn.feature.group
+        - org.eclipse.team.svn.resource.ignore.rules.jdt.feature.group
+        - org.eclipse.team.svn.m2e.feature.group
+        - org.eclipse.team.svn.mylyn.feature.group
+        - org.eclipse.team.svn.nl1.feature.group
+        - org.eclipse.team.svn.revision.graph.feature.group
+      creates_feature: org.eclipse.team.svn
+    svn_connector:
+      repositories:
+        - http://community.polarion.com/projects/subversive/download/eclipse/6.0/neon-site
+      install_units:
+        - org.polarion.eclipse.team.svn.connector.svnkit18.feature.group
+      creates_feature: org.polarion.eclipse.team.svn.connector.svnkit18
