@@ -1,0 +1,17 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: ferrarimarco
+  description: Install Docker
+  license: "license (Apache 2.0)"
+  min_ansible_version: 2.0
+  platforms:
+  - name: Ubuntu
+    versions:
+      - trusty
+      - vivid
+      - xenial
+  galaxy_tags:
+    - development
+    - docker

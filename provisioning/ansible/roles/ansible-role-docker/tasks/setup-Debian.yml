@@ -1,0 +1,50 @@
+---
+- name: Install Docker dependencies (APT)
+  apt:
+    name: "{{ item }}"
+    state: present
+  become: yes
+  with_items:
+    - apparmor
+    - apt-transport-https
+    - ca-certificates
+    - linux-image-extra-{{ ansible_kernel }}
+
+- name: Add Docker APT repository key
+  apt_key:
+    id: "58118E89F3A912897C070ADBF76221572C52609D"
+    keyserver: "hkp://p80.pool.sks-keyservers.net:80"
+
+# Add specified repository into sources list.
+- name: Add Docker APT repository
+  apt_repository:
+    repo: "deb https://apt.dockerproject.org/repo ubuntu-trusty main"
+    state: present
+    update_cache: yes
+
+- name: Install Docker
+  apt:
+    name: "{{ item }}"
+    state: present
+  become: yes
+  with_items:
+    - docker-engine
+
+- name: Create docker group
+  group:
+    name: docker
+    state: present
+
+- name: Add users to docker group
+  user:
+    name: "{{ item }}"
+    group: docker
+  with_items:
+    - vagrant
+    - ubuntu
+
+- name: Start the docker service
+  service:
+    name: docker
+    state: started
+    enabled: yes
