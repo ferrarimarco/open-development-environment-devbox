@@ -29,7 +29,3 @@
 - name: Set default locale
   become: yes
   template: src=locale.j2 dest=/etc/default/locale
-
-- name: Reconfigure locale package
-  become: yes
-  command: dpkg-reconfigure -f noninteractive locales
