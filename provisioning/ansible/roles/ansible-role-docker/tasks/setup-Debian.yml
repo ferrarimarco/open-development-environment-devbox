@@ -3,7 +3,6 @@
   apt:
     name: "{{ item }}"
     state: present
-  become: yes
   with_items:
     - apparmor
     - apt-transport-https
@@ -26,22 +25,8 @@
   apt:
     name: "{{ item }}"
     state: present
-  become: yes
   with_items:
     - docker-engine
-
-- name: Create docker group
-  group:
-    name: docker
-    state: present
-
-- name: Add users to docker group
-  user:
-    name: "{{ item }}"
-    group: docker
-  with_items:
-    - vagrant
-    - ubuntu
 
 - name: Start the docker service
   service:
