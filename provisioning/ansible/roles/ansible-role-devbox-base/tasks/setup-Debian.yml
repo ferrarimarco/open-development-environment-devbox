@@ -8,7 +8,9 @@
     update_cache: yes
   become: yes
   with_items:
+    - apt-transport-https
     - bzip2
+    - ca-certificates
     - curl
     - git
     - language-pack-en
