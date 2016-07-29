@@ -3,10 +3,10 @@
   apt: name={{ item }} state=present
   become: yes
   with_items:
-    - xfce4
-    - xfce4-goodies
     - gnome-icon-theme-full
     - lightdm
+    - xfce4
+    - xfce4-goodies
 
 - name: set default session in lightdm to xfce
   copy: src=../files/50-unity-greeter.conf dest=/usr/share/lightdm/lightdm.conf.d/50-unity-greeter.conf backup=yes
