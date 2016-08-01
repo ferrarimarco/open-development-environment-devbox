@@ -8,10 +8,6 @@ env:
     version: 14.04.4
     init: /sbin/init
     run_opts: ""
-  - distribution: ubuntu
-    version: "16.04"
-    init: /sbin/init
-    run_opts: ""
 
 services:
   - docker
@@ -39,9 +35,6 @@ script:
     | grep -q 'changed=0.*failed=0'
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)
-  # Ensure roles are installed
-  - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm ansible-galaxy list | grep geerlingguy.java'
-  - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm ansible-galaxy list | grep geerlingguy.nginx'
 
   # Clean up
   - 'sudo docker stop "$(cat ${container_id})"'
