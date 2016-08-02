@@ -19,9 +19,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     v.gui = true
   end
 
-  # Copy Ansible provisioning playbooks
-  #config.vm.provision "file", source: "provisioning/ansible", destination: "/tmp/provisioning/ansible"
-
   # Install Ansible
   config.vm.provision "ansible_local" do |ansible|
     ansible.install = true
