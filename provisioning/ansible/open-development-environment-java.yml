@@ -14,4 +14,4 @@
       - { role: ansible-role-devbox-base }
       - { role: ansible-role-xfce }
       - { role: ansible-role-eclipse }
-      - { role: ansible-role-docker, become: yes }
+      - { role: ferrarimarco.docker, become: yes }
