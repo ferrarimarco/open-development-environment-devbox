@@ -29,3 +29,10 @@
     backup: yes
   with_dict: "{{ eclipse_ini_flags_vmargs }}"
   when: eclipse_ini_overwrite
+
+- name: Configure Lombok
+  lineinfile:
+  args:
+    dest: "{{ eclipse_ini_path }}"
+    insertafter: EOF
+    line: "-javaagent:{{ eclipse_unpack_dir ~ '/' ~ lombok_file_jar }}"

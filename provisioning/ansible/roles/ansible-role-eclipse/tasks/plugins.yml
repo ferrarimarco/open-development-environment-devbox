@@ -24,5 +24,12 @@
   tags: [eclipse_plugins]
 
 - name: Copy Lombok jar to Eclipse root
-  copy: src={{ master_download_folder ~ '/' ~ lombok_file_jar }} dest={{ eclipse_unpack_dir ~ '/' ~ lombok_file_jar }} backup=yes
+  copy:
+  args:
+    backup: yes
+    dest: "{{ eclipse_unpack_dir ~ '/' ~ lombok_file_jar }}"
+    group: vagrant
+    mode: "u=rwx,g=rx,o=rx"
+    owner: vagrant
+    src: "{{ master_download_folder ~ '/' ~ lombok_file_jar }}"
   become: yes
