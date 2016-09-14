@@ -1,4 +1,15 @@
 ---
+- name: Copy Lombok jar to Eclipse root
+  copy:
+  args:
+    backup: yes
+    dest: "{{ eclipse_unpack_dir ~ '/' ~ lombok_file_jar }}"
+    group: vagrant
+    mode: "u=rwx,g=rx,o=rx"
+    owner: vagrant
+    src: "{{ master_download_folder ~ '/' ~ lombok_file_jar }}"
+  become: yes
+
 # http://help.eclipse.org/juno/index.jsp?topic=/org.eclipse.platform.doc.isv/guide/p2_director.html
 - name: create plugins install command
   set_fact:
@@ -22,14 +33,3 @@
   with_items: '{{ eclipse_defaults.plugins }}'
   when: (eclipse_defaults.plugins[item] is defined)
   tags: [eclipse_plugins]
-
-- name: Copy Lombok jar to Eclipse root
-  copy:
-  args:
-    backup: yes
-    dest: "{{ eclipse_unpack_dir ~ '/' ~ lombok_file_jar }}"
-    group: vagrant
-    mode: "u=rwx,g=rx,o=rx"
-    owner: vagrant
-    src: "{{ master_download_folder ~ '/' ~ lombok_file_jar }}"
-  become: yes
