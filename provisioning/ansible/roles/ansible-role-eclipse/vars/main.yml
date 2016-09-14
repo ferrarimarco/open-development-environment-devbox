@@ -35,4 +35,10 @@ eclipse_defaults:
       install_units:
         - org.polarion.eclipse.team.svn.connector.svnkit18.feature.group
       creates_feature: org.polarion.eclipse.team.svn.connector.svnkit18
+    m2eclipse-mavenarchiver:
+      repositories:
+        - https://otto.takari.io/content/sites/m2e.extras/m2eclipse-mavenarchiver/0.17.2/N/LATEST/
+      install_units:
+        - org.sonatype.m2e.mavenarchiver.feature.feature.group
+      creates_feature: org.sonatype.m2e.mavenarchiver.feature_0.17.2
 lombok_download_url: https://projectlombok.org/downloads/lombok.jar
