@@ -47,4 +47,16 @@ eclipse_defaults:
       install_units:
         - org.dadacoalition.yedit
       creates_feature: org.dadacoalition.yedit.feature
+    test_ng:
+      repositories:
+        - http://beust.com/eclipse
+      install_units:
+        - org.testng.eclipse
+      creates_feature: org.testng.eclipse
+    test_ng_maven_plugin:
+      repositories:
+        - http://beust.com/eclipse
+      install_units:
+        - org.testng.eclipse.maven
+      creates_feature: org.testng.eclipse.maven.feature
 lombok_download_url: https://projectlombok.org/downloads/lombok.jar
