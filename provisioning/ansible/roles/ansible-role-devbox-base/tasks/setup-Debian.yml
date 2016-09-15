@@ -11,6 +11,7 @@
     - apt-transport-https
     - bzip2
     - ca-certificates
+    - chromium-browser
     - curl
     - git
     - language-pack-en
