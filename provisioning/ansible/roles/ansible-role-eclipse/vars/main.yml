@@ -10,8 +10,9 @@ eclipse_defaults:
   ui_id_prefs:
     filename: "configuration/.settings/org.eclipse.ui.ide.prefs"
     settings:
+      RECENT_WORKSPACES: "/home/vagrant/workspace"
       SHOW_WORKSPACE_SELECTION_DIALOG: "false"
-      RECENT_WORKSPACES: ""
+      SHOW_RECENT_WORKSPACES: "false"
   distros:
     neon:
       version: 4.6
