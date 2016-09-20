@@ -1,22 +1,24 @@
 ---
 - name: set eclipse vars from defaults or settings
   set_fact:
-    eclipse_arch:   "{{ eclipse_arch   | default( eclipse_defaults.archmap[ansible_architecture] ) }}"
-    eclipse_os:     "{{ eclipse_os     | default( eclipse_defaults.osmap[ansible_system] ) }}"
-    eclipse_url:    "{{ eclipse_defaults.url }}"
+    eclipse_arch: "{{ eclipse_arch   | default( eclipse_defaults.archmap[ansible_architecture] ) }}"
+    eclipse_gui: "{{ eclipse_defaults.guimap[ansible_system] }}"
+    eclipse_os: "{{ eclipse_os     | default( eclipse_defaults.osmap[ansible_system] ) }}"
     eclipse_update: "{{ eclipse_service_release | default( eclipse_defaults.distros[eclipse_distro].latest_service_release ) }}"
-    eclipse_gui:    "{{ eclipse_defaults.guimap[ansible_system] }}"
+    eclipse_url: "{{ eclipse_defaults.url }}"
+    eclipse_workspace_dir: "{{ eclipse_default_workspace | default( eclipse_defaults.workspace_dir ) }}"
+    eclipse_recent_workspace_dir: "{{ eclipse_default_workspace | default( eclipse_defaults.workspace_dir ) }}"
   failed_when: (eclipse_distro not in eclipse_defaults.distros) or (eclipse_package not in eclipse_defaults.distros[eclipse_distro].packages)
 
 - name: set name of tar file
   set_fact:
-    eclipse_file_tar:    "eclipse-{{ eclipse_package }}-{{ eclipse_distro }}-{{ eclipse_update }}-{{ eclipse_os }}{{ '-' ~ eclipse_gui if eclipse_gui }}{{ '-' ~ eclipse_arch if eclipse_arch }}.tar.gz"
+    eclipse_file_tar: "eclipse-{{ eclipse_package }}-{{ eclipse_distro }}-{{ eclipse_update }}-{{ eclipse_os }}{{ '-' ~ eclipse_gui if eclipse_gui }}{{ '-' ~ eclipse_arch if eclipse_arch }}.tar.gz"
 
 - name: set name of lombok jar file
   set_fact:
-    lombok_file_jar:    "lombok.jar"
+    lombok_file_jar: "lombok.jar"
 
 - name: set java download url and install dir
   set_fact:
-    eclipse_install_dir:  "{{ eclipse_install_dir | default( ansible_env.HOME ~ '/sw/eclipse/' ~  eclipse_defaults.distros[eclipse_distro].version ) }}"
     eclipse_download_url: "{{ eclipse_url }}/{{ eclipse_distro }}/{{ eclipse_update }}/{{ eclipse_file_tar }}&r=1"
+    eclipse_install_dir:  "{{ eclipse_install_dir | default( ansible_env.HOME ~ '/sw/eclipse/' ~  eclipse_defaults.distros[eclipse_distro].version ) }}"

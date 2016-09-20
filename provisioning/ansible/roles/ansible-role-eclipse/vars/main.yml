@@ -7,6 +7,7 @@ eclipse_defaults:
     Linux: linux
   guimap:
     Linux: "gtk"
+  workspace_dir: "/home/vagrant/workspace"
   ui_id_prefs:
     filename: "configuration/.settings/org.eclipse.ui.ide.prefs"
     settings:
