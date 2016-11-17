@@ -3,3 +3,5 @@
 downloads/
 
 *.retry
+
+*.log
