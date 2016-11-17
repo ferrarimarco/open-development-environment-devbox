@@ -1,8 +1,7 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.ssh.username='vagrant'
-  config.vm.box='ubuntu/trusty64'
+  config.vm.box='bento/ubuntu-16.04'
   config.vm.hostname='open-development-environment-java'
   config.vm.network "private_network", type: "dhcp"
 
