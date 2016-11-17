@@ -4,10 +4,6 @@ A virtual machine serving as a development box. It's automatically built using [
 
 Part of the [Open Development Environment Project](https://github.com/ferrarimarco/open-development-environment).
 
-## Build status
-- Master Branch: [![Build Status Master Branch](https://travis-ci.org/ferrarimarco/open-development-environment-devbox.svg?branch=master)](https://travis-ci.org/ferrarimarco/open-development-environment-devbox)
-- Development Branch: [![Build Status Development Branch](https://travis-ci.org/ferrarimarco/open-development-environment-devbox.svg?branch=development)](https://travis-ci.org/ferrarimarco/open-development-environment-devbox)
-
 ## Dependencies
 These are the dependencies required to run and, if you choose so, to build the box by yourself.
 - Vagrant 1.8.7
