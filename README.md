@@ -14,6 +14,7 @@ These are the dependencies required to build and run the box:
 
 ## How to Run
 To build the box:
+
 1. Install the dependencies
 1. Clone this repository
 1. Run `vagrant up` from inside the cloned repository directory
