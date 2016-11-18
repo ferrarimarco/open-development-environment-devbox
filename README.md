@@ -8,12 +8,13 @@ Part of the [Open Development Environment Project](https://github.com/ferrarimar
 For a list of changes, have a look at the [changelog](CHANGELOG.md)
 
 ## Dependencies
-These are the dependencies required to run and, if you choose so, to build the box by yourself.
+These are the dependencies required to build and run the box:
 - Vagrant 1.8.6
 - Virtualbox 5.1.6
 
 ## How to Run
 To build the box:
+
 1. Install the dependencies
 1. Clone this repository
 1. Run `vagrant up` from inside the cloned repository directory
