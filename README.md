@@ -9,8 +9,8 @@ For a list of changes, have a look at the [changelog](CHANGELOG.md)
 
 ## Dependencies
 These are the dependencies required to run and, if you choose so, to build the box by yourself.
-- Vagrant 1.8.7
-- Virtualbox 5.1.8
+- Vagrant 1.8.6
+- Virtualbox 5.1.6
 
 ## How to Run
 You have two ways to use this virtual machine: using the prebuilt box or building by yourself.
