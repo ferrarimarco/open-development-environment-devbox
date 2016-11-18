@@ -33,7 +33,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Run Ansible from the Vagrant VM
   config.vm.provision "ansible_local" do |ansible|
-    ansible.playbook = "open-development-environment-java.yml"
+    ansible.playbook = "open-development-environment-devbox.yml"
     ansible.provisioning_path= "/tmp/provisioning/ansible"
   end
 
