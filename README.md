@@ -13,15 +13,7 @@ These are the dependencies required to run and, if you choose so, to build the b
 - Virtualbox 5.1.6
 
 ## How to Run
-You have two ways to use this virtual machine: using the prebuilt box or building by yourself.
-If in doubt, just pick the prebuilt box.
-
-## Prebuilt box
-Just use `ferrarimarco/open-development-environment-devbox` in your Vagrantfile:
-
-`config.vm.box='ferrarimarco/open-development-environment-devbox'`
-
-## Build the box
+To build the box:
 1. Install the dependencies
 1. Clone this repository
 1. Run `vagrant up` from inside the cloned repository directory
