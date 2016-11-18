@@ -2,7 +2,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box='boxcutter/ubuntu1604'
-  config.vm.hostname='open-development-environment-java'
+  config.vm.hostname='open-development-environment-devbox'
   config.vm.network "private_network", type: "dhcp"
 
   config.vm.provider "virtualbox" do |v|
