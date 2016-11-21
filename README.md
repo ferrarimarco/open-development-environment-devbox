@@ -27,6 +27,7 @@ This "development box" is based on Ubuntu 16.04 with an XFCE Desktop environment
 - Chromium browser
 - curl
 - git
+- Maven 3
 - Nano
 - Subversion
 
