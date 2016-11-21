@@ -15,6 +15,7 @@
     - curl
     - git
     - language-pack-en
+    - maven
     - nano
     - subversion
     - virtualbox-guest-dkms
