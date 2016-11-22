@@ -1,7 +1,7 @@
 ---
 - name: set download location on master for eclipse tar file
   set_fact:
-    master_download_folder: "{{ master_download_folder | default( ansible_env.PWD ~ '/downloads') }}"
+    master_download_folder: "{{ ansible_env.PWD ~ '/downloads' }}"
   delegate_to: local
   run_once: true
 
