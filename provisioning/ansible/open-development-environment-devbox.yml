@@ -12,5 +12,4 @@
     roles:
       - { role: geerlingguy.java, become: yes, java_packages: ['openjdk-8-jdk'] }
       - { role: ansible-role-devbox-base }
-      - { role: ansible-role-xfce }
       - { role: ansible-role-eclipse }
