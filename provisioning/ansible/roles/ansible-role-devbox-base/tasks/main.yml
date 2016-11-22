@@ -4,3 +4,5 @@
 
 - include: setup-xfce-Debian.yml
   when: ansible_os_family == "Debian"
+
+- include: oracle-sql-developer.yml

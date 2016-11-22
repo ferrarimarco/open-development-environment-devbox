@@ -27,8 +27,17 @@ This "development box" is based on Ubuntu 16.04 with an XFCE Desktop environment
 - Chromium browser
 - curl
 - git
+- Oracle SQL Developer
 - Maven 3
 - Nano
 - Subversion
 
 If you have suggestions about tools to include, please create a new GitHub issue.
+
+### How to install Oracle SQL Developer
+The archive containing Oracle SQL Developer must be manually downloaded from Oracle as it requires the acceptance of a license and
+a login:
+1. Download Oracle SQL Developer from [Oracle Website](http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index-097090.html)
+1. Put the downloaded archive in `provisioning/ansible/downloads`
+1. Rename the archive file to `sqldeveloper.zip`
+1. Run the playbook
