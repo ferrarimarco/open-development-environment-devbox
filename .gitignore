@@ -1,7 +1,5 @@
 .vagrant/
 
-downloads/
-
 *.retry
 
 *.log
