@@ -14,6 +14,7 @@
     - chromium-browser
     - curl
     - git
+    - jmeter
     - language-pack-en
     - maven
     - nano
