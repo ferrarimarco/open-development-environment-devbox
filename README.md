@@ -26,6 +26,7 @@ This "development box" is based on Ubuntu 16.04 with an XFCE Desktop environment
 - Eclipse Neon
 - Chromium browser
 - curl
+- Docker
 - git
 - Oracle SQL Developer
 - Maven 3
