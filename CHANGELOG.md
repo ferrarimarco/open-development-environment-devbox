@@ -4,11 +4,15 @@
 
 **Implemented enhancements:**
 
+- Add the Vagrant user to the docker group [\#22](https://github.com/ferrarimarco/open-development-environment-devbox/issues/22)
 - Install Oracle SQL Developer [\#21](https://github.com/ferrarimarco/open-development-environment-devbox/issues/21)
 - Install Apache JMeter [\#20](https://github.com/ferrarimarco/open-development-environment-devbox/issues/20)
 - Install Maven [\#19](https://github.com/ferrarimarco/open-development-environment-devbox/issues/19)
 - Update the hostname in Vagrantfile [\#17](https://github.com/ferrarimarco/open-development-environment-devbox/issues/17)
 - Update open-development-environment-java playbook name [\#16](https://github.com/ferrarimarco/open-development-environment-devbox/issues/16)
+- Set open-development-environment-git aliases [\#15](https://github.com/ferrarimarco/open-development-environment-devbox/issues/15)
+- Set Github changelog generator aliases [\#14](https://github.com/ferrarimarco/open-development-environment-devbox/issues/14)
+- Install Docker [\#13](https://github.com/ferrarimarco/open-development-environment-devbox/issues/13)
 - Publish a changelog [\#12](https://github.com/ferrarimarco/open-development-environment-devbox/issues/12)
 - Use boxcutter/ubuntu-1604 as a base [\#11](https://github.com/ferrarimarco/open-development-environment-devbox/issues/11)
 - Add log files to .gitignore [\#10](https://github.com/ferrarimarco/open-development-environment-devbox/issues/10)
