@@ -39,6 +39,6 @@
     dest: "{{ bash_aliases_path }}"
     create: yes
     mode: 0644
-    line: 'alias {{ item.alias }}="{{ item.command }}"'
+    line: "alias {{ item.alias }}='{{ item.command }}'"
     regexp: "^alias {{ item.alias }}="
   with_items: '{{bash_aliases}}'
