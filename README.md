@@ -28,12 +28,21 @@ This "development box" is based on Ubuntu 16.04 with an XFCE Desktop environment
 - curl
 - Docker
 - git
-- Oracle SQL Developer
+- Oracle SQL Developer ([see below](###how-to-install-oracle-sql-developer))
 - Maven 3
 - Nano
 - Subversion
 
 If you have suggestions about tools to include, please create a new GitHub issue.
+
+### Bash aliases
+The following aliases are automatically set up during the provisioning process:
+- *`changelog-generator`*: `command: 'docker run -it --rm -v "$(pwd)":/app prooph/github-changelog-generator'`
+- *`git-log1`*: `docker run -it --rm -v "$(pwd)":/usr/src -w /usr/src --rm ferrarimarco/open-development-environment-git:1.0.0 lg1`
+- *`git-log2`*: `docker run -it --rm -v "$(pwd)":/usr/src -w /usr/src --rm ferrarimarco/open-development-environment-git:1.0.0 lg2`
+- *`git-log3`*: `docker run -it --rm -v "$(pwd)":/usr/src -w /usr/src --rm ferrarimarco/open-development-environment-git:1.0.0 lg3`
+
+_For more information about Git logs, have a look at [open-development-environment-git](https://github.com/ferrarimarco/open-development-environment-git)._
 
 ### How to install Oracle SQL Developer
 The archive containing Oracle SQL Developer must be manually downloaded from Oracle as it requires the acceptance of a license and a login:
