@@ -28,7 +28,7 @@ This "development box" is based on Ubuntu 16.04 with an XFCE Desktop environment
 - curl
 - Docker
 - git
-- Oracle SQL Developer ([see below](###how-to-install-oracle-sql-developer))
+- Oracle SQL Developer ([see below](#how-to-install-oracle-sql-developer))
 - Maven 3
 - Nano
 - Subversion
