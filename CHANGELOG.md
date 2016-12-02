@@ -4,6 +4,7 @@
 
 **Implemented enhancements:**
 
+- Update README: dependencies section [\#30](https://github.com/ferrarimarco/open-development-environment-devbox/issues/30)
 - Add the Vagrant user to the docker group [\#22](https://github.com/ferrarimarco/open-development-environment-devbox/issues/22)
 - Install Oracle SQL Developer [\#21](https://github.com/ferrarimarco/open-development-environment-devbox/issues/21)
 - Install Apache JMeter [\#20](https://github.com/ferrarimarco/open-development-environment-devbox/issues/20)
