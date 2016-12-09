@@ -48,7 +48,7 @@ eclipse_defaults:
         - http://dadacoalition.org/yedit
       install_units:
         - org.dadacoalition.yedit
-      creates_feature: org.dadacoalition.yedit.feature
+      creates_feature: org.dadacoalition.yedit
     test_ng:
       repositories:
         - http://beust.com/eclipse
@@ -60,7 +60,7 @@ eclipse_defaults:
         - http://beust.com/eclipse
       install_units:
         - org.testng.eclipse.maven
-      creates_feature: org.testng.eclipse.maven.feature
+      creates_feature: org.testng.eclipse.maven
 lombok_download_url: https://projectlombok.org/downloads/lombok.jar
 bash_aliases_path: "~/.bash_aliases"
 bash_aliases:

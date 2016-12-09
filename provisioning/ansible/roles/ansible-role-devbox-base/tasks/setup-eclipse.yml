@@ -130,7 +130,7 @@
     {{ eclipse_defaults.plugins[item].install_units | join(',') }} \
     -tag ansible_install_plugin_{{ item }}"
   args:
-    creates: "{{ eclipse_unpack_dir}}/features/{{ eclipse_defaults.plugins[item].creates_feature }}*"
+    creates: "{{ eclipse_unpack_dir}}/*/{{ eclipse_defaults.plugins[item].creates_feature }}*"
   with_items: '{{ eclipse_defaults.plugins }}'
   when: (eclipse_defaults.plugins[item] is defined)
 
