@@ -1,0 +1,154 @@
+---
+- name: set eclipse vars from defaults or settings
+  set_fact:
+    eclipse_arch: "{{ eclipse_arch   | default( eclipse_defaults.archmap[ansible_architecture] ) }}"
+    eclipse_gui: "{{ eclipse_defaults.guimap[ansible_system] }}"
+    eclipse_os: "{{ eclipse_os     | default( eclipse_defaults.osmap[ansible_system] ) }}"
+    eclipse_update: "{{ eclipse_service_release | default( eclipse_defaults.distros[eclipse_distro].latest_service_release ) }}"
+    eclipse_url: "{{ eclipse_defaults.url }}"
+    eclipse_workspace_dir: "{{ eclipse_default_workspace | default( eclipse_defaults.workspace_dir ) }}"
+    eclipse_recent_workspace_dir: "{{ eclipse_default_workspace | default( eclipse_defaults.workspace_dir ) }}"
+  failed_when: (eclipse_distro not in eclipse_defaults.distros) or (eclipse_package not in eclipse_defaults.distros[eclipse_distro].packages)
+
+- name: set name of tar file
+  set_fact:
+    eclipse_file_tar: "eclipse-{{ eclipse_package }}-{{ eclipse_distro }}-{{ eclipse_update }}-{{ eclipse_os }}{{ '-' ~ eclipse_gui if eclipse_gui }}{{ '-' ~ eclipse_arch if eclipse_arch }}.tar.gz"
+
+- name: set name of lombok jar file
+  set_fact:
+    lombok_file_jar: "lombok.jar"
+
+- name: set java download url and install dir
+  set_fact:
+    eclipse_download_url: "{{ eclipse_url }}/{{ eclipse_distro }}/{{ eclipse_update }}/{{ eclipse_file_tar }}&r=1"
+    eclipse_install_dir:  "{{ eclipse_install_dir | default( ansible_env.HOME ~ '/sw/eclipse/' ~  eclipse_defaults.distros[eclipse_distro].version ) }}"
+
+- name: set download location on master for eclipse tar file
+  set_fact:
+    master_download_folder: "{{ ansible_env.PWD ~ '/downloads' }}"
+  delegate_to: local
+  run_once: true
+
+- name: create downloads folder if it does not exist yet
+  file:
+    dest: "{{ master_download_folder }}"
+    state: directory
+
+- name: Download eclipse to ansible-master if we don't have it
+  local_action: get_url \
+    url="{{ eclipse_download_url }}" \
+    dest="{{ master_download_folder ~ '/' ~ eclipse_file_tar }}" \
+    force=no
+  run_once: true
+
+- name: Download lombok to ansible-master if we don't have it
+  local_action: get_url \
+    url="{{ lombok_download_url }}" \
+    dest="{{ master_download_folder ~ '/' ~ lombok_file_jar }}" \
+    force=no
+  run_once: true
+
+- name: Create install directory
+  file:
+    dest: "{{ eclipse_install_dir }}"
+    state: directory
+
+- name: set name of unpacked eclipse directory
+  set_fact:
+    eclipse_unpack_dir: "{{ eclipse_install_dir ~ '/eclipse' }}"
+    eclipse_ini_path:   "{{ eclipse_install_dir ~ '/eclipse/eclipse.ini' }}"
+
+- name: unpack archive from master
+  unarchive:
+    src:     "{{ master_download_folder ~ '/' ~ eclipse_file_tar }}"
+    dest:    "{{ eclipse_install_dir }}"
+    creates: "{{ eclipse_ini_path }}"
+
+- name: Configure eclipse ini next line parameters option
+  lineinfile:
+    dest: "{{ eclipse_ini_path }}"
+    state: present
+    regexp: "^{{ item.key | regex_escape() }}$"
+    insertbefore: "^-vmargs$"
+    line: "{{ item.key }}"
+    backup: yes
+  when: eclipse_ini_overwrite
+  with_dict: "{{ eclipse_ini_flags_next_line }}"
+
+- name: Configure eclipse ini next line parameters value
+  lineinfile:
+    dest: "{{ eclipse_ini_path }}"
+    state: present
+    regexp: "^{{ item.value | regex_escape() }}$"
+    insertafter: "^{{ item.key }}$"
+    line: "{{ item.value }}"
+    backup: yes
+  when: eclipse_ini_overwrite
+  with_dict: "{{ eclipse_ini_flags_next_line }}"
+
+- name: Configure eclipse ini vmargs
+  replace:
+    dest: "{{ eclipse_ini_path }}"
+    regexp: "^{{ item.key | regex_escape }}.*$"
+    replace: "{{ item.key }}{{ item.value }}"
+    backup: yes
+  with_dict: "{{ eclipse_ini_flags_vmargs }}"
+  when: eclipse_ini_overwrite
+
+- name: Configure Lombok
+  lineinfile:
+  args:
+    dest: "{{ eclipse_ini_path }}"
+    insertafter: EOF
+    line: "-javaagent:{{ eclipse_unpack_dir ~ '/' ~ lombok_file_jar }}"
+
+- name: Copy Lombok jar to Eclipse root
+  copy:
+  args:
+    backup: yes
+    dest: "{{ eclipse_unpack_dir ~ '/' ~ lombok_file_jar }}"
+    group: vagrant
+    mode: "u=rwx,g=rx,o=rx"
+    owner: vagrant
+    src: "{{ master_download_folder ~ '/' ~ lombok_file_jar }}"
+
+# http://help.eclipse.org/juno/index.jsp?topic=/org.eclipse.platform.doc.isv/guide/p2_director.html
+- name: create plugins install command
+  set_fact:
+    plugin_install_command: "{{ eclipse_unpack_dir }}/eclipse -nosplash \
+      -application org.eclipse.equinox.p2.director \
+      -destination {{ eclipse_unpack_dir}} \
+      {{ '-p2.os '   ~ eclipse_os  if eclipse_os  }} \
+      {{ '-p2.ws '   ~ eclipse_gui if eclipse_gui }} \
+      {{ '-p2.arch ' ~ ansible_architecture if ansible_architecture }}"
+
+- name: Install eclipse plugins
+  command: "{{ plugin_install_command }} \
+    -repository \
+    {{ (['http://download.eclipse.org/releases/' + eclipse_distro] + eclipse_defaults.plugins[item].repositories) | join(',') }} \
+    -installIU \
+    {{ eclipse_defaults.plugins[item].install_units | join(',') }} \
+    -tag ansible_install_plugin_{{ item }}"
+  args:
+    creates: "{{ eclipse_unpack_dir}}/*/{{ eclipse_defaults.plugins[item].creates_feature }}*"
+  with_items: '{{ eclipse_defaults.plugins }}'
+  when: (eclipse_defaults.plugins[item] is defined)
+
+- name: set location of org.eclipse.ui.ide.pref
+  set_fact:
+    eclipse_ui_ide_pref: "{{ eclipse_unpack_dir }}/{{ eclipse_defaults.ui_id_prefs.filename }}"
+
+- name: check if org.eclipse.ui.ide.prefs exists
+  stat:
+    path: "{{ eclipse_ui_ide_pref }}"
+  register: eclipse_ui_ide_pref_stat
+
+- name: Configure settings/org.eclipse.ui.ide.prefs
+  lineinfile:
+    dest: "{{ eclipse_ui_ide_pref }}"
+    state: present
+    backup: no
+    regexp: "^{{ item.key }}=.*$"
+    line: "{{ item.key }}={{ item.value }}"
+  with_dict: "{{ eclipse_defaults.ui_id_prefs.settings }}"
+  when: eclipse_ui_ide_pref_stat.stat.exists

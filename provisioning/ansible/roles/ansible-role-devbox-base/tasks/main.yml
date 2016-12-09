@@ -2,10 +2,13 @@
 - include: setup-Debian.yml
   when: ansible_os_family == "Debian"
 
+- include: setup-locale.yml
+
+- include: setup-bash-aliases.yml
+
 - include: setup-xfce-Debian.yml
   when: ansible_os_family == "Debian"
 
-- include: setup-eclipse-Debian.yml
-  when: ansible_os_family == "Debian"
+- include: setup-eclipse.yml
 
-- include: oracle-sql-developer.yml
+- include: setup-oracle-sql-developer.yml
