@@ -75,17 +75,6 @@
   when: eclipse_ini_overwrite
   with_dict: "{{ eclipse_ini_flags_next_line }}"
 
-- name: Configure eclipse ini next line parameters value
-  lineinfile:
-    dest: "{{ eclipse_ini_path }}"
-    state: present
-    regexp: "^{{ item.value | regex_escape() }}$"
-    insertafter: "^{{ item.key }}$"
-    line: "{{ item.value }}"
-    backup: yes
-  when: eclipse_ini_overwrite
-  with_dict: "{{ eclipse_ini_flags_next_line }}"
-
 - name: Configure eclipse ini vmargs
   replace:
     dest: "{{ eclipse_ini_path }}"
