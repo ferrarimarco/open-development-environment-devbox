@@ -12,3 +12,5 @@
 - include: setup-eclipse.yml
 
 - include: setup-oracle-sql-developer.yml
+
+- include: setup-nano.yml
