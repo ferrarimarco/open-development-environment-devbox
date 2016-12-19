@@ -38,6 +38,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     ansible.provisioning_path= "/tmp/provisioning/ansible"
   end
 
+  # Run Ansible from the Vagrant VM
+  config.vm.provision "ansible_local" do |ansible|
+    ansible.playbook = "open-development-environment-devbox-finalization.yml"
+    ansible.provisioning_path= "/tmp/provisioning/ansible"
+  end
+
   config.vm.synced_folder '.', '/vagrant', disabled: true
   config.vm.synced_folder "provisioning/ansible", "/tmp/provisioning/ansible"
 end
