@@ -23,12 +23,12 @@ The build process can take up to 15 minutes.
 
 ## What's inside the box
 This "development box" is based on Ubuntu 16.04 with an XFCE Desktop environment and includes the following tools, ready to be used:
-- Eclipse Neon
+- Eclipse Neon (avaliable in `/home/vagrant/sw`)
 - Chromium browser
 - curl
 - Docker
 - git
-- Oracle SQL Developer ([see below](#how-to-install-oracle-sql-developer))
+- Oracle SQL Developer ([see below](#how-to-install-oracle-sql-developer), avaliable in `/home/vagrant/sw`)
 - Maven 3
 - Nano
 - Subversion
