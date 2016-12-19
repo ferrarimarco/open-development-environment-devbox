@@ -72,4 +72,5 @@ bash_aliases:
     command: 'docker run -it --rm -v "$(pwd)":/usr/src -w /usr/src --rm ferrarimarco/open-development-environment-git:1.0.0 lg2'
   - alias: 'git-log3'
     command: 'docker run -it --rm -v "$(pwd)":/usr/src -w /usr/src --rm ferrarimarco/open-development-environment-git:1.0.0 lg3'
+docker_clean_download_url: 'https://raw.githubusercontent.com/ZZROTDesign/docker-clean/v2.0.4/docker-clean'
 nano_settings_file_path: "~/.nanorc"
