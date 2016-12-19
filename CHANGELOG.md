@@ -4,7 +4,14 @@
 
 **Implemented enhancements:**
 
+- Reduce the number of tasks used to setup facts during Eclipse installation [\#40](https://github.com/ferrarimarco/open-development-environment-devbox/issues/40)
+- Use a single task to download dependencies in setup-eclipse.yml [\#37](https://github.com/ferrarimarco/open-development-environment-devbox/issues/37)
+- Move locale setup and bash aliases configuration to their own playbooks [\#34](https://github.com/ferrarimarco/open-development-environment-devbox/issues/34)
+- Reduce the number of playbooks used to install and configure Eclipse [\#33](https://github.com/ferrarimarco/open-development-environment-devbox/issues/33)
 - Update README: dependencies section [\#30](https://github.com/ferrarimarco/open-development-environment-devbox/issues/30)
+- Add box version to Vagrantfile [\#29](https://github.com/ferrarimarco/open-development-environment-devbox/issues/29)
+- Setup nano to display line number [\#26](https://github.com/ferrarimarco/open-development-environment-devbox/issues/26)
+- Document bash aliases in README [\#23](https://github.com/ferrarimarco/open-development-environment-devbox/issues/23)
 - Add the Vagrant user to the docker group [\#22](https://github.com/ferrarimarco/open-development-environment-devbox/issues/22)
 - Install Oracle SQL Developer [\#21](https://github.com/ferrarimarco/open-development-environment-devbox/issues/21)
 - Install Apache JMeter [\#20](https://github.com/ferrarimarco/open-development-environment-devbox/issues/20)
@@ -21,6 +28,14 @@
 - Write a README [\#8](https://github.com/ferrarimarco/open-development-environment-devbox/issues/8)
 - Configure default Eclipse Workspace [\#5](https://github.com/ferrarimarco/open-development-environment-devbox/issues/5)
 - Merge ansible-role-eclipse with ansible-role-devbox [\#2](https://github.com/ferrarimarco/open-development-environment-devbox/issues/2)
+
+**Fixed bugs:**
+
+- Unable to add vagrant user to docker group during the first provisioning [\#39](https://github.com/ferrarimarco/open-development-environment-devbox/issues/39)
+- Avoid installing Virtualbox Guest Additions during the provisioning process [\#38](https://github.com/ferrarimarco/open-development-environment-devbox/issues/38)
+- Use super user privileges to add vagrant user to docker group [\#36](https://github.com/ferrarimarco/open-development-environment-devbox/issues/36)
+- Install Eclipse plugins task may not be idempotent for all plugins [\#35](https://github.com/ferrarimarco/open-development-environment-devbox/issues/35)
+- Avoid expansions when evaluating bash aliases [\#24](https://github.com/ferrarimarco/open-development-environment-devbox/issues/24)
 
 
 
