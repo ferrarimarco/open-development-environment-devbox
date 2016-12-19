@@ -8,15 +8,12 @@
     eclipse_url: "{{ eclipse_defaults.url }}"
     eclipse_workspace_dir: "{{ eclipse_default_workspace | default( eclipse_defaults.workspace_dir ) }}"
     eclipse_recent_workspace_dir: "{{ eclipse_default_workspace | default( eclipse_defaults.workspace_dir ) }}"
+    lombok_file_jar: "lombok.jar"
   failed_when: (eclipse_distro not in eclipse_defaults.distros) or (eclipse_package not in eclipse_defaults.distros[eclipse_distro].packages)
 
 - name: set name of tar file
   set_fact:
     eclipse_file_tar: "eclipse-{{ eclipse_package }}-{{ eclipse_distro }}-{{ eclipse_update }}-{{ eclipse_os }}{{ '-' ~ eclipse_gui if eclipse_gui }}{{ '-' ~ eclipse_arch if eclipse_arch }}.tar.gz"
-
-- name: set name of lombok jar file
-  set_fact:
-    lombok_file_jar: "lombok.jar"
 
 - name: set java download url and install dir
   set_fact:
@@ -36,17 +33,13 @@
 
 - name: Download eclipse to ansible-master if we don't have it
   local_action: get_url \
-    url="{{ eclipse_download_url }}" \
-    dest="{{ master_download_folder ~ '/' ~ eclipse_file_tar }}" \
+    url="{{ item.url }}" \
+    dest="{{ item.dest }}" \
     force=no
   run_once: true
-
-- name: Download lombok to ansible-master if we don't have it
-  local_action: get_url \
-    url="{{ lombok_download_url }}" \
-    dest="{{ master_download_folder ~ '/' ~ lombok_file_jar }}" \
-    force=no
-  run_once: true
+  with_items:
+    - { url: "{{ eclipse_download_url }}", dest: "{{ master_download_folder ~ '/' ~ eclipse_file_tar }}" }
+    - { url: "{{ lombok_download_url }}", dest: "{{ master_download_folder ~ '/' ~ lombok_file_jar }}" }
 
 - name: Create install directory
   file:
