@@ -36,17 +36,13 @@
 
 - name: Download eclipse to ansible-master if we don't have it
   local_action: get_url \
-    url="{{ eclipse_download_url }}" \
-    dest="{{ master_download_folder ~ '/' ~ eclipse_file_tar }}" \
+    url="{{ item.url }}" \
+    dest="{{ item.dest }}" \
     force=no
   run_once: true
-
-- name: Download lombok to ansible-master if we don't have it
-  local_action: get_url \
-    url="{{ lombok_download_url }}" \
-    dest="{{ master_download_folder ~ '/' ~ lombok_file_jar }}" \
-    force=no
-  run_once: true
+  with_items:
+    - { url: "{{ eclipse_download_url }}", dest: "{{ master_download_folder ~ '/' ~ eclipse_file_tar }}" }
+    - { url: "{{ lombok_download_url }}", dest: "{{ master_download_folder ~ '/' ~ lombok_file_jar }}" }
 
 - name: Create install directory
   file:
