@@ -9,11 +9,6 @@
     post_tasks:
       - name: select Java 8 JRE as default java
         alternatives: name=java path=/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
-      - name: Add vagrant user to docker group
-        become: yes
-        user:
-          group: docker
-          name: vagrant
     roles:
       - { role: geerlingguy.java, become: yes, java_packages: ['openjdk-8-jdk'] }
       - { role: ansible-role-devbox-base }
