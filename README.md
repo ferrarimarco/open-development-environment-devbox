@@ -27,6 +27,7 @@ This "development box" is based on Ubuntu 16.04 with an XFCE Desktop environment
 - Chromium browser
 - curl
 - Docker
+- [docker-clean](https://github.com/ZZROTDesign/docker-clean)
 - git
 - Oracle SQL Developer ([see below](#how-to-install-oracle-sql-developer), avaliable in `/home/vagrant/sw`)
 - Maven 3
