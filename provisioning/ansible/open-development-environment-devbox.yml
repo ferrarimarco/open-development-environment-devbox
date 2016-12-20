@@ -9,13 +9,6 @@
     post_tasks:
       - name: select Java 8 JRE as default java
         alternatives: name=java path=/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
-      - name: setup docker-clean
-        become: yes
-        get_url:
-          dest: "/usr/local/bin/docker-clean"
-          force: no
-          mode: u+x,g+x,o+x
-          url: "{{ docker_clean_download_url }}"
     roles:
       - { role: geerlingguy.java, become: yes, java_packages: ['openjdk-8-jdk'] }
       - { role: ansible-role-devbox-base }
