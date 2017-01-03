@@ -4,6 +4,7 @@
 
 **Implemented enhancements:**
 
+- Update bash aliases to open-development-environment-git:1.0.1 [\#41](https://github.com/ferrarimarco/open-development-environment-devbox/issues/41)
 - Reduce the number of tasks used to setup facts during Eclipse installation [\#40](https://github.com/ferrarimarco/open-development-environment-devbox/issues/40)
 - Use a single task to download dependencies in setup-eclipse.yml [\#37](https://github.com/ferrarimarco/open-development-environment-devbox/issues/37)
 - Move locale setup and bash aliases configuration to their own playbooks [\#34](https://github.com/ferrarimarco/open-development-environment-devbox/issues/34)
