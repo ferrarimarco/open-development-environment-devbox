@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 echo "Installing Ansible roles..."
 # Install required roles
