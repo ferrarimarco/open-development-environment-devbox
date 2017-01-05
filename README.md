@@ -21,6 +21,9 @@ To build the box:
 
 The build process can take up to 15 minutes.
 
+### Credentials
+There is a `vagrant` user already configured, password: `vagrant`
+
 ## What's inside the box
 This "development box" is based on Ubuntu 16.04 with an XFCE Desktop environment and includes the following tools, ready to be used:
 - Eclipse Neon (avaliable in `/home/vagrant/sw`)
