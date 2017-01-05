@@ -14,4 +14,4 @@
       - { role: ansible-role-devbox-base }
       - { role: ferrarimarco.docker, become: yes }
       - ferrarimarco.ruby
-      - ferrarimarco.atom
+      - { role: ferrarimarco.atom, become: yes }
