@@ -4,6 +4,10 @@
 
 **Implemented enhancements:**
 
+- Updated Ansible to 2.2.0.0 [\#46](https://github.com/ferrarimarco/open-development-environment-devbox/issues/46)
+- Install a Ruby environment [\#45](https://github.com/ferrarimarco/open-development-environment-devbox/issues/45)
+- Install Atom [\#44](https://github.com/ferrarimarco/open-development-environment-devbox/issues/44)
+- Document the password of the vagrant user [\#43](https://github.com/ferrarimarco/open-development-environment-devbox/issues/43)
 - Update bash aliases to open-development-environment-git:1.0.1 [\#41](https://github.com/ferrarimarco/open-development-environment-devbox/issues/41)
 - Reduce the number of tasks used to setup facts during Eclipse installation [\#40](https://github.com/ferrarimarco/open-development-environment-devbox/issues/40)
 - Use a single task to download dependencies in setup-eclipse.yml [\#37](https://github.com/ferrarimarco/open-development-environment-devbox/issues/37)
