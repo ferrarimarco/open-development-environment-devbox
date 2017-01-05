@@ -26,7 +26,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     ansible.install_mode = :pip
     ansible.playbook = "check-ansible-installation.yml"
     ansible.provisioning_path= "/tmp/provisioning/ansible"
-    ansible.version = "2.1.1.0"
+    ansible.version = "2.2.0.0"
   end
 
   # Install the required Ansible roles
