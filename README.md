@@ -35,12 +35,13 @@ This "development box" is based on Ubuntu 16.04 with an XFCE Desktop environment
 - [docker-clean](https://github.com/ZZROTDesign/docker-clean)
 - [Github Changelog Generator](https://github.com/skywinder/github-changelog-generator)
 - Git
+- Java 8 (OpenJDK)
+- [Apache JMeter](http://jmeter.apache.org/)
 - Oracle SQL Developer ([see below](#how-to-install-oracle-sql-developer), avaliable in `/home/vagrant/sw`)
 - Maven 3
+- Ruby (with [ruby-install](https://github.com/postmodern/ruby-install) and [chruby](https://github.com/postmodern/chruby))
 - Nano
 - Subversion
-
-If you have suggestions about tools to include, please create a new GitHub issue.
 
 ### Bash aliases
 The following aliases are automatically set up during the provisioning process:
@@ -54,3 +55,6 @@ The archive containing Oracle SQL Developer must be manually downloaded from Ora
 1. Put the downloaded archive in `provisioning/ansible/downloads`
 1. Rename the archive file to `sqldeveloper.zip`
 1. Run the playbook
+
+## Contributions
+If you have suggestions, please create a new GitHub issue or a pull request.
