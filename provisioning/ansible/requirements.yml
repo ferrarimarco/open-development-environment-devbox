@@ -1,0 +1,8 @@
+---
+- src: ferrarimarco.atom
+- src: ferrarimarco.bash-aliases
+- src: ferrarimarco.docker
+- src: ferrarimarco.ruby
+- src: ferrarimarco.vagrant
+- src: ferrarimarco.virtualbox
+- src: geerlingguy.java
