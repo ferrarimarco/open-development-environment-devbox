@@ -4,6 +4,11 @@
 
 **Implemented enhancements:**
 
+- Don't be too explicit about the installed Ansible version [\#52](https://github.com/ferrarimarco/open-development-environment-devbox/issues/52)
+- Use a requirements file for Ansible role dependencies [\#51](https://github.com/ferrarimarco/open-development-environment-devbox/issues/51)
+- Use ferrarimarco.bash-aliases role [\#50](https://github.com/ferrarimarco/open-development-environment-devbox/issues/50)
+- Advise on which Oracle SQL developer version to download [\#48](https://github.com/ferrarimarco/open-development-environment-devbox/issues/48)
+- Install Ansible using a shell script [\#47](https://github.com/ferrarimarco/open-development-environment-devbox/issues/47)
 - Updated Ansible to 2.2.0.0 [\#46](https://github.com/ferrarimarco/open-development-environment-devbox/issues/46)
 - Install a Ruby environment [\#45](https://github.com/ferrarimarco/open-development-environment-devbox/issues/45)
 - Install Atom [\#44](https://github.com/ferrarimarco/open-development-environment-devbox/issues/44)
@@ -38,6 +43,7 @@
 
 **Fixed bugs:**
 
+- Don't be too explicit about the installed Ansible version [\#52](https://github.com/ferrarimarco/open-development-environment-devbox/issues/52)
 - Unable to add vagrant user to docker group during the first provisioning [\#39](https://github.com/ferrarimarco/open-development-environment-devbox/issues/39)
 - Avoid installing Virtualbox Guest Additions during the provisioning process [\#38](https://github.com/ferrarimarco/open-development-environment-devbox/issues/38)
 - Use super user privileges to add vagrant user to docker group [\#36](https://github.com/ferrarimarco/open-development-environment-devbox/issues/36)

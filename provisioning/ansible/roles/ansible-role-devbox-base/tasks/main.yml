@@ -4,8 +4,6 @@
 
 - include: setup-locale.yml
 
-- include: setup-bash-aliases.yml
-
 - include: setup-xfce-Debian.yml
   when: ansible_os_family == "Debian"
 

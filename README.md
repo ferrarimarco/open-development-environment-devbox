@@ -51,7 +51,7 @@ The following aliases are automatically set up during the provisioning process:
 ### How to install Oracle SQL Developer
 The archive containing Oracle SQL Developer must be manually downloaded from Oracle as it requires the acceptance of a license and a login:
 
-1. Download Oracle SQL Developer from [Oracle Website](http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index-097090.html)
+1. Download Oracle SQL Developer from [Oracle Website](http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html)
 1. Put the downloaded archive in `provisioning/ansible/downloads`
 1. Rename the archive file to `sqldeveloper.zip`
 1. Run the playbook
