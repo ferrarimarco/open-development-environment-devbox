@@ -8,5 +8,5 @@ else
   apt-get install --yes software-properties-common
   add-apt-repository ppa:ansible/ansible
   apt-get update
-  apt-get install --yes ansible=2.2.0.0-1ppa~xenial
+  apt-get install --yes ansible
 fi
