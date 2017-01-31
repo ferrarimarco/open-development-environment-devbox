@@ -62,4 +62,3 @@ eclipse_defaults:
         - org.testng.eclipse.maven
       creates_feature: org.testng.eclipse.maven_
 lombok_download_url: https://projectlombok.org/downloads/lombok.jar
-nano_settings_file_path: "/etc/nanorc"

@@ -15,6 +15,8 @@
       - { role: ferrarimarco.docker, become: yes }
       - ferrarimarco.ruby
       - { role: ferrarimarco.atom, become: yes }
+      - role: ferrarimarco.nano
+        become: yes
       - role: ferrarimarco.bash-aliases
         bash_aliases:
           - { alias: "changelog-generator", command: 'docker run -it --rm -v "$(pwd)":/app prooph/github-changelog-generator' }
