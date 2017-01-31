@@ -4,6 +4,8 @@
 
 **Implemented enhancements:**
 
+- Move Nano configuration and installation to a dedicated role [\#54](https://github.com/ferrarimarco/open-development-environment-devbox/issues/54)
+- Use the system-wide configuration file for Nano [\#53](https://github.com/ferrarimarco/open-development-environment-devbox/issues/53)
 - Don't be too explicit about the installed Ansible version [\#52](https://github.com/ferrarimarco/open-development-environment-devbox/issues/52)
 - Use a requirements file for Ansible role dependencies [\#51](https://github.com/ferrarimarco/open-development-environment-devbox/issues/51)
 - Use ferrarimarco.bash-aliases role [\#50](https://github.com/ferrarimarco/open-development-environment-devbox/issues/50)

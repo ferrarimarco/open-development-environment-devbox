@@ -1,7 +1,0 @@
----
-- name: Configure Nano to always show line numbers
-  lineinfile:
-    dest: "{{ nano_settings_file_path }}"
-    create: yes
-    mode: 0644
-    line: "set const"

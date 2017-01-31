@@ -15,6 +15,8 @@
       - { role: ferrarimarco.docker, become: yes }
       - ferrarimarco.ruby
       - { role: ferrarimarco.atom, become: yes }
+      - role: ferrarimarco.nano
+        become: yes
       - role: ferrarimarco.bash-aliases
         bash_aliases:
           - { alias: "changelog-generator", command: 'docker run -it --rm -v "$(pwd)":/app prooph/github-changelog-generator' }
@@ -22,3 +24,4 @@
           - { alias: "git-log1", command: 'docker run -it --rm -v "$(pwd)":/usr/src -w /usr/src --rm ferrarimarco/open-development-environment-git:1.0.1 lg1' }
           - { alias: "git-log2", command: 'docker run -it --rm -v "$(pwd)":/usr/src -w /usr/src --rm ferrarimarco/open-development-environment-git:1.0.1 lg2' }
           - { alias: "git-log3", command: 'docker run -it --rm -v "$(pwd)":/usr/src -w /usr/src --rm ferrarimarco/open-development-environment-git:1.0.1 lg3' }
+        become: yes
