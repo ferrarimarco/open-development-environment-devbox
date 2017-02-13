@@ -7,3 +7,4 @@
 - src: ferrarimarco.vagrant
 - src: ferrarimarco.virtualbox
 - src: geerlingguy.java
+- src: stevenharradine.locale
