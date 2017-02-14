@@ -10,10 +10,14 @@
       - name: select Java 8 JRE as default java
         alternatives: name=java path=/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
     roles:
+      - role: stevenharradine.locale
+        locale_locales:
+          - en_US.UTF-8
       - { role: geerlingguy.java, become: yes, java_packages: ['openjdk-8-jdk'] }
       - { role: ansible-role-devbox-base }
       - { role: ferrarimarco.docker, become: yes }
-      - ferrarimarco.ruby
+      - role: ferrarimarco.ruby
+        become: yes
       - { role: ferrarimarco.atom, become: yes }
       - role: ferrarimarco.nano
         become: yes

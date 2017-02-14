@@ -4,6 +4,7 @@
 
 **Implemented enhancements:**
 
+- Use a dedicated role to generate locales [\#57](https://github.com/ferrarimarco/open-development-environment-devbox/issues/57)
 - Move Nano configuration and installation to a dedicated role [\#54](https://github.com/ferrarimarco/open-development-environment-devbox/issues/54)
 - Use the system-wide configuration file for Nano [\#53](https://github.com/ferrarimarco/open-development-environment-devbox/issues/53)
 - Don't be too explicit about the installed Ansible version [\#52](https://github.com/ferrarimarco/open-development-environment-devbox/issues/52)
@@ -45,6 +46,7 @@
 
 **Fixed bugs:**
 
+- ruby-install and chruby installation fails due to insufficient privileges [\#56](https://github.com/ferrarimarco/open-development-environment-devbox/issues/56)
 - Don't be too explicit about the installed Ansible version [\#52](https://github.com/ferrarimarco/open-development-environment-devbox/issues/52)
 - Unable to add vagrant user to docker group during the first provisioning [\#39](https://github.com/ferrarimarco/open-development-environment-devbox/issues/39)
 - Avoid installing Virtualbox Guest Additions during the provisioning process [\#38](https://github.com/ferrarimarco/open-development-environment-devbox/issues/38)
