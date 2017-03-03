@@ -6,5 +6,6 @@
 - src: ferrarimarco.ruby
 - src: ferrarimarco.vagrant
 - src: ferrarimarco.virtualbox
+- src: ferrarimarco.xfce
 - src: geerlingguy.java
 - src: stevenharradine.locale
