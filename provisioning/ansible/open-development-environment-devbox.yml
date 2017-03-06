@@ -14,6 +14,8 @@
         locale_locales:
           - en_US.UTF-8
       - { role: geerlingguy.java, become: yes, java_packages: ['openjdk-8-jdk'] }
+      - role: ferrarimarco.xfce
+        become: yes
       - { role: ansible-role-devbox-base }
       - { role: ferrarimarco.docker, become: yes }
       - role: ferrarimarco.ruby
