@@ -12,6 +12,7 @@
 - Don't be too explicit about the installed Ansible version [\#52](https://github.com/ferrarimarco/open-development-environment-devbox/issues/52)
 - Use a requirements file for Ansible role dependencies [\#51](https://github.com/ferrarimarco/open-development-environment-devbox/issues/51)
 - Use ferrarimarco.bash-aliases role [\#50](https://github.com/ferrarimarco/open-development-environment-devbox/issues/50)
+- Move Eclipse installation to a dedicated Ansible role [\#49](https://github.com/ferrarimarco/open-development-environment-devbox/issues/49)
 - Advise on which Oracle SQL developer version to download [\#48](https://github.com/ferrarimarco/open-development-environment-devbox/issues/48)
 - Install Ansible using a shell script [\#47](https://github.com/ferrarimarco/open-development-environment-devbox/issues/47)
 - Updated Ansible to 2.2.0.0 [\#46](https://github.com/ferrarimarco/open-development-environment-devbox/issues/46)

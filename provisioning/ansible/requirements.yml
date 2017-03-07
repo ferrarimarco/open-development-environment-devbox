@@ -2,6 +2,7 @@
 - src: ferrarimarco.atom
 - src: ferrarimarco.bash-aliases
 - src: ferrarimarco.docker
+- src: ferrarimarco.eclipse
 - src: ferrarimarco.nano
 - src: ferrarimarco.ruby
 - src: ferrarimarco.vagrant
