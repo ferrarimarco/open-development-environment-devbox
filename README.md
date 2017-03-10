@@ -37,7 +37,6 @@ This "development box" is based on Ubuntu 16.04 with an XFCE Desktop environment
 - Git
 - Java 8 (OpenJDK)
 - [Apache JMeter](http://jmeter.apache.org/)
-- Oracle SQL Developer ([see below](#how-to-install-oracle-sql-developer), avaliable in `/home/vagrant/sw`)
 - Maven 3
 - Ruby (with [ruby-install](https://github.com/postmodern/ruby-install) and [chruby](https://github.com/postmodern/chruby))
 - Nano
@@ -47,14 +46,6 @@ This "development box" is based on Ubuntu 16.04 with an XFCE Desktop environment
 The following aliases are automatically set up during the provisioning process:
 - *`changelog-generator`*: to run Github Changelog Generator
 - *`git-log1`*, *`git-log2`*, *`git-log3`*: see [open-development-environment-git](https://github.com/ferrarimarco/open-development-environment-git) for details
-
-### How to install Oracle SQL Developer
-The archive containing Oracle SQL Developer must be manually downloaded from Oracle as it requires the acceptance of a license and a login:
-
-1. Download Oracle SQL Developer from [Oracle Website](http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html)
-1. Put the downloaded archive in `provisioning/ansible/downloads`
-1. Rename the archive file to `sqldeveloper.zip`
-1. Run the playbook
 
 ## Contributions
 If you have suggestions, please create a new GitHub issue or a pull request.
