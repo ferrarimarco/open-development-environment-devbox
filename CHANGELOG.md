@@ -4,6 +4,7 @@
 
 **Implemented enhancements:**
 
+- Delete Oracle SQL Developer installation tasks [\#60](https://github.com/ferrarimarco/open-development-environment-devbox/issues/60)
 - Update the base image to boxcutter/ubuntu 2.0.26 [\#59](https://github.com/ferrarimarco/open-development-environment-devbox/issues/59)
 - Move XFCE installation to a dedicated role [\#58](https://github.com/ferrarimarco/open-development-environment-devbox/issues/58)
 - Use a dedicated role to generate locales [\#57](https://github.com/ferrarimarco/open-development-environment-devbox/issues/57)
