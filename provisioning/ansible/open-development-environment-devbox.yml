@@ -6,6 +6,25 @@
         apt_repository: repo='ppa:openjdk-r/ppa'
         become: yes
         when: ansible_distribution == 'Ubuntu'
+      - name: Ensure required apt packages are installed
+        apt:
+          autoremove: yes
+          cache_valid_time: 3600
+          pkg: "{{ item }}"
+          state: present
+          update_cache: yes
+        become: yes
+        with_items:
+          - apt-transport-https
+          - bzip2
+          - ca-certificates
+          - chromium-browser
+          - curl
+          - git
+          - jmeter
+          - language-pack-en
+          - maven
+          - subversion
     post_tasks:
       - name: select Java 8 JRE as default java
         alternatives: name=java path=/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
@@ -16,7 +35,6 @@
       - { role: geerlingguy.java, become: yes, java_packages: ['openjdk-8-jdk'] }
       - role: ferrarimarco.xfce
         become: yes
-      - { role: ansible-role-devbox-base }
       - ferrarimarco.eclipse
       - { role: ferrarimarco.docker, become: yes }
       - role: ferrarimarco.ruby
