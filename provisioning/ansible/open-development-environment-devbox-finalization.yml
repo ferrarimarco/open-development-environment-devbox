@@ -1,9 +1,0 @@
----
-  - hosts: all
-    gather_facts: yes
-    tasks:
-      - name: Add vagrant user to docker group
-        become: yes
-        user:
-          groups: "docker"
-          name: vagrant

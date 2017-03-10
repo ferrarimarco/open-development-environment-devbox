@@ -28,6 +28,11 @@
     post_tasks:
       - name: select Java 8 JRE as default java
         alternatives: name=java path=/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+      - name: Add vagrant user to docker group
+        become: yes
+        user:
+          groups: "docker"
+          name: vagrant
     roles:
       - role: stevenharradine.locale
         locale_locales:
