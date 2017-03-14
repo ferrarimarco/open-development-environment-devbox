@@ -4,6 +4,7 @@
 
 **Implemented enhancements:**
 
+- Install Atom packages [\#63](https://github.com/ferrarimarco/open-development-environment-devbox/issues/63)
 - Use Vagrant to install Ansible roles [\#62](https://github.com/ferrarimarco/open-development-environment-devbox/issues/62)
 - Remove ansible-devbox-base role [\#61](https://github.com/ferrarimarco/open-development-environment-devbox/issues/61)
 - Delete Oracle SQL Developer installation tasks [\#60](https://github.com/ferrarimarco/open-development-environment-devbox/issues/60)
