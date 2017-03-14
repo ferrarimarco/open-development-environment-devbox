@@ -23,11 +23,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Install Ansible
   config.vm.provision "shell", path: "provisioning/scripts/install_ansible.sh"
 
-  # Install the required Ansible roles
-  config.vm.provision "shell", path: "provisioning/scripts/install_ansible_roles.sh"
-
   # Run Ansible from the Vagrant VM
   config.vm.provision "ansible_local" do |ansible|
+    ansible.galaxy_role_file = "/tmp/provisioning/ansible/requirements.yml"
+    ansible.galaxy_roles_path = "/tmp/ansible/roles"
     ansible.playbook = "open-development-environment-devbox.yml"
     ansible.provisioning_path= "/tmp/provisioning/ansible"
   end
