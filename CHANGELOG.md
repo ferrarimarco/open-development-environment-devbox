@@ -4,6 +4,7 @@
 
 **Implemented enhancements:**
 
+- Install bridge-utils package [\#67](https://github.com/ferrarimarco/open-development-environment-devbox/issues/67)
 - Install Virtualbox [\#65](https://github.com/ferrarimarco/open-development-environment-devbox/issues/65)
 - Install Vagrant [\#64](https://github.com/ferrarimarco/open-development-environment-devbox/issues/64)
 - Install Atom packages [\#63](https://github.com/ferrarimarco/open-development-environment-devbox/issues/63)

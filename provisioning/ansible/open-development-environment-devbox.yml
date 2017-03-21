@@ -16,6 +16,7 @@
         become: yes
         with_items:
           - apt-transport-https
+          - bridge-utils
           - bzip2
           - ca-certificates
           - chromium-browser
