@@ -16,6 +16,7 @@
         become: yes
         with_items:
           - apt-transport-https
+          - bmon
           - bridge-utils
           - bzip2
           - ca-certificates

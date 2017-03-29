@@ -28,6 +28,7 @@ There is a `vagrant` user already configured, password: `vagrant`
 This "development box" is based on Ubuntu 16.04 with an XFCE Desktop environment and includes the following tools, ready to be used:
 - Ansible
 - [Atom editor](https://atom.io/)
+- [bmon](https://github.com/tgraf/bmon)
 - Eclipse Neon (avaliable in `/home/vagrant/sw`)
 - Chromium browser
 - curl
