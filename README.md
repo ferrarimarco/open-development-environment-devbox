@@ -36,6 +36,7 @@ This "development box" is based on Ubuntu 16.04 with an XFCE Desktop environment
 - [docker-clean](https://github.com/ZZROTDesign/docker-clean)
 - [Github Changelog Generator](https://github.com/skywinder/github-changelog-generator)
 - Git
+- Imagemagick
 - Java 8 (OpenJDK)
 - [Apache JMeter](http://jmeter.apache.org/)
 - Maven 3
