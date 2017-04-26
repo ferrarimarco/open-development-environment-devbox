@@ -54,6 +54,7 @@
             atom_packages:
               - atom-beautify
               - autocomplete-plus
+              - autocomplete-python
               - color-picker
               - file-icons
               - hyperclick
