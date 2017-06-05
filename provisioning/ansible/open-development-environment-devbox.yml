@@ -29,6 +29,13 @@
           - maven
           - subversion
     post_tasks:
+      - name: Ensure required pip packages are installed
+        pip:
+          name: "{{ item }}"
+          state: present
+        become: yes
+        with_items:
+          - sqlparse
       - name: select Java 8 JRE as default java
         alternatives: name=java path=/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
       - name: Add vagrant user to docker group
