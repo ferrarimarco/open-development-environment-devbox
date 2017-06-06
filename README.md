@@ -39,6 +39,7 @@ This "development box" is based on Ubuntu 16.04 with an XFCE Desktop environment
 - Imagemagick
 - Java 8 (OpenJDK)
 - [Apache JMeter](http://jmeter.apache.org/)
+- [Liquibase](https://github.com/ferrarimarco/docker-liquibase)
 - Maven 3
 - Ruby (with [ruby-install](https://github.com/postmodern/ruby-install) and [chruby](https://github.com/postmodern/chruby))
 - Nano

@@ -4,6 +4,7 @@
 
 **Implemented enhancements:**
 
+- Install Liquibase [\#73](https://github.com/ferrarimarco/open-development-environment-devbox/issues/73)
 - Install sqlparse [\#70](https://github.com/ferrarimarco/open-development-environment-devbox/issues/70)
 - Install imagemagick package [\#69](https://github.com/ferrarimarco/open-development-environment-devbox/issues/69)
 - Install bmon [\#68](https://github.com/ferrarimarco/open-development-environment-devbox/issues/68)
