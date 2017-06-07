@@ -12,16 +12,28 @@
         become: yes
         with_items:
           - apt-transport-https
-          - bmon
-          - bridge-utils
           - bzip2
           - ca-certificates
-          - chromium-browser
           - curl
+          - gzip
+          - language-pack-en
+          - tar
+          - unzip
+      - name: Ensure additional apt packages are installed
+        apt:
+          autoremove: yes
+          cache_valid_time: 3600
+          pkg: "{{ item }}"
+          state: present
+          update_cache: yes
+        become: yes
+        with_items:
+          - bmon
+          - bridge-utils
+          - chromium-browser
           - git
           - imagemagick
           - jmeter
-          - language-pack-en
           - maven
           - subversion
     post_tasks:
