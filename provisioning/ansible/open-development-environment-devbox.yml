@@ -2,10 +2,6 @@
   - hosts: all
     gather_facts: yes
     pre_tasks:
-      - name: Installing apt repository for Java 8
-        apt_repository: repo='ppa:openjdk-r/ppa'
-        become: yes
-        when: ansible_distribution == 'Ubuntu'
       - name: Ensure required apt packages are installed
         apt:
           autoremove: yes
