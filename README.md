@@ -41,6 +41,7 @@ This "development box" is based on Ubuntu 16.04 with an XFCE Desktop environment
 - [Apache JMeter](http://jmeter.apache.org/)
 - [Liquibase](https://github.com/ferrarimarco/docker-liquibase)
 - Maven 3
+- [Oracle SQL Developer](http://www.oracle.com/technetwork/developer-tools/sql-developer): see note below
 - Ruby (with [ruby-install](https://github.com/postmodern/ruby-install) and [chruby](https://github.com/postmodern/chruby))
 - Nano
 - Subversion
@@ -49,6 +50,10 @@ This "development box" is based on Ubuntu 16.04 with an XFCE Desktop environment
 The following aliases are automatically set up during the provisioning process:
 - *`changelog-generator`*: to run Github Changelog Generator
 - *`git-log1`*, *`git-log2`*, *`git-log3`*: see [open-development-environment-git](https://github.com/ferrarimarco/open-development-environment-git) for details
+
+### Oracle SQL Developer
+
+If you want to install Oracle SQL Developer, put an archive downloaded from [the official website](http://www.oracle.com/technetwork/developer-tools/sql-developer) in `provisioning/ansible/downloads`. You have to do it by yourself because its license does not allow any redistribution.
 
 ## Contributions
 If you have suggestions, please create a new GitHub issue or a pull request.

@@ -4,6 +4,7 @@
 - src: ferrarimarco.docker
 - src: ferrarimarco.eclipse
 - src: ferrarimarco.nano
+- src: ferrarimarco.oracle-sql-developer
 - src: ferrarimarco.ruby
 - src: ferrarimarco.vagrant
 - src: ferrarimarco.virtualbox

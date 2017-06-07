@@ -84,3 +84,5 @@
         become: yes
       - role: ferrarimarco.vagrant
         become: yes
+      - role: ferrarimarco.oracle-sql-developer
+        ferrarimarco_oracle_sql_dev_archive_path: "{{ ansible_env.PWD ~ '/downloads/sqldeveloper-no-jre.zip' }}"
