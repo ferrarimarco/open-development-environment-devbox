@@ -5,6 +5,7 @@
 **Implemented enhancements:**
 
 - Install linter dependencies [\#77](https://github.com/ferrarimarco/open-development-environment-devbox/issues/77)
+- Install libreoffice-calc [\#76](https://github.com/ferrarimarco/open-development-environment-devbox/issues/76)
 - Install glogg [\#75](https://github.com/ferrarimarco/open-development-environment-devbox/issues/75)
 - Don't add the OpenJDK PPA [\#74](https://github.com/ferrarimarco/open-development-environment-devbox/issues/74)
 - Install Liquibase [\#73](https://github.com/ferrarimarco/open-development-environment-devbox/issues/73)

@@ -35,6 +35,7 @@
           - glogg
           - imagemagick
           - jmeter
+          - libreoffice-calc
           - maven
           - subversion
     post_tasks:
