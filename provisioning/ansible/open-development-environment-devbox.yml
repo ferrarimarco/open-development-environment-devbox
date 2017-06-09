@@ -71,12 +71,15 @@
               - atom-beautify
               - autocomplete-plus
               - autocomplete-python
+              - busy-signal
               - color-picker
               - file-icons
               - hyperclick
+              - intentions
               - language-ansible
               - language-docker
               - linter
+              - linter-ui-default
               - pigments
               - minimap
       - role: ferrarimarco.nano
