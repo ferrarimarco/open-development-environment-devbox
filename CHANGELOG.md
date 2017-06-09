@@ -5,6 +5,7 @@
 **Implemented enhancements:**
 
 - Install glogg [\#75](https://github.com/ferrarimarco/open-development-environment-devbox/issues/75)
+- Don't add the OpenJDK PPA [\#74](https://github.com/ferrarimarco/open-development-environment-devbox/issues/74)
 - Install Liquibase [\#73](https://github.com/ferrarimarco/open-development-environment-devbox/issues/73)
 - Install Oracle SQL Developer [\#72](https://github.com/ferrarimarco/open-development-environment-devbox/issues/72)
 - Install sqlparse [\#70](https://github.com/ferrarimarco/open-development-environment-devbox/issues/70)
