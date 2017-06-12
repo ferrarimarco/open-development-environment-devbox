@@ -5,6 +5,7 @@
 **Implemented enhancements:**
 
 - Upgrade to ferrarimarco.atom 1.2.2 [\#79](https://github.com/ferrarimarco/open-development-environment-devbox/issues/79)
+- Remove note about Eclipse path in README [\#78](https://github.com/ferrarimarco/open-development-environment-devbox/issues/78)
 - Install linter dependencies [\#77](https://github.com/ferrarimarco/open-development-environment-devbox/issues/77)
 - Install libreoffice-calc [\#76](https://github.com/ferrarimarco/open-development-environment-devbox/issues/76)
 - Install glogg [\#75](https://github.com/ferrarimarco/open-development-environment-devbox/issues/75)
