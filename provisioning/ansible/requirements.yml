@@ -1,6 +1,6 @@
 ---
 - src: ferrarimarco.atom
-  version: 1.2.1
+  version: 1.2.2
 - src: ferrarimarco.bash-aliases
   version: 1.0.2
 - src: ferrarimarco.docker
