@@ -60,7 +60,8 @@
       - { role: geerlingguy.java, become: yes, java_packages: ['openjdk-8-jdk'] }
       - role: ferrarimarco.xfce
         become: yes
-      - ferrarimarco.eclipse
+      - role: ferrarimarco.eclipse
+        become: yes
       - { role: ferrarimarco.docker, become: yes }
       - role: ferrarimarco.ruby
         become: yes

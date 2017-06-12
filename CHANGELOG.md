@@ -11,6 +11,7 @@
 - Don't add the OpenJDK PPA [\#74](https://github.com/ferrarimarco/open-development-environment-devbox/issues/74)
 - Install Liquibase [\#73](https://github.com/ferrarimarco/open-development-environment-devbox/issues/73)
 - Install Oracle SQL Developer [\#72](https://github.com/ferrarimarco/open-development-environment-devbox/issues/72)
+- Create menu entries [\#71](https://github.com/ferrarimarco/open-development-environment-devbox/issues/71)
 - Install sqlparse [\#70](https://github.com/ferrarimarco/open-development-environment-devbox/issues/70)
 - Install imagemagick package [\#69](https://github.com/ferrarimarco/open-development-environment-devbox/issues/69)
 - Install bmon [\#68](https://github.com/ferrarimarco/open-development-environment-devbox/issues/68)

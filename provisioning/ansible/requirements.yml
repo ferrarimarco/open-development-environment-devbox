@@ -6,11 +6,11 @@
 - src: ferrarimarco.docker
   version: 1.4.1
 - src: ferrarimarco.eclipse
-  version: 1.0.0
+  version: 1.1.1
 - src: ferrarimarco.nano
   version: 1.0.1
 - src: ferrarimarco.oracle-sql-developer
-  version: 1.0.2
+  version: 1.1.0
 - src: ferrarimarco.ruby
   version: 1.0.3
 - src: ferrarimarco.vagrant
