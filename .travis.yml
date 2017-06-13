@@ -1,0 +1,15 @@
+---
+language: ruby
+rvm:
+  - 2.3
+sudo: required
+
+services:
+  - docker
+
+env:
+  - PACKER_VERSION="1.0.1"
+
+before_install: test/scripts/ci/before_install.sh
+install: test/scripts/ci/install.sh
+script: test/scripts/ci/script.sh

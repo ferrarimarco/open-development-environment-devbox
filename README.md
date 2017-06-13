@@ -1,6 +1,9 @@
 # Open Development Environment: Devbox
 
-A virtual machine serving as a development box. It's automatically built using [Vagrant](https://www.vagrantup.com/) and [Ansible](https://www.ansible.com/).
+* Development branch: [![Build Status](https://travis-ci.org/ferrarimarco/open-development-environment-devbox.svg?branch=development)](https://travis-ci.org/ferrarimarco/open-development-environment-devbox)
+* Master branch: [![Build Status](https://travis-ci.org/ferrarimarco/open-development-environment-devbox.svg?branch=master)](https://travis-ci.org/ferrarimarco/open-development-environment-devbox)
+
+A Vagrant box serving as a development machine. It's automatically built using [Packer](https://www.packer.io/) and [Ansible](https://www.ansible.com/).
 
 Part of the [Open Development Environment Project](https://github.com/ferrarimarco/open-development-environment).
 
@@ -9,23 +12,20 @@ For a list of changes, have a look at the [changelog](CHANGELOG.md)
 
 ## Dependencies
 These are the dependencies required to build and run the box:
-- Vagrant 1.8.7+
-- Virtualbox 5.1.10+
+- Vagrant 1.9.5+
+- Virtualbox 5.1.22+
 
 ## How to Run
-To build the box:
+To use the box:
 
 1. Install the dependencies
-1. Clone this repository
-1. Run `vagrant up` from inside the cloned repository directory
-
-The build process can take up to 15 minutes.
+1. Run `vagrant init ferrarimarco/open-development-environment-devbox` to initialize a `Vagrantfile` for this box
 
 ### Credentials
 There is a `vagrant` user already configured, password: `vagrant`
 
 ## What's inside the box
-This "development box" is based on Ubuntu 16.04 with an XFCE Desktop environment and includes the following tools, ready to be used:
+This "development box" is based on Ubuntu with an XFCE Desktop environment and includes the following tools, ready to be used:
 - Ansible
 - [Atom editor](https://atom.io/)
 - [bmon](https://github.com/tgraf/bmon)
@@ -53,7 +53,58 @@ The following aliases are automatically set up during the provisioning process:
 
 ### Oracle SQL Developer
 
-If you want to install Oracle SQL Developer, put an archive downloaded from [the official website](http://www.oracle.com/technetwork/developer-tools/sql-developer) in `provisioning/ansible/downloads`. You have to do it by yourself because its license does not allow any redistribution.
+You should first start Oracle SQL Developer manually via command line (`/opt/oracle/sqldeveloper/sqldeveloper.sh`) because it needs to run the first setup. The default JDK is in `/usr/lib/jvm/java-8-openjdk-amd64/`.
+
+## Example Vagrantfile
+
+```ruby
+Vagrant.configure("2") do |config|
+  config.vm.box = "ferrarimarco/open-development-environment-devbox"
+  config.vm.network "private_network", type: "dhcp"
+
+  config.vm.provider "virtualbox" do |v|
+    v.customize ["modifyvm", :id, "--cpus", 4]
+    v.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
+    v.customize ["modifyvm", :id, "--memory", 4096]
+    v.customize ["modifyvm", :id, "--name", config.vm.hostname]
+    v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+    v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+    v.customize ["modifyvm", :id, "--vram", "128"] # 10 MB is the minimum to enable Virtualbox seamless mode
+    v.customize ["modifyvm", :id, "--cableconnected1", "on"] # ensure that the network cable is connected. See chef/bento#688
+
+    # Display the VirtualBox GUI
+    v.gui = true
+  end
+end
+```
 
 ## Contributions
-If you have suggestions, please create a new GitHub issue or a pull request.
+If you have suggestions, please create a new GitHub issue or pull request.
+
+## Manual Build
+
+### Dependencies
+- GNU Make 4.1+
+- Packer 1.0.0+
+- Vagrant 1.9.5+
+- Virtualbox 5.1.22+
+
+### Build
+1. Install the dependencies
+1. Clone the repository
+1. Run `make`
+
+## Testing
+
+### Dependencies
+- Bundler 1.13.0+
+- Ruby 2.3.0+
+- Docker 1.12.0+
+- See [`Gemfile`](Gemfile)
+
+### Setup
+1. Install the necessary tools: [`test/scripts/ci/before-install.sh`](test/scripts/ci/before-install.sh)
+1. Install required gems from inside the root of the project: [`test/scripts/ci/install.sh`](test/scripts/ci/install.sh)
+1. Run tests: [`test/scripts/ci/script.sh`](test/scripts/ci/test-role.sh)
+
+Note that after installing the required gems you can run other Test-kitchen commands besides the ones listed in [`test/scripts/ci/script.sh`](test/scripts/ci/script.sh).

@@ -1,0 +1,53 @@
+---
+driver:
+  name: docker
+  require_chef_omnibus: false
+  require_ruby_for_busser: false
+  use_sudo: false
+  volume:
+    - $(pwd)/provisioning/scripts/:/usr/open-development-environment-devbox/provisioning/scripts/
+
+platforms:
+  - name: ubuntu-17.04
+
+suites:
+  - name: script-update-disabled
+    provisioner:
+      name: shell
+      script: ./provisioning/scripts/update.sh
+    verifier:
+      inspec_tests:
+        - path: test/integration/script-update/inspec
+      controls:
+        - open-development-environment-devbox-update
+  - name: script-update-enabled
+    provisioner:
+      name: shell
+      script: ./test/scripts/test-kitchen/script-update-enabled.sh
+    verifier:
+      inspec_tests:
+        - path: test/integration/script-update/inspec
+      controls:
+        - open-development-environment-devbox-update
+  - name: script-sshd
+    provisioner:
+      name: shell
+      script: ./provisioning/scripts/sshd.sh
+  - name: script-networking
+    provisioner:
+      name: shell
+      script: ./provisioning/scripts/networking.sh
+  - name: script-vagrant
+    provisioner:
+      name: shell
+      script: ./test/scripts/test-kitchen/script-vagrant-enabled.sh
+  - name: script-cleanup
+    provisioner:
+      name: shell
+      script: ./test/scripts/test-kitchen/script-cleanup-zeroing-disabled.sh
+
+transport:
+  max_ssh_sessions: 6
+
+verifier:
+  name: inspec

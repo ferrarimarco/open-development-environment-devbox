@@ -46,8 +46,6 @@
         become: yes
         with_items:
           - sqlparse
-      - name: select Java 8 JRE as default java
-        alternatives: name=java path=/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
       - name: Add vagrant user to docker group
         become: yes
         user:
@@ -57,12 +55,17 @@
       - role: stevenharradine.locale
         locale_locales:
           - en_US.UTF-8
-      - { role: geerlingguy.java, become: yes, java_packages: ['openjdk-8-jdk'] }
+      - role: kbrebanov.java
+        become: yes
+        java_openjdk_use_ppa: no
       - role: ferrarimarco.xfce
         become: yes
       - role: ferrarimarco.eclipse
         become: yes
-      - { role: ferrarimarco.docker, become: yes }
+        java_openjdk_use_ppa: no
+      - role: ferrarimarco.docker
+        become: yes
+        docker_apt_repository_section_name: stable edge
       - role: ferrarimarco.ruby
         become: yes
       - role: ferrarimarco.atom
@@ -100,4 +103,4 @@
         become: yes
       - role: ferrarimarco.oracle-sql-developer
         become: yes
-        ferrarimarco_oracle_sql_dev_archive_path: "{{ ansible_env.PWD ~ '/downloads/sqldeveloper-no-jre.zip' }}"
+        ferrarimarco_oracle_sql_dev_archive_path: "/tmp/downloads/sqldeveloper-no-jre.zip"

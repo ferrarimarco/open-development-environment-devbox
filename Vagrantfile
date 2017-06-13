@@ -1,9 +1,5 @@
-VAGRANTFILE_API_VERSION = "2"
-
-Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box='boxcutter/ubuntu1604'
-  config.vm.box_version = '2.0.26'
-  config.vm.hostname='open-development-environment-devbox'
+Vagrant.configure("2") do |config|
+  config.vm.box = "ferrarimarco/open-development-environment-devbox"
   config.vm.network "private_network", type: "dhcp"
 
   config.vm.provider "virtualbox" do |v|
@@ -19,19 +15,4 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Display the VirtualBox GUI
     v.gui = true
   end
-
-  # Install Ansible
-  config.vm.provision "shell", path: "provisioning/scripts/install_ansible.sh"
-
-  # Install the required Ansible roles
-  config.vm.provision "shell", path: "provisioning/scripts/install_ansible_roles.sh"
-
-  # Run Ansible from the Vagrant VM
-  config.vm.provision "ansible_local" do |ansible|
-    ansible.playbook = "open-development-environment-devbox.yml"
-    ansible.provisioning_path= "/tmp/provisioning/ansible"
-  end
-
-  config.vm.synced_folder '.', '/vagrant', disabled: true
-  config.vm.synced_folder "provisioning/ansible", "/tmp/provisioning/ansible"
 end
