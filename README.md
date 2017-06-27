@@ -20,6 +20,7 @@ To use the box:
 
 1. Install the dependencies
 1. Run `vagrant init ferrarimarco/open-development-environment-devbox` to initialize a `Vagrantfile` for this box
+1. Run `vagrant up`
 
 ### Credentials
 There is a `vagrant` user already configured, password: `vagrant`
