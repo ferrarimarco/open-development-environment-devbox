@@ -1,7 +1,6 @@
 # Change Log
 
-## [Unreleased](https://github.com/ferrarimarco/open-development-environment-devbox/tree/HEAD)
-
+## [1.0.0](https://github.com/ferrarimarco/open-development-environment-devbox/tree/1.0.0) (2017-06-27)
 **Implemented enhancements:**
 
 - Upgrade to ferrarimarco.atom 1.2.2 [\#79](https://github.com/ferrarimarco/open-development-environment-devbox/issues/79)
@@ -44,6 +43,7 @@
 - Move locale setup and bash aliases configuration to their own playbooks [\#34](https://github.com/ferrarimarco/open-development-environment-devbox/issues/34)
 - Reduce the number of playbooks used to install and configure Eclipse [\#33](https://github.com/ferrarimarco/open-development-environment-devbox/issues/33)
 - Document how to start installed tools [\#32](https://github.com/ferrarimarco/open-development-environment-devbox/issues/32)
+- Prepare 1.0.0 release [\#31](https://github.com/ferrarimarco/open-development-environment-devbox/issues/31)
 - Update README: dependencies section [\#30](https://github.com/ferrarimarco/open-development-environment-devbox/issues/30)
 - Add box version to Vagrantfile [\#29](https://github.com/ferrarimarco/open-development-environment-devbox/issues/29)
 - Setup nano to display line number [\#26](https://github.com/ferrarimarco/open-development-environment-devbox/issues/26)
