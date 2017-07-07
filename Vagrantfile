@@ -6,7 +6,6 @@ Vagrant.configure("2") do |config|
     v.customize ["modifyvm", :id, "--cpus", 4]
     v.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
     v.customize ["modifyvm", :id, "--memory", 4096]
-    v.customize ["modifyvm", :id, "--name", config.vm.hostname]
     v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
     v.customize ["modifyvm", :id, "--vram", "128"] # 10 MB is the minimum to enable Virtualbox seamless mode

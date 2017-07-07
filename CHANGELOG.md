@@ -1,5 +1,10 @@
 # Change Log
 
+## [1.0.1](https://github.com/ferrarimarco/open-development-environment-devbox/tree/1.0.1) (2017-07-07)
+**Implemented enhancements:**
+
+- Remove config.vm.name setting from Vagrantfile and README [\#80](https://github.com/ferrarimarco/open-development-environment-devbox/issues/80)
+
 ## [1.0.0](https://github.com/ferrarimarco/open-development-environment-devbox/tree/1.0.0) (2017-06-27)
 **Implemented enhancements:**
 
