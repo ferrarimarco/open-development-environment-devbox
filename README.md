@@ -3,7 +3,7 @@
 * Development branch: [![Build Status](https://travis-ci.org/ferrarimarco/open-development-environment-devbox.svg?branch=development)](https://travis-ci.org/ferrarimarco/open-development-environment-devbox)
 * Master branch: [![Build Status](https://travis-ci.org/ferrarimarco/open-development-environment-devbox.svg?branch=master)](https://travis-ci.org/ferrarimarco/open-development-environment-devbox)
 
-A Vagrant box serving as a development machine. It's automatically built using [Packer](https://www.packer.io/) and [Ansible](https://www.ansible.com/).
+A Vagrant box serving as a development machine. It's automatically built using [Packer](https://www.packer.io/) and [Ansible](https://www.ansible.com/). Read the related [blog post](http://ferrarimarco.info/blog/development/devops/configuration/2017/07/26/open-development-environment-devbox/).
 
 Part of the [Open Development Environment Project](https://github.com/ferrarimarco/open-development-environment).
 
