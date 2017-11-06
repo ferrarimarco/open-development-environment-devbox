@@ -83,6 +83,7 @@
               - intentions
               - language-ansible
               - language-docker
+              - language-powershell
               - linter
               - linter-ui-default
               - pigments

@@ -1,5 +1,10 @@
 # Change Log
 
+## [1.1.0](https://github.com/ferrarimarco/open-development-environment-devbox/tree/1.1.0) (2017-xxxxxxxxxxx)
+**Implemented enhancements:**
+
+- Install language-powershell Atom package [\#82](https://github.com/ferrarimarco/open-development-environment-devbox/issues/82)
+
 ## [1.0.1](https://github.com/ferrarimarco/open-development-environment-devbox/tree/1.0.1) (2017-07-07)
 **Implemented enhancements:**
 
