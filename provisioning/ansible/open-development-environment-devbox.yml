@@ -91,6 +91,7 @@
               - linter-ui-default
               - pigments
               - minimap
+        ferrarimarco_atom_atom_version: 1.23.1
       - role: ferrarimarco.nano
         become: yes
       - role: ferrarimarco.bash-aliases
