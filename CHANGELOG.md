@@ -3,6 +3,7 @@
 ## [1.1.0](https://github.com/ferrarimarco/open-development-environment-devbox/tree/1.1.0) (2017-xxxxxxxxxxx)
 **Implemented enhancements:**
 
+- Install nethogs package [\#88](https://github.com/ferrarimarco/open-development-environment-devbox/issues/88)
 - Set PSScriptAnalyzer alias [\#84](https://github.com/ferrarimarco/open-development-environment-devbox/issues/84)
 - Set shellcheck alias [\#83](https://github.com/ferrarimarco/open-development-environment-devbox/issues/83)
 - Install language-powershell Atom package [\#82](https://github.com/ferrarimarco/open-development-environment-devbox/issues/82)

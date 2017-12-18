@@ -37,6 +37,7 @@
           - jmeter
           - libreoffice-calc
           - maven
+          - nethogs
           - subversion
     post_tasks:
       - name: Ensure required pip packages are installed
