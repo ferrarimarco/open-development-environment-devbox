@@ -70,6 +70,7 @@
         docker_apt_repository_section_name: stable edge
       - role: ferrarimarco.ruby
         become: yes
+        ruby_version: 2.4.3
       - role: ferrarimarco.atom
         become: yes
         ferrarimarco_atom_become_users:
