@@ -11,9 +11,9 @@ Part of the [Open Development Environment Project](https://github.com/ferrarimar
 For a list of changes, have a look at the [changelog](CHANGELOG.md)
 
 ## Dependencies
-These are the dependencies required to build and run the box:
-- Vagrant 1.9.5+
-- Virtualbox 5.1.22+
+These are the dependencies required to run the box:
+- Vagrant 2.0.1+
+- Virtualbox 5.1.30+
 
 ## How to Run
 To use the box:
@@ -85,9 +85,9 @@ If you have suggestions, please create a new GitHub issue or pull request.
 
 ### Dependencies
 - GNU Make 4.1+
-- Packer 1.0.0+
-- Vagrant 1.9.5+
-- Virtualbox 5.1.22+
+- Packer 1.1.3+
+- Vagrant 2.0.1+
+- Virtualbox 5.1.30+
 
 ### Build
 1. Install the dependencies
