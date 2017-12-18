@@ -109,6 +109,7 @@
         become: yes
       - role: ferrarimarco.vagrant
         become: yes
+        vagrant_download_url: "https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.deb"
       - role: ferrarimarco.oracle-sql-developer
         become: yes
         ferrarimarco_oracle_sql_dev_archive_path: "/tmp/downloads/sqldeveloper-no-jre.zip"
