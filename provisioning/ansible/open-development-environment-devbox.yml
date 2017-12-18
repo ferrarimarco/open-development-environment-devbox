@@ -108,3 +108,6 @@
       - role: ferrarimarco.oracle-sql-developer
         become: yes
         ferrarimarco_oracle_sql_dev_archive_path: "/tmp/downloads/sqldeveloper-no-jre.zip"
+      - role: chrisevett.inspec
+        become: yes
+        inspecVersion: 1.48.0
