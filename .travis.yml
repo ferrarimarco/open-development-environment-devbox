@@ -8,7 +8,7 @@ services:
   - docker
 
 env:
-  - PACKER_VERSION="1.0.1"
+  - PACKER_VERSION="1.1.3"
 
 before_install: test/scripts/ci/before_install.sh
 install: test/scripts/ci/install.sh
