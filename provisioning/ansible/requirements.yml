@@ -22,6 +22,6 @@
 - src: ferrarimarco.xfce
   version: 1.0.0
 - src: kbrebanov.java
-  version: v2.0.0
+  version: v2.0.1
 - src: stevenharradine.locale
   version: master
