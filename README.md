@@ -108,3 +108,7 @@ If you have suggestions, please create a new GitHub issue or pull request.
 1. Run tests: [`test/scripts/ci/script.sh`](test/scripts/ci/test-role.sh)
 
 Note that after installing the required gems you can run other Test-kitchen commands besides the ones listed in [`test/scripts/ci/script.sh`](test/scripts/ci/script.sh).
+
+### Manual Downloads
+
+Due to licensing reasons, we cannot include the SQL Developer setup package. Download it manually from [Oracle Website](http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html) and place it in `provisioning/downloads/sqldeveloper-no-jre.zip`
