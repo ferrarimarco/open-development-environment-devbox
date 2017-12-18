@@ -66,6 +66,7 @@
         java_openjdk_use_ppa: no
       - role: ferrarimarco.docker
         become: yes
+        docker_compose_version: 1.17.1
         docker_apt_repository_section_name: stable edge
       - role: ferrarimarco.ruby
         become: yes
