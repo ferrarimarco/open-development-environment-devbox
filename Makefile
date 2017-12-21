@@ -1,4 +1,4 @@
-all: validate clean build install
+all: validate clean build install clean clean-all
 
 validate:
 	packer validate ubuntu.json
