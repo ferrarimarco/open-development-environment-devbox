@@ -188,6 +188,42 @@
       "boot_wait": "10s",
       "guest_additions_mode": "disable",
       "headless": "{{ user `headless` }}",
+      "name": "vagrant-box",
+      "output_directory": "builds/virtualbox-ovf/vagrant-box/{{user `template`}}",
+      "post_shutdown_delay": "1m",
+      "shutdown_command": "echo '{{ user `ssh_password` }}'|sudo -S shutdown -P now",
+      "source_path": "builds/virtualbox-ovf/provision-cleanup/{{user `template`}}/{{user `vm_name`}}.ovf",
+      "ssh_password": "{{ user `ssh_password` }}",
+      "ssh_port": 22,
+      "ssh_username": "{{ user `ssh_username` }}",
+      "ssh_wait_timeout": "10000s",
+      "type": "virtualbox-ovf",
+      "vboxmanage": [
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--cpus",
+          "{{ user `cpus` }}"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--memory",
+          "{{ user `memory` }}"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--nictype1",
+          "virtio"
+        ]
+      ],
+      "vm_name": "{{ user `vm_name` }}"
+    },
+    {
+      "boot_wait": "10s",
+      "guest_additions_mode": "disable",
+      "headless": "{{ user `headless` }}",
       "name": "vagrant-cloud-upload",
       "output_directory": "builds/virtualbox-ovf/vagrant-cloud-upload/{{user `template`}}",
       "post_shutdown_delay": "1m",
@@ -225,8 +261,14 @@
     [
       {
         "keep_input_artifact": true,
-        "only": ["vagrant-cloud-upload"],
+        "only": ["vagrant-box"],
         "output": "builds/vagrant/{{user `template`}}.{{.Provider}}.box",
+        "type": "vagrant"
+      },
+      {
+        "keep_input_artifact": true,
+        "only": ["vagrant-cloud-upload"],
+        "output": "builds/vagrant-cloud/{{user `template`}}.{{.Provider}}.box",
         "type": "vagrant"
       },
       {
