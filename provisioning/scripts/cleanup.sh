@@ -44,8 +44,8 @@ apt-get -y purge $packages_to_remove;
 echo "==> Clean up orphaned packages with deborphan"
 apt-get update
 apt-get -y install deborphan
-while [ -n "$(deborphan --guess-all --libdevel)" ]; do
-    deborphan --guess-all --libdevel | xargs apt-get -y purge
+while [ -n "$(deborphan --libdevel)" ]; do
+    deborphan --libdevel | xargs apt-get -y purge
 done
 apt-get -y purge deborphan dialog
 
