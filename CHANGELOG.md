@@ -1,23 +1,31 @@
 # Change Log
 
-## [1.1.0](https://github.com/ferrarimarco/open-development-environment-devbox/tree/1.1.0) (2017-xxxxxxxxxxx)
+## [1.1.0](https://github.com/ferrarimarco/open-development-environment-devbox/tree/1.1.0) (2017-12-23)
+[Full Changelog](https://github.com/ferrarimarco/open-development-environment-devbox/compare/1.0.1...1.1.0)
+
 **Implemented enhancements:**
 
 - Install nethogs package [\#88](https://github.com/ferrarimarco/open-development-environment-devbox/issues/88)
 - Configure Dockerfile linters [\#87](https://github.com/ferrarimarco/open-development-environment-devbox/issues/87)
 - Install InSpec [\#86](https://github.com/ferrarimarco/open-development-environment-devbox/issues/86)
+- Automatically setup Oracle SQL Developer [\#85](https://github.com/ferrarimarco/open-development-environment-devbox/issues/85)
 - Set PSScriptAnalyzer alias [\#84](https://github.com/ferrarimarco/open-development-environment-devbox/issues/84)
 - Set shellcheck alias [\#83](https://github.com/ferrarimarco/open-development-environment-devbox/issues/83)
 - Install language-powershell Atom package [\#82](https://github.com/ferrarimarco/open-development-environment-devbox/issues/82)
 
 ## [1.0.1](https://github.com/ferrarimarco/open-development-environment-devbox/tree/1.0.1) (2017-07-07)
-**Implemented enhancements:**
+[Full Changelog](https://github.com/ferrarimarco/open-development-environment-devbox/compare/1.0.0...1.0.1)
+
+**Fixed bugs:**
 
 - Remove config.vm.name setting from Vagrantfile and README [\#80](https://github.com/ferrarimarco/open-development-environment-devbox/issues/80)
 
 ## [1.0.0](https://github.com/ferrarimarco/open-development-environment-devbox/tree/1.0.0) (2017-06-27)
 **Implemented enhancements:**
 
+- Implement an automated test mechanism [\#42](https://github.com/ferrarimarco/open-development-environment-devbox/issues/42)
+- Set Github changelog generator aliases [\#14](https://github.com/ferrarimarco/open-development-environment-devbox/issues/14)
+- Install Docker [\#13](https://github.com/ferrarimarco/open-development-environment-devbox/issues/13)
 - Upgrade to ferrarimarco.atom 1.2.2 [\#79](https://github.com/ferrarimarco/open-development-environment-devbox/issues/79)
 - Remove note about Eclipse path in README [\#78](https://github.com/ferrarimarco/open-development-environment-devbox/issues/78)
 - Install linter dependencies [\#77](https://github.com/ferrarimarco/open-development-environment-devbox/issues/77)
@@ -51,7 +59,6 @@
 - Install a Ruby environment [\#45](https://github.com/ferrarimarco/open-development-environment-devbox/issues/45)
 - Install Atom [\#44](https://github.com/ferrarimarco/open-development-environment-devbox/issues/44)
 - Document the password of the vagrant user [\#43](https://github.com/ferrarimarco/open-development-environment-devbox/issues/43)
-- Implement an automated test mechanism [\#42](https://github.com/ferrarimarco/open-development-environment-devbox/issues/42)
 - Update bash aliases to open-development-environment-git:1.0.1 [\#41](https://github.com/ferrarimarco/open-development-environment-devbox/issues/41)
 - Reduce the number of tasks used to setup facts during Eclipse installation [\#40](https://github.com/ferrarimarco/open-development-environment-devbox/issues/40)
 - Use a single task to download dependencies in setup-eclipse.yml [\#37](https://github.com/ferrarimarco/open-development-environment-devbox/issues/37)
@@ -72,8 +79,6 @@
 - Update the hostname in Vagrantfile [\#17](https://github.com/ferrarimarco/open-development-environment-devbox/issues/17)
 - Update open-development-environment-java playbook name [\#16](https://github.com/ferrarimarco/open-development-environment-devbox/issues/16)
 - Set open-development-environment-git aliases [\#15](https://github.com/ferrarimarco/open-development-environment-devbox/issues/15)
-- Set Github changelog generator aliases [\#14](https://github.com/ferrarimarco/open-development-environment-devbox/issues/14)
-- Install Docker [\#13](https://github.com/ferrarimarco/open-development-environment-devbox/issues/13)
 - Publish a changelog [\#12](https://github.com/ferrarimarco/open-development-environment-devbox/issues/12)
 - Use boxcutter/ubuntu-1604 as a base [\#11](https://github.com/ferrarimarco/open-development-environment-devbox/issues/11)
 - Add log files to .gitignore [\#10](https://github.com/ferrarimarco/open-development-environment-devbox/issues/10)
