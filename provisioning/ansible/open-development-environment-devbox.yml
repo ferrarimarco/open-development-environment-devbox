@@ -98,12 +98,12 @@
         bash_aliases:
           - { alias: "changelog-generator", command: 'docker run -it --rm -v "$(pwd)":/app prooph/github-changelog-generator' }
           - { alias: "docker-clean", command: 'docker run --rm -v /var/run/docker.sock:/var/run/docker.sock zzrot/docker-clean' }
-          - { alias: "dockerfile-lint", command: 'echo "Linting Dockerfiles from $(pwd)"; find "$(pwd)" -type f -iname "Dockerfile" | while read -r line; do echo "Linting $line"; docker run -v "$(pwd)":/mnt --rm -w="/mnt" lukasmartinelli/hadolint hadolint "$line"; docker run -v "$(pwd)":/mnt --rm -w="/mnt" redcoolbeans/dockerlint "$line"; done' }
+          - { alias: "dockerfile-lint", command: 'echo "Linting Dockerfiles from $(pwd)"; find . -type f -iname "Dockerfile" | while read -r line; do echo "Linting $line"; docker run -v "$(pwd)":/mnt --rm -w="/mnt" lukasmartinelli/hadolint hadolint "$line"; docker run -v "$(pwd)":/mnt --rm -w="/mnt" redcoolbeans/dockerlint "$line"; done' }
           - { alias: "git-log1", command: 'docker run -it --rm -v "$(pwd)":/usr/src -w /usr/src --rm ferrarimarco/open-development-environment-git:1.0.1 lg1' }
           - { alias: "git-log2", command: 'docker run -it --rm -v "$(pwd)":/usr/src -w /usr/src --rm ferrarimarco/open-development-environment-git:1.0.1 lg2' }
           - { alias: "git-log3", command: 'docker run -it --rm -v "$(pwd)":/usr/src -w /usr/src --rm ferrarimarco/open-development-environment-git:1.0.1 lg3' }
           - { alias: "psscriptanalyzer", command: 'docker run -it --rm -v "$(pwd)":/powershell cvent/psscriptanalyzer' }
-          - { alias: "shellcheck", command: 'echo "Linting shell scripts from $(pwd)"; find "$(pwd)" -type f -iname "*.sh" | while read -r line; do echo "Linting $line"; docker run -v "$(pwd)":/mnt --rm koalaman/shellcheck-alpine "$line"; done'}
+          - { alias: "shellcheck", command: 'echo "Linting shell scripts from $(pwd)"; find . -type f -iname "*.sh" | while read -r line; do echo "Linting $line"; docker run -v "$(pwd)":/mnt --rm koalaman/shellcheck-alpine "$line"; done'}
         become: yes
       - role: ferrarimarco.virtualbox
         become: yes
