@@ -52,6 +52,13 @@
         user:
           groups: "docker"
           name: vagrant
+      - name: Initialize Oracle SQL Developer
+        copy:
+          dest: /home/vagrant/.sqldeveloper/17.3.1/
+          group: vagrant
+          mode: 0664
+          owner: vagrant
+          src: files/.sqldeveloper/product.conf
     roles:
       - role: stevenharradine.locale
         locale_locales:

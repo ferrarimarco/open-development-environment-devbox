@@ -67,10 +67,6 @@ The following aliases are automatically set up during the provisioning process:
 - *`psscriptanalyzer`*: to run [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer) on every Powershell script in the current directory and its subdirectories
 - *`shellcheck`*: to run [shellcheck](https://github.com/koalaman/shellcheck) on every shell script in the current directory and its subdirectories
 
-### Oracle SQL Developer
-
-You should first start Oracle SQL Developer manually via command line (`/opt/oracle/sqldeveloper/sqldeveloper.sh`) because it needs to run the first setup. The default JDK is in `/usr/lib/jvm/java-8-openjdk-amd64/`.
-
 ## Example Vagrantfile
 
 ```ruby
