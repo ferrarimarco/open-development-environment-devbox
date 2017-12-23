@@ -30,27 +30,42 @@ This "development box" is based on Ubuntu with an XFCE Desktop environment and i
 - Ansible
 - [Atom editor](https://atom.io/)
 - [bmon](https://github.com/tgraf/bmon)
-- Eclipse Neon
 - Chromium browser
 - curl
 - Docker
 - [docker-clean](https://github.com/ZZROTDesign/docker-clean)
+- Docker Compose
+- [Dockerlint](https://github.com/RedCoolBeans/dockerlint)
+- Eclipse Neon
 - [Github Changelog Generator](https://github.com/skywinder/github-changelog-generator)
 - Git
+- glogg
+- [hadolint](https://github.com/hadolint/hadolint)
 - Imagemagick
+- Inspec
 - Java 8 (OpenJDK)
-- [Apache JMeter](http://jmeter.apache.org/)
+- [JMeter](http://jmeter.apache.org/)
+- libreoffice Calc
 - [Liquibase](https://github.com/ferrarimarco/docker-liquibase)
 - Maven 3
-- [Oracle SQL Developer](http://www.oracle.com/technetwork/developer-tools/sql-developer): see note below
-- Ruby (with [ruby-install](https://github.com/postmodern/ruby-install) and [chruby](https://github.com/postmodern/chruby))
 - Nano
+- Nethogs
+- [Oracle SQL Developer](http://www.oracle.com/technetwork/developer-tools/sql-developer): see note below
+- [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer)
+- Ruby (with [ruby-install](https://github.com/postmodern/ruby-install) and [chruby](https://github.com/postmodern/chruby))
+- [Shellcheck](https://github.com/koalaman/shellcheck)
 - Subversion
+- Vagrant
+- Virtualbox
 
 ### Bash aliases
 The following aliases are automatically set up during the provisioning process:
 - *`changelog-generator`*: to run Github Changelog Generator
+- *`docker-clean`*: to run [docker-clean](https://github.com/ZZROTDesign/docker-clean)
+- *`dockerfile-lint`*: to run [hadolint](https://github.com/hadolint/hadolint) and [dockerlint](https://github.com/RedCoolBeans/dockerlint) on every Dockerfile in the current directory and its subdirectories
 - *`git-log1`*, *`git-log2`*, *`git-log3`*: see [open-development-environment-git](https://github.com/ferrarimarco/open-development-environment-git) for details
+- *`psscriptanalyzer`*: to run [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer) on every Powershell script in the current directory and its subdirectories
+- *`shellcheck`*: to run [shellcheck](https://github.com/koalaman/shellcheck) on every shell script in the current directory and its subdirectories
 
 ### Oracle SQL Developer
 
