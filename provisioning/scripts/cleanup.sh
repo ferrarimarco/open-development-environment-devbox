@@ -41,14 +41,6 @@ apt-get update;
 packages_to_remove="popularity-contest installation-report command-not-found command-not-found-data friendly-recovery landscape-common wireless-tools wpasupplicant";
 apt-get -y purge $packages_to_remove;
 
-echo "==> Clean up orphaned packages with deborphan"
-apt-get update
-apt-get -y install deborphan
-while [ -n "$(deborphan --libdevel)" ]; do
-    deborphan --libdevel | xargs apt-get -y purge
-done
-apt-get -y purge deborphan dialog
-
 echo "==> Running APT maintenance commands"
 apt-get -y autoremove;
 apt-get -y clean;
