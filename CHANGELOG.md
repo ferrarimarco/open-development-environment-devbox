@@ -5,6 +5,8 @@
 
 **Implemented enhancements:**
 
+- Upgrade to ferrarimarco.vagrant 1.0.2 [\#91](https://github.com/ferrarimarco/open-development-environment-devbox/issues/91)
+- Upgrade to ferrarimarco.nano 1.0.2 [\#90](https://github.com/ferrarimarco/open-development-environment-devbox/issues/90)
 - Install nethogs package [\#88](https://github.com/ferrarimarco/open-development-environment-devbox/issues/88)
 - Configure Dockerfile linters [\#87](https://github.com/ferrarimarco/open-development-environment-devbox/issues/87)
 - Install InSpec [\#86](https://github.com/ferrarimarco/open-development-environment-devbox/issues/86)
