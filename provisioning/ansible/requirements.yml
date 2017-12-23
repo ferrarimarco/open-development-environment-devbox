@@ -10,7 +10,7 @@
 - src: ferrarimarco.eclipse
   version: 1.1.2
 - src: ferrarimarco.nano
-  version: 1.0.1
+  version: 1.0.2
 - src: ferrarimarco.oracle-sql-developer
   version: 1.1.0
 - src: ferrarimarco.ruby
