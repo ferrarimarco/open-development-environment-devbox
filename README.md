@@ -26,7 +26,7 @@ To use the box:
 There is a `vagrant` user already configured, password: `vagrant`
 
 ## What's inside the box
-This "development box" is based on Ubuntu with an XFCE Desktop environment and includes the following tools, ready to be used:
+This "development box" is based on Ubuntu 17.04 with an XFCE Desktop environment and includes the following tools, ready to be used:
 - Ansible
 - [Atom editor](https://atom.io/)
 - [bmon](https://github.com/tgraf/bmon)
