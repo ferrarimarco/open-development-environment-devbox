@@ -1,3 +1,3 @@
-#!/bin/sh -eux
+#!/bin/sh -eu
 
 bundle install
