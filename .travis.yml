@@ -11,5 +11,7 @@ env:
   - PACKER_VERSION="1.1.3"
 
 before_install: test/scripts/ci/before_install.sh
-install: test/scripts/ci/install.sh
+install:
+  - test/scripts/ci/install.sh
+  - provisioning/scripts/install_ansible.sh
 script: test/scripts/ci/script.sh
