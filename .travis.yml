@@ -13,5 +13,5 @@ env:
 before_install: test/scripts/ci/before_install.sh
 install:
   - test/scripts/ci/install.sh
-  - provisioning/scripts/install_ansible.sh
+  - sudo provisioning/scripts/install_ansible.sh
 script: test/scripts/ci/script.sh
