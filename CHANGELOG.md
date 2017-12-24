@@ -1,12 +1,16 @@
 # Change Log
 
-## [1.1.0](https://github.com/ferrarimarco/open-development-environment-devbox/tree/1.1.0) (2017-12-23)
+## [1.1.0](https://github.com/ferrarimarco/open-development-environment-devbox/tree/1.1.0) (2017-12-24)
 [Full Changelog](https://github.com/ferrarimarco/open-development-environment-devbox/compare/1.0.1...1.1.0)
 
 **Implemented enhancements:**
 
+- Test Ansible role installation [\#94](https://github.com/ferrarimarco/open-development-environment-devbox/issues/94)
+- Update ferrarimarco.nano to 1.0.3 [\#93](https://github.com/ferrarimarco/open-development-environment-devbox/issues/93)
+- Update ferrarimarco.vagrant to 1.0.3 [\#92](https://github.com/ferrarimarco/open-development-environment-devbox/issues/92)
 - Upgrade to ferrarimarco.vagrant 1.0.2 [\#91](https://github.com/ferrarimarco/open-development-environment-devbox/issues/91)
 - Upgrade to ferrarimarco.nano 1.0.2 [\#90](https://github.com/ferrarimarco/open-development-environment-devbox/issues/90)
+- Upgrade to ferrarimarco.eclipse 1.2.0 [\#89](https://github.com/ferrarimarco/open-development-environment-devbox/issues/89)
 - Install nethogs package [\#88](https://github.com/ferrarimarco/open-development-environment-devbox/issues/88)
 - Configure Dockerfile linters [\#87](https://github.com/ferrarimarco/open-development-environment-devbox/issues/87)
 - Install InSpec [\#86](https://github.com/ferrarimarco/open-development-environment-devbox/issues/86)
