@@ -6,7 +6,7 @@ else
   echo "Installing Ansible..."
   apt-get update
   apt-get install --yes software-properties-common
-  add-apt-repository ppa:ansible/ansible
+  add-apt-repository -y ppa:ansible/ansible
   apt-get update
   apt-get install --yes ansible
 fi
