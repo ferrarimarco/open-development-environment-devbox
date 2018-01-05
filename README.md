@@ -122,4 +122,4 @@ Note that after installing the required gems you can run other Test-kitchen comm
 
 ### Manual Downloads
 
-Due to licensing reasons, we cannot include the SQL Developer setup package. Download it manually from [Oracle Website](http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html) and place it in `provisioning/downloads/sqldeveloper-no-jre.zip`
+Due to licensing reasons, we cannot include the SQL Developer setup package. Download it manually from [Oracle Website](http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html) and place it in `provisioning/downloads/` and update `sql_developer_path` value in the `variables` section of the [`template`](ubuntu.json) (or provide your own `variables` file).

@@ -309,9 +309,9 @@
       "type": "shell"
     },
     {
-      "destination": "/tmp",
+      "destination": "/tmp/sqldeveloper-no-jre.zip",
       "only": ["provision-ansible"],
-      "source": "provisioning/downloads",
+      "source": "{{ user `sql_developer_path` }}",
       "type": "file"
     },
     {
@@ -324,6 +324,7 @@
       "galaxy_file": "provisioning/ansible/requirements.yml",
       "host_vars": "provisioning/ansible/host_vars",
       "inventory_file": "provisioning/ansible/inventory",
+      "playbook_dir": "provisioning/ansible",
       "playbook_file": "provisioning/ansible/open-development-environment-devbox.yml",
       "type": "ansible-local"
     },
@@ -362,6 +363,7 @@
     "ssh_fullname": "vagrant",
     "ssh_password": "vagrant",
     "ssh_username": "vagrant",
+    "sql_developer_path": "provisioning/downloads/sqldeveloper-17.4.0.355.2349-no-jre.zip",
     "template": "ubuntu-17.04-amd64",
     "uid": "1000",
     "update": "false",
