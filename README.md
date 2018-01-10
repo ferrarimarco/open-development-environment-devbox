@@ -36,7 +36,7 @@ This "development box" is based on Ubuntu 17.04 with an XFCE Desktop environment
 - [docker-clean](https://github.com/ZZROTDesign/docker-clean)
 - Docker Compose
 - [Dockerlint](https://github.com/RedCoolBeans/dockerlint)
-- Eclipse Neon
+- Eclipse
 - [Github Changelog Generator](https://github.com/skywinder/github-changelog-generator)
 - Git
 - glogg
@@ -45,7 +45,7 @@ This "development box" is based on Ubuntu 17.04 with an XFCE Desktop environment
 - Inspec
 - Java 8 (OpenJDK)
 - [JMeter](http://jmeter.apache.org/)
-- libreoffice Calc
+- Libreoffice Calc
 - [Liquibase](https://github.com/ferrarimarco/docker-liquibase)
 - Maven 3
 - Nano
@@ -81,7 +81,6 @@ Vagrant.configure("2") do |config|
     v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
     v.customize ["modifyvm", :id, "--vram", "128"] # 10 MB is the minimum to enable Virtualbox seamless mode
-    v.customize ["modifyvm", :id, "--cableconnected1", "on"] # ensure that the network cable is connected. See chef/bento#688
 
     # Display the VirtualBox GUI
     v.gui = true
