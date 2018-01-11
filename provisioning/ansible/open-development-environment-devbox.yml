@@ -111,6 +111,7 @@
           - { alias: "git-log3", command: 'docker run -it --rm -v "$(pwd)":/usr/src -w /usr/src --rm ferrarimarco/open-development-environment-git:1.0.1 lg3' }
           - { alias: "psscriptanalyzer", command: 'docker run -it --rm -v "$(pwd)":/powershell cvent/psscriptanalyzer' }
           - { alias: "shellcheck", command: 'echo "Linting shell scripts from $(pwd)"; find . -type f -iname "*.sh" | while read -r line; do echo "Linting $line"; docker run -v "$(pwd)":/mnt --rm koalaman/shellcheck-alpine "$line"; done'}
+          - { alias: "pgadmin4", command: 'mkdir -p ~/.pgadmin4; name=pgadmin4; if [ ! "$(docker ps -q -f name=$name)" ]; then echo "Starting $name container"; docker run -d -p 5050:5050 -e "SERVER_MODE=False" --rm --name="$name" -v /home/vagrant/.pgadmin4:/data chorss/docker-pgadmin4; fi; sleep 5; xdg-open http://localhost:5050;'}
         become: yes
       - role: ferrarimarco.virtualbox
         become: yes

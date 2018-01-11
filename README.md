@@ -65,6 +65,7 @@ The following aliases are automatically set up during the provisioning process:
 - *`docker-clean`*: to run [docker-clean](https://github.com/ZZROTDesign/docker-clean)
 - *`dockerfile-lint`*: to run [hadolint](https://github.com/hadolint/hadolint) and [dockerlint](https://github.com/RedCoolBeans/dockerlint) on every Dockerfile in the current directory and its subdirectories
 - *`git-log1`*, *`git-log2`*, *`git-log3`*: see [open-development-environment-git](https://github.com/ferrarimarco/open-development-environment-git) for details
+- *`pgadmin4`*: to start a container running pgAdmin4 in single user mode and then open a browser window pointing to it. Data is saved in an external volume mapped to `/home/vagrant/.pgadmin4`
 - *`psscriptanalyzer`*: to run [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer) on every Powershell script in the current directory and its subdirectories
 - *`shellcheck`*: to run [Shellcheck](https://github.com/koalaman/shellcheck) on every shell script in the current directory and its subdirectories
 
