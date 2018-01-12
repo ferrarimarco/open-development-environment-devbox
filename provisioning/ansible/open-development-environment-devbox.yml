@@ -59,6 +59,10 @@
           mode: 0664
           owner: vagrant
           src: files/.sqldeveloper/product.conf
+      - name: Install JaspersoftStudio CE
+        apt:
+          deb: https://netcologne.dl.sourceforge.net/project/jasperstudio/JaspersoftStudio-6.5.1/TIB_js-studiocomm_6.5.1.final_linux_amd64.deb
+        become: yes
     roles:
       - role: stevenharradine.locale
         locale_locales:
