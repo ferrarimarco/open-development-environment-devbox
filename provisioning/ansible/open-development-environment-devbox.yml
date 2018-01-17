@@ -39,6 +39,10 @@
           - maven
           - nethogs
           - subversion
+      - name: Upgrade pip before installing any other package
+        pip:
+          name: "pip"
+          version: "9.0.1"
     post_tasks:
       - name: Ensure required pip packages are installed
         pip:
