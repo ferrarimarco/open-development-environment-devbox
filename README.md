@@ -27,11 +27,12 @@ There is a `vagrant` user already configured, password: `vagrant`
 
 ## What's inside the box
 This "development box" is based on Ubuntu 17.04 with an XFCE Desktop environment and includes the following tools, ready to be used:
-- Ansible
+- [Ansible](https://www.ansible.com/)
 - [Atom editor](https://atom.io/), along with the plugins listed in the [playbook](provisioning/ansible/open-development-environment-devbox.yml)
 - [bmon](https://github.com/tgraf/bmon)
-- Chromium browser
-- curl
+- [Chromium](https://www.chromium.org/)
+- [cookiecutter](https://github.com/audreyr/cookiecutter)
+- [curl](https://curl.haxx.se/)
 - [Docker](https://www.docker.com/)
 - [docker-clean](https://github.com/ZZROTDesign/docker-clean)
 - [Docker Compose](https://docs.docker.com/compose/)
@@ -52,7 +53,9 @@ This "development box" is based on Ubuntu 17.04 with an XFCE Desktop environment
 - [Nethogs](https://github.com/raboof/nethogs)
 - [Oracle SQL Developer](http://www.oracle.com/technetwork/developer-tools/sql-developer): see note below
 - [pgAdmin4](https://www.pgadmin.org)
+- [pip](https://pypi.python.org/pypi/pip)
 - [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer)
+- [Python](https://www.python.org/)
 - [Ruby](https://www.ruby-lang.org) (with [ruby-install](https://github.com/postmodern/ruby-install) and [chruby](https://github.com/postmodern/chruby))
 - [Shellcheck](https://github.com/koalaman/shellcheck)
 - [Subversion](https://subversion.apache.org/)
