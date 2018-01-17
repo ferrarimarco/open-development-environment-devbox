@@ -40,10 +40,12 @@
           - nethogs
           - subversion
       - name: Upgrade pip before installing any other package
+        become: yes
         pip:
           name: "pip"
           version: "9.0.1"
       - name: Install pip packages
+        become: yes
         pip:
           name: "{{item.name}}"
           version: "{{item.version}}"
