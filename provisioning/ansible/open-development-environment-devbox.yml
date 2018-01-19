@@ -39,6 +39,7 @@
           - maven
           - nethogs
           - subversion
+    post_tasks:
       - name: Upgrade pip before installing any other package
         become: yes
         pip:
@@ -51,14 +52,7 @@
           version: "{{item.version}}"
         with_items:
           - { name: 'cookiecutter', version: '1.6.0' }
-    post_tasks:
-      - name: Ensure required pip packages are installed
-        pip:
-          name: "{{ item }}"
-          state: present
-        become: yes
-        with_items:
-          - sqlparse
+          - { name: 'sqlparse', version: '0.2.4' }
       - name: Add vagrant user to docker group
         become: yes
         user:
