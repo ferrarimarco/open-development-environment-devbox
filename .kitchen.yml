@@ -8,7 +8,7 @@ driver:
     - $(pwd)/provisioning/scripts/:/usr/open-development-environment-devbox/provisioning/scripts/
 
 platforms:
-  - name: ubuntu-17.04
+  - name: ubuntu-17.10
 
 suites:
   - name: script-update-disabled
