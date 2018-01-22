@@ -4,7 +4,7 @@ validate:
 	packer validate ubuntu.json
 
 build:
-	packer build -only=virtualbox-iso ubuntu.json
+	packer build -only=os-install ubuntu.json
 	packer build -only=provision-install-ansible ubuntu.json
 	packer build -only=provision-ansible ubuntu.json
 	packer build -only=provision-cleanup ubuntu.json

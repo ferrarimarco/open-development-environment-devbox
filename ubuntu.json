@@ -40,6 +40,7 @@
         "{{ user `iso_path` }}/{{ user `iso_name` }}",
         "{{ user `iso_url` }}"
       ],
+      "name": "os-install",
       "output_directory": "builds/virtualbox-iso/{{user `template`}}",
       "post_shutdown_delay": "1m",
       "shutdown_command": "echo '{{ user `ssh_password` }}'|sudo -S shutdown -P now",
