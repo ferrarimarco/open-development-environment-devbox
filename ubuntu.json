@@ -286,7 +286,7 @@
         "UPDATE={{user `update`}}"
       ],
       "execute_command": "echo '{{ user `ssh_password` }}' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
-      "only": ["virtualbox-iso"],
+      "only": ["os-install"],
       "scripts": [
         "provisioning/scripts/update.sh",
         "provisioning/scripts/sshd.sh",
