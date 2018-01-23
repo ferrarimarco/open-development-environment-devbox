@@ -1,5 +1,6 @@
 ---
 driver:
+  provision_command: mkdir -p /run/sshd
   name: docker
   require_chef_omnibus: false
   require_ruby_for_busser: false
