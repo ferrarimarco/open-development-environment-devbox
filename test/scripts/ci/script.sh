@@ -3,7 +3,7 @@
 mktouch() {
   for f in "$@"; do
     mkdir -p -- "$(dirname -- "$f")"
-    touch -a -- "$f"
+    touch -- "$f"
   done
 }
 
