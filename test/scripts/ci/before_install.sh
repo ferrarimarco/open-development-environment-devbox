@@ -5,7 +5,7 @@ unzip -d packer packer_${PACKER_VERSION}_linux_amd64.zip
 mv ./packer/packer /usr/local/bin/packer
 installed_packer_version="$(packer --version)"
 
-if [ "$PACKER_VERSION" == "$installed_packer_version" ]; then
+if [ "$PACKER_VERSION" = "$installed_packer_version" ]; then
   echo "Packer Version: $installed_packer_version"
 else
   packer_path="$(which packer)"
