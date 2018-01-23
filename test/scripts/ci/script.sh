@@ -22,7 +22,7 @@ mktouch \
 # Create a dummy archive to validate its path in the template
 mktouch ./provisioning/downloads/sqldeveloper-17.4.0.355.2349-no-jre.zip
 
-VAGRANT_CLOUD_TOKEN=dummy_token ./packer/packer validate ubuntu.json
+VAGRANT_CLOUD_TOKEN=dummy_token packer validate ubuntu.json
 
 kitchen test
 
