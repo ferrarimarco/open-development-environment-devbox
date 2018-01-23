@@ -1,5 +1,8 @@
 #!/bin/sh -eux
 
+echo "==> Setting DEBIAN_FRONTEND"
+export DEBIAN_FRONTEND=noninteractive
+
 echo "==> Checking version of Ubuntu"
 ubuntu_version="`lsb_release -r | awk '{print $2}'`";
 ubuntu_major_version="`echo $ubuntu_version | awk -F. '{print $1}'`";
@@ -22,6 +25,7 @@ apt-get -y update;
 
 # update package index on boot
 echo "==> Update package index on boot"
+mkdir -p /etc/init;
 cat <<EOF >/etc/init/refresh-apt.conf;
 description "update package index"
 start on networking
@@ -41,9 +45,5 @@ REBOOT=${REBOOT:-1}
 # Upgrade all installed packages incl. kernel and kernel headers
 if [ $UPDATE  = "true" ] || [ $UPDATE = 1 ] || [ $UPDATE = "yes" ]; then
     echo "==> Performing dist-upgrade (all packages and kernel)"
-    apt-get -y dist-upgrade --force-yes
-		if [ $REBOOT  = 1 ]; then
-    	reboot
-			sleep 60
-		fi
+    apt-get -y dist-upgrade -o Dpkg::Options::="--force-confnew";
 fi

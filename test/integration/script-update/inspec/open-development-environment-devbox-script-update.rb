@@ -1,6 +1,10 @@
 control "open-development-environment-devbox-script-update" do
   title "open-development-environment-devbox-script-update control"
 
+  describe os_env('DEBIAN_FRONTEND') do
+    its('content') { should eq 'noninteractive' }
+  end
+
   describe file("/etc/update-manager/release-upgrades") do
     it { should exist }
     it { should be_owned_by 'root' }
