@@ -17,7 +17,7 @@ clean-all: clean
 	rm -rf packer_cache
 
 install:
-	vagrant box add ferrarimarco/open-development-environment-devbox ./builds/vagrant/ubuntu-17.04-amd64.virtualbox.box --force || true
+	vagrant box add ferrarimarco/open-development-environment-devbox ./builds/vagrant/ubuntu-17.10.1-amd64.virtualbox.box --force || true
 	vagrant box list | grep ferrarimarco/open-development-environment-devbox
 	@echo Boxes have been installed. Run make clean-all to reclaim disk space.
 
