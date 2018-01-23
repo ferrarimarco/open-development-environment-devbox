@@ -19,8 +19,12 @@ mktouch \
   ./builds/virtualbox-ovf/provision-ansible/ubuntu-17.10.1-amd64/open-development-environment-devbox-build.ovf \
   ./builds/virtualbox-ovf/provision-cleanup/ubuntu-17.10.1-amd64/open-development-environment-devbox-build.ovf
 
+# Create a dummy archive to validate its path in the template
+mktouch ./provisioning/downloads/sqldeveloper-17.4.0.355.2349-no-jre.zip
+
 VAGRANT_CLOUD_TOKEN=dummy_token ./packer/packer validate ubuntu.json
 
 kitchen test
 
-rm -rf builds
+rm -rf ./builds
+rm ./provisioning/downloads/sqldeveloper-17.4.0.355.2349-no-jre.zip
