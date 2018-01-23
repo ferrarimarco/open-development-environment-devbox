@@ -40,7 +40,7 @@
           - nethogs
           - subversion
     post_tasks:
-      - name: Upgrade pip before installing any other package
+      - name: Upgrade pip before installing any other packages
         become: yes
         pip:
           name: "pip"
