@@ -1,0 +1,5 @@
+.git
+.kitchen
+.vagrant
+builds
+packer_cache
