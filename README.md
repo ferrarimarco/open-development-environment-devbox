@@ -1,7 +1,7 @@
 # Open Development Environment: Devbox
 
-* Development branch: [![Build Status](https://travis-ci.org/ferrarimarco/open-development-environment-devbox.svg?branch=development)](https://travis-ci.org/ferrarimarco/open-development-environment-devbox)
-* Master branch: [![Build Status](https://travis-ci.org/ferrarimarco/open-development-environment-devbox.svg?branch=master)](https://travis-ci.org/ferrarimarco/open-development-environment-devbox)
+* Development branch: [![Build Status](https://travis-ci.org/ferrarimarco/open-development-environment-devbox.svg?branch=development)](https://travis-ci.org/ferrarimarco/open-development-environment-devbox) [![Run Status](https://api.shippable.com/projects/5a6729c4fe72de0600ed0659/badge?branch=development)](https://app.shippable.com/github/ferrarimarco/open-development-environment-devbox)
+* Master branch: [![Build Status](https://travis-ci.org/ferrarimarco/open-development-environment-devbox.svg?branch=master)](https://travis-ci.org/ferrarimarco/open-development-environment-devbox) [![Run Status](https://api.shippable.com/projects/5a6729c4fe72de0600ed0659/badge?branch=master)](https://app.shippable.com/github/ferrarimarco/open-development-environment-devbox)
 
 A Vagrant box serving as a development machine. It's automatically built using [Packer](https://www.packer.io/) and [Ansible](https://www.ansible.com/). Read the related [blog post](http://ferrarimarco.info/blog/development/devops/configuration/2017/07/26/open-development-environment-devbox/).
 
