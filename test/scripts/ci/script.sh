@@ -24,7 +24,7 @@ mktouch ./provisioning/downloads/sqldeveloper-17.4.0.355.2349-no-jre.zip
 
 VAGRANT_CLOUD_TOKEN=dummy_token packer validate ubuntu.json
 
-kitchen test
+kitchen test "$KITCHEN_SCRIPT-$KITCHEN_PLATFORM"
 
 rm -rf ./builds
 rm ./provisioning/downloads/sqldeveloper-17.4.0.355.2349-no-jre.zip
