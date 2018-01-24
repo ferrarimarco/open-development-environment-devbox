@@ -23,7 +23,7 @@ script: kitchen test "$KITCHEN_SCRIPT-$KITCHEN_PLATFORM"
 jobs:
   include:
     - stage: validate packer template
-      before_install: sudo test/scripts/ci/install-packer.sh
+      before_install: chmod a+x test/scripts/ci/install-packer.sh && sudo test/scripts/ci/install-packer.sh
       script: test/scripts/ci/validate-packer-template.sh
       env:
         - PACKER_VERSION="1.1.3"
