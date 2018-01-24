@@ -1,0 +1,70 @@
+{
+  "_comment": "Build with `packer build ubuntu.json`",
+  "builders": [
+    {
+      "boot_wait": "10s",
+      "guest_additions_mode": "disable",
+      "headless": "{{ user `headless` }}",
+      "name": "vagrant-cloud-upload",
+      "output_directory": "builds/{{build_type}}/{{build_name}}/{{user `template`}}",
+      "post_shutdown_delay": "1m",
+      "shutdown_command": "echo '{{ user `ssh_password` }}'|sudo -S shutdown -P now",
+      "source_path": "builds/virtualbox-ovf/provision-cleanup/{{user `template`}}/{{user `vm_name`}}.ovf",
+      "ssh_password": "{{ user `ssh_password` }}",
+      "ssh_port": 22,
+      "ssh_username": "{{ user `ssh_username` }}",
+      "ssh_wait_timeout": "10000s",
+      "type": "virtualbox-ovf",
+      "vboxmanage": [
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--cpus",
+          "{{ user `cpus` }}"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--memory",
+          "{{ user `memory` }}"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--nictype1",
+          "virtio"
+        ]
+      ],
+      "vm_name": "{{ user `vm_name` }}"
+    }
+  ],
+  "post-processors": [
+    [
+      {
+        "keep_input_artifact": true,
+        "only": ["vagrant-cloud-upload"],
+        "output": "builds/vagrant-cloud/{{user `template`}}.{{.Provider}}.box",
+        "type": "vagrant"
+      },
+      {
+        "box_tag": "ferrarimarco/open-development-environment-devbox",
+        "only": ["vagrant-cloud-upload"],
+        "type": "vagrant-cloud",
+        "version": "{{user `version`}}",
+        "version_description": "[ferrarimarco/open-development-environment-devbox](https://github.com/ferrarimarco/open-development-environment-devbox)"
+      }
+    ]
+  ],
+  "variables": {
+    "cpus": "4",
+    "disk_size": "40960",
+    "headless": "",
+    "memory": "4096",
+    "name": "ubuntu-17.10.1",
+    "ssh_password": "vagrant",
+    "ssh_username": "vagrant",
+    "template": "ubuntu-17.10.1-amd64",
+    "version": "1.2.0",
+    "vm_name": "open-development-environment-devbox-build"
+  }
+}

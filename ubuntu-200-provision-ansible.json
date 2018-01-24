@@ -1,0 +1,74 @@
+{
+  "builders": [
+    {
+      "boot_wait": "10s",
+      "guest_additions_mode": "disable",
+      "headless": "{{ user `headless` }}",
+      "name": "provision-ansible",
+      "output_directory": "builds/{{build_type}}/{{build_name}}/{{user `template`}}",
+      "post_shutdown_delay": "1m",
+      "shutdown_command": "echo '{{ user `ssh_password` }}'|sudo -S shutdown -P now",
+      "source_path": "builds/virtualbox-ovf/provision-install-ansible/{{user `template`}}/{{user `vm_name`}}.ovf",
+      "ssh_password": "{{ user `ssh_password` }}",
+      "ssh_port": 22,
+      "ssh_username": "{{ user `ssh_username` }}",
+      "ssh_wait_timeout": "10000s",
+      "type": "virtualbox-ovf",
+      "vboxmanage": [
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--cpus",
+          "{{ user `cpus` }}"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--memory",
+          "{{ user `memory` }}"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--nictype1",
+          "virtio"
+        ]
+      ],
+      "vm_name": "{{ user `vm_name` }}"
+    }
+  ],
+  "provisioners": [
+    {
+      "destination": "/tmp/sqldeveloper-no-jre.zip",
+      "only": ["provision-ansible"],
+      "source": "{{ user `sql_developer_path` }}",
+      "type": "file"
+    },
+    {
+      "inline": "echo '{{ user `ssh_password` }}' | sudo -S -E chown -R vagrant:vagrant /home/vagrant",
+      "only": ["provision-ansible"],
+      "type": "shell"
+    },
+    {
+      "only": ["provision-ansible"],
+      "galaxy_file": "provisioning/ansible/requirements.yml",
+      "host_vars": "provisioning/ansible/host_vars",
+      "inventory_file": "provisioning/ansible/inventory",
+      "playbook_dir": "provisioning/ansible",
+      "playbook_file": "provisioning/ansible/open-development-environment-devbox.yml",
+      "type": "ansible-local"
+    }
+  ],
+  "variables": {
+    "cpus": "4",
+    "disk_size": "40960",
+    "headless": "",
+    "memory": "4096",
+    "name": "ubuntu-17.10.1",
+    "ssh_password": "vagrant",
+    "ssh_username": "vagrant",
+    "sql_developer_path": "provisioning/downloads/sqldeveloper-17.4.0.355.2349-no-jre.zip",
+    "template": "ubuntu-17.10.1-amd64",
+    "vm_name": "open-development-environment-devbox-build"
+  }
+}

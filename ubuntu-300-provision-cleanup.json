@@ -1,0 +1,68 @@
+{
+  "builders": [
+    {
+      "boot_wait": "10s",
+      "guest_additions_mode": "disable",
+      "headless": "{{ user `headless` }}",
+      "name": "provision-cleanup",
+      "output_directory": "builds/{{build_type}}/{{build_name}}/{{user `template`}}",
+      "post_shutdown_delay": "1m",
+      "shutdown_command": "echo '{{ user `ssh_password` }}'|sudo -S shutdown -P now",
+      "source_path": "builds/virtualbox-ovf/provision-ansible/{{user `template`}}/{{user `vm_name`}}.ovf",
+      "ssh_password": "{{ user `ssh_password` }}",
+      "ssh_port": 22,
+      "ssh_username": "{{ user `ssh_username` }}",
+      "ssh_wait_timeout": "10000s",
+      "type": "virtualbox-ovf",
+      "vboxmanage": [
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--cpus",
+          "{{ user `cpus` }}"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--memory",
+          "{{ user `memory` }}"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--nictype1",
+          "virtio"
+        ]
+      ],
+      "vm_name": "{{ user `vm_name` }}"
+    }
+  ],
+  "provisioners": [
+    {
+      "environment_vars": [
+        "SSH_USERNAME={{user `ssh_username`}}",
+        "SSH_PASSWORD={{user `ssh_password`}}",
+        "HOME_DIR=/home/$SSH_USERNAME",
+        "ZEROING={{user `zeroing`}}"
+      ],
+      "execute_command": "echo '{{ user `ssh_password` }}' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
+      "only": ["provision-cleanup"],
+      "scripts": [
+        "provisioning/scripts/cleanup.sh"
+      ],
+      "type": "shell"
+    }
+  ],
+  "variables": {
+    "cpus": "4",
+    "disk_size": "40960",
+    "headless": "",
+    "memory": "4096",
+    "name": "ubuntu-17.10.1",
+    "ssh_password": "vagrant",
+    "ssh_username": "vagrant",
+    "template": "ubuntu-17.10.1-amd64",
+    "vm_name": "open-development-environment-devbox-build",
+    "zeroing": "true"
+  }
+}
