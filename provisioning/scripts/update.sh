@@ -40,7 +40,6 @@ APT::Periodic::Enable "0";
 EOF
 
 UPDATE=${UPDATE:-false}
-REBOOT=${REBOOT:-1}
 
 # Upgrade all installed packages incl. kernel and kernel headers
 if [ $UPDATE  = "true" ] || [ $UPDATE = 1 ] || [ $UPDATE = "yes" ]; then
