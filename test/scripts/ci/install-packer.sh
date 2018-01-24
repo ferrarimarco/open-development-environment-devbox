@@ -12,5 +12,3 @@ else
   "Expected Packer version: $PACKER_VERSION. Installed Packer version: $installed_packer_version. Packer path: $packer_path"
   exit 1;
 fi
-
-gem install bundle
