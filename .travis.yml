@@ -22,16 +22,16 @@ script: kitchen test "$KITCHEN_SCRIPT-$KITCHEN_PLATFORM"
 
 jobs:
   include:
-    - stage: Validate Packer template
+    - stage: validate packer template
       before_install: sudo test/scripts/ci/install-packer.sh
       script: test/scripts/ci/validate-packer-template.sh
       env:
         - PACKER_VERSION="1.1.3"
-    - stage: Test Ansible roles installation
+    - stage: validate ansible role installation
       before_install: sudo provisioning/scripts/install_ansible.sh
       script: test/scripts/ci/install-ansible-roles.sh
 
 stages:
-  - validate-packer
-  - validate-ansible
+  - validate packer template
+  - validate ansible role installation
   - test
