@@ -19,8 +19,12 @@ env:
     - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-vagrant"
     - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-cleanup"
 
-before_install: sudo test/scripts/ci/before_install.sh
-install:
-  - test/scripts/ci/install.sh
-  - sudo provisioning/scripts/install_ansible.sh
-script: test/scripts/ci/script.sh
+jobs:
+  include:
+    - stage: Test Ansible roles installation
+      before_install: sudo provisioning/scripts/install_ansible.sh
+      script: test/scripts/ci/install-ansible-roles.sh
+    - stage: Run Test-Kitchen
+      before_install: sudo test/scripts/ci/before_install.sh
+      install: test/scripts/ci/install.sh
+      script: test/scripts/ci/script.sh

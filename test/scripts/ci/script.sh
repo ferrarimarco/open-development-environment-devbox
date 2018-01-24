@@ -7,11 +7,6 @@ mktouch() {
   done
 }
 
-
-ROLE_FILE_PATH=provisioning/ansible/requirements.yml
-echo "Test Ansible role installation from $ROLE_FILE_PATH"
-ansible-galaxy install -r "$ROLE_FILE_PATH"
-
 # Workaround until we have feedback on https://github.com/hashicorp/packer/issues/5727
 mktouch \
   ./builds/virtualbox-iso/ubuntu-17.10.1-amd64/open-development-environment-devbox-build.ovf \
