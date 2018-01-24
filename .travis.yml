@@ -8,25 +8,30 @@ services:
   - docker
 
 # matrix has to be populated by hand for now (https://github.com/travis-ci/travis-ci/issues/1519)
+env:
+  - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-update-disabled"
+  - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-update-enabled"
+  - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-sshd"
+  - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-networking"
+  - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-vagrant"
+  - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-cleanup"
+
+before_install: gem install bundle
+install: bundle install
+script: kitchen test "$KITCHEN_SCRIPT-$KITCHEN_PLATFORM"
 
 jobs:
   include:
-    - stage: Test Ansible roles installation
-      before_install: sudo provisioning/scripts/install_ansible.sh
-      script: test/scripts/ci/install-ansible-roles.sh
     - stage: Validate Packer template
       before_install: sudo test/scripts/ci/install-packer.sh
       script: test/scripts/ci/validate-packer-template.sh
       env:
         - PACKER_VERSION="1.1.3"
-    - stage: Run Test-Kitchen
-      before_install: gem install bundle
-      install: bundle install
-      script: kitchen test "$KITCHEN_SCRIPT-$KITCHEN_PLATFORM"
-      env:
-        - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-update-disabled"
-        - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-update-enabled"
-        - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-sshd"
-        - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-networking"
-        - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-vagrant"
-        - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-cleanup"
+    - stage: Test Ansible roles installation
+      before_install: sudo provisioning/scripts/install_ansible.sh
+      script: test/scripts/ci/install-ansible-roles.sh
+
+stages:
+  - validate-packer
+  - validate-ansible
+  - test
