@@ -1,0 +1,14 @@
+---
+  - hosts: all
+    gather_facts: yes
+    post_tasks:
+      - name: Add vagrant user to docker group
+        become: yes
+        user:
+          groups: "docker"
+          name: vagrant
+    roles:
+      - role: ferrarimarco.docker
+        become: yes
+        docker_compose_version: 1.17.1
+        docker_apt_repository_section_name: stable edge

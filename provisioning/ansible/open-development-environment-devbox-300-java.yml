@@ -1,0 +1,10 @@
+---
+  - hosts: all
+    gather_facts: yes
+    roles:
+      - role: kbrebanov.java
+        become: yes
+        java_openjdk_use_ppa: no
+      - role: ferrarimarco.eclipse
+        become: yes
+        java_openjdk_use_ppa: no

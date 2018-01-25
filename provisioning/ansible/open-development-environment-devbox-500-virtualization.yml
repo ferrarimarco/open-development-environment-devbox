@@ -1,0 +1,6 @@
+---
+  - hosts: all
+    gather_facts: yes
+    roles:
+      - role: ferrarimarco.virtualbox
+        become: yes
