@@ -46,6 +46,159 @@ suites:
     provisioner:
       name: shell
       script: ./test/scripts/test-kitchen/script-cleanup-zeroing-disabled.sh
+  - name: ansible-playbook-000-prerequisites
+    provisioner:
+      ansible_connection: local
+      ansible_host_key_checking: false
+      ansible_version: latest
+      custom_pre_play_command: chown -R kitchen:kitchen /home/kitchen/.ansible
+      hosts: localhost
+      host_vars_path: ./provisioning/ansible/host_vars/localhost.yml
+      idempotency_test: true
+      ignore_paths_from_root:
+        - .git
+        - .kitchen
+        - .vagrant
+        - builds
+        - packer_cache
+      playbook: ./provisioning/ansible/open-development-environment-devbox-000-prerequisites.yml
+      name: ansible_playbook
+      require_ansible_repo: true
+      require_chef_for_busser: false
+      require_ruby_for_busser: false
+      requirements_path: ./provisioning/ansible/requirements.yml
+  - name: ansible-playbook-100-desktop
+    provisioner:
+      ansible_connection: local
+      ansible_host_key_checking: false
+      ansible_version: latest
+      custom_pre_play_command: chown -R kitchen:kitchen /home/kitchen/.ansible
+      hosts: localhost
+      host_vars_path: ./provisioning/ansible/host_vars/localhost.yml
+      idempotency_test: true
+      ignore_paths_from_root:
+        - .git
+        - .kitchen
+        - .vagrant
+        - builds
+        - packer_cache
+      playbook: ./provisioning/ansible/open-development-environment-devbox-100-desktop.yml
+      name: ansible_playbook
+      require_ansible_repo: true
+      require_chef_for_busser: false
+      require_ruby_for_busser: false
+      requirements_path: ./provisioning/ansible/requirements.yml
+  - name: ansible-playbook-200-docker
+    provisioner:
+      ansible_connection: local
+      ansible_host_key_checking: false
+      ansible_version: latest
+      custom_pre_play_command: chown -R kitchen:kitchen /home/kitchen/.ansible
+      hosts: localhost
+      host_vars_path: ./provisioning/ansible/host_vars/localhost.yml
+      idempotency_test: true
+      ignore_paths_from_root:
+        - .git
+        - .kitchen
+        - .vagrant
+        - builds
+        - packer_cache
+      playbook: ./provisioning/ansible/open-development-environment-devbox-200-docker.yml
+      name: ansible_playbook
+      require_ansible_repo: true
+      require_chef_for_busser: false
+      require_ruby_for_busser: false
+      requirements_path: ./provisioning/ansible/requirements.yml
+  - name: ansible-playbook-300-java
+    provisioner:
+      ansible_connection: local
+      ansible_host_key_checking: false
+      ansible_version: latest
+      custom_pre_play_command: chown -R kitchen:kitchen /home/kitchen/.ansible
+      hosts: localhost
+      host_vars_path: ./provisioning/ansible/host_vars/localhost.yml
+      idempotency_test: true
+      ignore_paths_from_root:
+        - .git
+        - .kitchen
+        - .vagrant
+        - builds
+        - packer_cache
+      playbook: ./provisioning/ansible/open-development-environment-devbox-300-java.yml
+      name: ansible_playbook
+      require_ansible_repo: true
+      require_chef_for_busser: false
+      require_ruby_for_busser: false
+      requirements_path: ./provisioning/ansible/requirements.yml
+  - name: ansible-playbook-400-ruby
+    provisioner:
+      ansible_connection: local
+      ansible_host_key_checking: false
+      ansible_version: latest
+      custom_pre_play_command: chown -R kitchen:kitchen /home/kitchen/.ansible
+      hosts: localhost
+      host_vars_path: ./provisioning/ansible/host_vars/localhost.yml
+      idempotency_test: true
+      ignore_paths_from_root:
+        - .git
+        - .kitchen
+        - .vagrant
+        - builds
+        - packer_cache
+      playbook: ./provisioning/ansible/open-development-environment-devbox-400-ruby.yml
+      name: ansible_playbook
+      require_ansible_repo: true
+      require_chef_for_busser: false
+      require_ruby_for_busser: false
+      requirements_path: ./provisioning/ansible/requirements.yml
+  - name: ansible-playbook-500-virtualization
+    provisioner:
+      ansible_connection: local
+      ansible_host_key_checking: false
+      ansible_version: latest
+      custom_pre_play_command: chown -R kitchen:kitchen /home/kitchen/.ansible
+      hosts: localhost
+      host_vars_path: ./provisioning/ansible/host_vars/localhost.yml
+      idempotency_test: true
+      ignore_paths_from_root:
+        - .git
+        - .kitchen
+        - .vagrant
+        - builds
+        - packer_cache
+      playbook: ./provisioning/ansible/open-development-environment-devbox-500-virtualization.yml
+      name: ansible_playbook
+      require_ansible_repo: true
+      require_chef_for_busser: false
+      require_ruby_for_busser: false
+      requirements_path: ./provisioning/ansible/requirements.yml
+  - name: ansible-playbook-600-general-development-tools
+    driver:
+      provision_command:
+        - mkdir -p /run/sshd
+        - wget -O /tmp/sqldeveloper-no-jre.zip https://github.com/ferrarimarco/ansible-role-oracle-sql-developer/raw/1.2.0/test/sqldeveloper-no-jre.zip
+        - useradd --user-group vagrant
+    provisioner:
+      ansible_connection: local
+      ansible_host_key_checking: false
+      ansible_version: latest
+      custom_pre_play_command: chown -R kitchen:kitchen /home/kitchen/.ansible ; mv /tmp/kitchen/provisioning/ansible/files /tmp/kitchen
+      hosts: localhost
+      host_vars_path: ./provisioning/ansible/host_vars/localhost.yml
+      idempotency_test: true
+      ignore_paths_from_root:
+        - .git
+        - .kitchen
+        - .vagrant
+        - builds
+        - packer_cache
+      playbook: ./provisioning/ansible/open-development-environment-devbox-600-general-development-tools.yml
+      name: ansible_playbook
+      recursive_additional_copy_path: ./provisioning/ansible/files
+      require_ansible_repo: true
+      require_chef_for_busser: false
+      require_ruby_for_busser: false
+      requirements_path: ./provisioning/ansible/requirements.yml
 
 transport:
   max_ssh_sessions: 6

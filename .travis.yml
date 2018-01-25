@@ -1,7 +1,7 @@
 ---
 language: ruby
 rvm:
-  - 2.3
+  - 2.4.1
 sudo: required
 
 services:
@@ -15,6 +15,13 @@ env:
   - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-networking"
   - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-vagrant"
   - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-cleanup"
+  - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="ansible-playbook-000-prerequisites"
+  - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="ansible-playbook-100-desktop"
+  - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="ansible-playbook-200-docker"
+  - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="ansible-playbook-300-java"
+  - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="ansible-playbook-400-ruby"
+  - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="ansible-playbook-500-virtualization"
+  - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="ansible-playbook-600-general-development-tools"
 
 before_install: gem install bundle
 install: bundle install

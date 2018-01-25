@@ -2,6 +2,10 @@
   - hosts: all
     gather_facts: yes
     post_tasks:
+      - name: Ensure pip is installed
+        package:
+          name: "python-pip"
+          state: present
       - name: Upgrade pip before installing any other packages
         become: yes
         pip:
@@ -45,8 +49,9 @@
               - language-powershell
               - linter
               - linter-ui-default
-              - pigments
               - minimap
+              - pigments
+              - sort-lines
         ferrarimarco_atom_atom_version: 1.23.1
       - role: ferrarimarco.vagrant
         become: yes
