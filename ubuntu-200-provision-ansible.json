@@ -68,7 +68,7 @@
     "name": "ubuntu-17.10.1",
     "source_path_builder": "virtualbox-ovf",
     "source_path_step": "provision-ansible",
-    "source_path_substep": null,
+    "source_path_substep": "",
     "ssh_password": "vagrant",
     "ssh_username": "vagrant",
     "sql_developer_path": "provisioning/downloads/sqldeveloper-17.4.0.355.2349-no-jre.zip",

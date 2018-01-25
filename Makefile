@@ -43,7 +43,6 @@ build:
 	packer build \
 		-var 'ansible_playbook_suffix=000-prerequisites' \
 		-var 'source_path_step=provision-install-ansible' \
-		-var 'source_path_substep=null' \
 		ubuntu-200-provision-ansible.json
 	packer build \
 		-var 'ansible_playbook_suffix=100-desktop' \
