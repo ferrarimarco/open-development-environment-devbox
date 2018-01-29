@@ -9,6 +9,8 @@
   version: 1.4.1
 - src: ferrarimarco.eclipse
   version: 1.2.0
+- src: ferrarimarco.tomcat
+  version: 1.0.1
 - src: ferrarimarco.nano
   version: 1.0.3
 - src: ferrarimarco.oracle-sql-developer

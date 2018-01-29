@@ -8,3 +8,5 @@
       - role: ferrarimarco.eclipse
         become: yes
         java_openjdk_use_ppa: no
+      - role: ferrarimarco.tomcat
+        become: yes
