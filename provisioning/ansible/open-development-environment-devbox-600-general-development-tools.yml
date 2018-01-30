@@ -62,6 +62,6 @@
       - role: chrisevett.inspec
         become: yes
         inspecVersion: 1.48.0
-      - role: geerlingguy.packer
+      - role: geerlingguy.ansible-role-packer
         become: yes
         packer_version: "1.1.3"

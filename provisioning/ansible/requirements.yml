@@ -27,5 +27,5 @@
   version: v2.0.1
 - src: stevenharradine.locale
   version: master
-- src: geerlingguy.packer
+- src: geerlingguy.ansible-role-packer
   version: 1.0.1
