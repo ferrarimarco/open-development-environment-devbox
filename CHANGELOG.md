@@ -1,6 +1,25 @@
 # Change Log
 
-## [1.1.0](https://github.com/ferrarimarco/open-development-environment-devbox/tree/1.1.0) (2017-12-24)
+## [1.2.0](https://github.com/ferrarimarco/open-development-environment-devbox/tree/1.2.0) (2018-02-13)
+[Full Changelog](https://github.com/ferrarimarco/open-development-environment-devbox/compare/1.1.0...1.2.0)
+
+**Implemented enhancements:**
+
+- Configure a testing infrastructure [\#108](https://github.com/ferrarimarco/open-development-environment-devbox/issues/108)
+- Install sort-lines Atom package [\#107](https://github.com/ferrarimarco/open-development-environment-devbox/issues/107)
+- Modularize Ansible roles application [\#106](https://github.com/ferrarimarco/open-development-environment-devbox/issues/106)
+- Install packer 1.1.3 [\#105](https://github.com/ferrarimarco/open-development-environment-devbox/issues/105)
+- Set the name for the first \(OS installation\) packer builder [\#103](https://github.com/ferrarimarco/open-development-environment-devbox/issues/103)
+- Upgrade to Ubuntu 17.10.1 [\#102](https://github.com/ferrarimarco/open-development-environment-devbox/issues/102)
+- Install cookiecutter 1.6.0 [\#101](https://github.com/ferrarimarco/open-development-environment-devbox/issues/101)
+- Upgrade pip to 9.0.1 [\#100](https://github.com/ferrarimarco/open-development-environment-devbox/issues/100)
+- Install Tomcat 8.5 [\#99](https://github.com/ferrarimarco/open-development-environment-devbox/issues/99)
+- Install JasperSoft Studio CE [\#98](https://github.com/ferrarimarco/open-development-environment-devbox/issues/98)
+- Upgrade ferrarimarco.xfce role to 1.1.0 [\#97](https://github.com/ferrarimarco/open-development-environment-devbox/issues/97)
+- Install pgAdmin4 [\#96](https://github.com/ferrarimarco/open-development-environment-devbox/issues/96)
+- Upgrade ferrarimarco.oracle-sql-developer to 1.2.0 [\#95](https://github.com/ferrarimarco/open-development-environment-devbox/issues/95)
+
+## [1.1.0](https://github.com/ferrarimarco/open-development-environment-devbox/tree/1.1.0) (2018-01-05)
 [Full Changelog](https://github.com/ferrarimarco/open-development-environment-devbox/compare/1.0.1...1.1.0)
 
 **Implemented enhancements:**
