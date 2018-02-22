@@ -90,6 +90,7 @@
         "provisioning/scripts/vagrant.sh",
         "provisioning/scripts/virtualbox.sh"
       ],
+      "expect_disconnect": "true",
       "type": "shell"
     }
   ],
