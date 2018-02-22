@@ -41,6 +41,17 @@ apt-get update;
 packages_to_remove="popularity-contest installation-report command-not-found command-not-found-data friendly-recovery landscape-common wireless-tools wpasupplicant";
 apt-get -y purge $packages_to_remove;
 
+# Exclude the files we don't need w/o uninstalling linux-firmware
+echo "==> Setup dpkg excludes for linux-firmware"
+cat <<_EOF_ | cat >> /etc/dpkg/dpkg.cfg.d/excludes
+path-exclude=/lib/firmware/*
+path-exclude=/usr/share/doc/linux-firmware/*
+_EOF_
+
+echo "==>Delete the massive firmware packages"
+rm -rf /lib/firmware/*
+rm -rf /usr/share/doc/linux-firmware/*
+
 echo "==> Running APT maintenance commands"
 apt-get -y autoremove;
 apt-get -y clean;
