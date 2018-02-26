@@ -3,6 +3,7 @@
     gather_facts: yes
     post_tasks:
       - name: Ensure pip is installed
+        become: yes
         package:
           name: "python-pip"
           state: present
