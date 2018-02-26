@@ -10,7 +10,7 @@ rm -f /lib/udev/rules.d/75-persistent-net-generator.rules
 
 echo "==> Cleaning up leftover dhcp leases"
 if [ -d "/var/lib/dhcp" ]; then
-    rm /var/lib/dhcp/*
+    rm -f /var/lib/dhcp/*
 fi
 
 echo "==> Delete all Linux headers"
