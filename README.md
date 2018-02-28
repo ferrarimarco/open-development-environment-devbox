@@ -1,6 +1,5 @@
 # Open Development Environment: Devbox
 
-* Development branch: [![Build Status](https://travis-ci.org/ferrarimarco/open-development-environment-devbox.svg?branch=development)](https://travis-ci.org/ferrarimarco/open-development-environment-devbox) [![Build Status](https://semaphoreci.com/api/v1/ferrarimarco/open-development-environment-devbox-2/branches/development/badge.svg)](https://semaphoreci.com/ferrarimarco/open-development-environment-devbox-2)
 * Master branch: [![Build Status](https://travis-ci.org/ferrarimarco/open-development-environment-devbox.svg?branch=master)](https://travis-ci.org/ferrarimarco/open-development-environment-devbox) [![Build Status](https://semaphoreci.com/api/v1/ferrarimarco/open-development-environment-devbox-2/branches/master/badge.svg)](https://semaphoreci.com/ferrarimarco/open-development-environment-devbox-2)
 
 A Vagrant box serving as a development machine. It's automatically built using [Packer](https://www.packer.io/) and [Ansible](https://www.ansible.com/). Read the related [blog post](http://ferrarimarco.info/blog/development/devops/configuration/2017/07/26/open-development-environment-devbox/).
