@@ -6,6 +6,7 @@
 
 **Implemented enhancements:**
 
+- Use infOpen.locales to configure locales [\#120](https://github.com/ferrarimarco/open-development-environment-devbox/issues/120)
 - Switch to geerlingguy.java to install java [\#119](https://github.com/ferrarimarco/open-development-environment-devbox/issues/119)
 - Upgrade Packer to 1.2.1 [\#118](https://github.com/ferrarimarco/open-development-environment-devbox/issues/118)
 - Upgrade InSpec to 2.0.45 [\#117](https://github.com/ferrarimarco/open-development-environment-devbox/issues/117)
