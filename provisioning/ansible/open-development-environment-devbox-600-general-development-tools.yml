@@ -22,7 +22,7 @@
           - { name: 'sqlparse', version: '0.2.4' }
       - name: Initialize Oracle SQL Developer
         copy:
-          dest: /home/vagrant/.sqldeveloper/17.4.0/
+          dest: /home/vagrant/.sqldeveloper/17.4.1/
           group: vagrant
           mode: 0664
           owner: vagrant

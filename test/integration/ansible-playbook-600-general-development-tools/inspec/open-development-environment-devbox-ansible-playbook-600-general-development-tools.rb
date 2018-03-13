@@ -28,7 +28,7 @@ control "open-development-environment-devbox-ansible-playbook-600-general-develo
     end
   end
 
-  describe file('/home/vagrant/.sqldeveloper/17.4.0/product.conf') do
+  describe file('/home/vagrant/.sqldeveloper/17.4.1/product.conf') do
     it { should exist }
     it { should be_file }
     it { should be_owned_by 'vagrant' }
