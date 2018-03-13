@@ -15,6 +15,7 @@ control "open-development-environment-devbox-ansible-playbook-000-prerequisites"
     'imagemagick',
     'jmeter',
     'language-pack-en',
+    'language-pack-en-base',
     'libreoffice-calc',
     'maven',
     'nethogs',
