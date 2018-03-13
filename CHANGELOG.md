@@ -1,6 +1,23 @@
 # Change Log
 
-## [1.2.0](https://github.com/ferrarimarco/open-development-environment-devbox/tree/1.2.0) (2018-02-13)
+## [Unreleased](https://github.com/ferrarimarco/open-development-environment-devbox/tree/HEAD)
+
+[Full Changelog](https://github.com/ferrarimarco/open-development-environment-devbox/compare/1.2.0...HEAD)
+
+**Implemented enhancements:**
+
+- Switch to geerlingguy.java to install java [\#119](https://github.com/ferrarimarco/open-development-environment-devbox/issues/119)
+- Upgrade Packer to 1.2.1 [\#118](https://github.com/ferrarimarco/open-development-environment-devbox/issues/118)
+- Upgrade InSpec to 2.0.45 [\#117](https://github.com/ferrarimarco/open-development-environment-devbox/issues/117)
+- Upgrade Vagrant to 2.0.2 [\#116](https://github.com/ferrarimarco/open-development-environment-devbox/issues/116)
+- Upgrade Atom to 1.24.1 [\#115](https://github.com/ferrarimarco/open-development-environment-devbox/issues/115)
+- Remove Vagrantfile [\#114](https://github.com/ferrarimarco/open-development-environment-devbox/issues/114)
+- Upgrade to SQL Developer 17.4.1.054.0712 [\#113](https://github.com/ferrarimarco/open-development-environment-devbox/issues/113)
+- Increase disk size to 81920 [\#112](https://github.com/ferrarimarco/open-development-environment-devbox/issues/112)
+- Set locale to en\_US.UTF-8 [\#111](https://github.com/ferrarimarco/open-development-environment-devbox/issues/111)
+- Install pip3 [\#109](https://github.com/ferrarimarco/open-development-environment-devbox/issues/109)
+
+## [1.2.0](https://github.com/ferrarimarco/open-development-environment-devbox/tree/1.2.0) (2018-02-28)
 [Full Changelog](https://github.com/ferrarimarco/open-development-environment-devbox/compare/1.1.0...1.2.0)
 
 **Implemented enhancements:**
@@ -18,6 +35,10 @@
 - Upgrade ferrarimarco.xfce role to 1.1.0 [\#97](https://github.com/ferrarimarco/open-development-environment-devbox/issues/97)
 - Install pgAdmin4 [\#96](https://github.com/ferrarimarco/open-development-environment-devbox/issues/96)
 - Upgrade ferrarimarco.oracle-sql-developer to 1.2.0 [\#95](https://github.com/ferrarimarco/open-development-environment-devbox/issues/95)
+
+**Closed issues:**
+
+- Reduce the number of builders using interpolation [\#104](https://github.com/ferrarimarco/open-development-environment-devbox/issues/104)
 
 ## [1.1.0](https://github.com/ferrarimarco/open-development-environment-devbox/tree/1.1.0) (2018-01-05)
 [Full Changelog](https://github.com/ferrarimarco/open-development-environment-devbox/compare/1.0.1...1.1.0)
