@@ -3,6 +3,7 @@
     gather_facts: yes
     roles:
       - role: geerlingguy.java
+        ansible_distribution_version: "16.04"
         become: yes
         java_packages:
           - openjdk-8-jdk
