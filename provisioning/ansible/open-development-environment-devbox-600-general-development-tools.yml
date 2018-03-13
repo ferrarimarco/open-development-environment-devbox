@@ -2,14 +2,23 @@
   - hosts: all
     gather_facts: yes
     post_tasks:
-      - name: Ensure pip is installed
+      - name: Ensure pip and pip3 are installed
         become: yes
         package:
-          name: "python-pip"
+          name: "{{item}}"
           state: present
+        with_items:
+          - python-pip
+          - python3-pip
       - name: Upgrade pip before installing any other packages
         become: yes
         pip:
+          name: "pip"
+          version: "9.0.1"
+      - name: Upgrade pip3 before installing any other packages
+        become: yes
+        pip:
+          executable: pip3
           name: "pip"
           version: "9.0.1"
       - name: Install pip packages
