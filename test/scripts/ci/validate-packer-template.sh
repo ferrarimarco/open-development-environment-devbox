@@ -21,9 +21,9 @@ mktouch \
   ./builds/virtualbox-ovf/provision-cleanup/ubuntu-17.10.1-amd64/open-development-environment-devbox-build.ovf
 
 # Create a dummy archive to validate its path in the template
-mktouch ./provisioning/downloads/sqldeveloper-17.4.0.355.2349-no-jre.zip
+mktouch ./provisioning/downloads/sqldeveloper-17.4.1.054.0712-no-jre.zip
 
 VAGRANT_CLOUD_TOKEN=dummy_token make validate
 
 rm -rf ./builds
-rm ./provisioning/downloads/sqldeveloper-17.4.0.355.2349-no-jre.zip
+rm ./provisioning/downloads/sqldeveloper-17.4.1.054.0712-no-jre.zip
