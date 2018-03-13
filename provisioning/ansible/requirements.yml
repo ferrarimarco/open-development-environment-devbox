@@ -27,5 +27,5 @@
   version: 1.7.6
 - src: geerlingguy.ansible-role-packer
   version: 1.0.1
-- src: tersmitten.locales
-  version: v1.0.16
+- src: infOpen.locales
+  version: 0.3.0
