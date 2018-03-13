@@ -98,7 +98,7 @@
     "boot_command_prefix": "<esc><wait><esc><wait><enter><wait>",
     "box_basename": "ubuntu-17.10.1",
     "cpus": "4",
-    "disk_size": "40960",
+    "disk_size": "81920",
     "headless": "",
     "hostname": "vagrant",
     "install_vagrant_key": "true",
