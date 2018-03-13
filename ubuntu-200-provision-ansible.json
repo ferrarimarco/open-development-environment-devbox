@@ -71,7 +71,7 @@
     "source_path_substep": "",
     "ssh_password": "vagrant",
     "ssh_username": "vagrant",
-    "sql_developer_path": "provisioning/downloads/sqldeveloper-17.4.0.355.2349-no-jre.zip",
+    "sql_developer_path": "provisioning/downloads/sqldeveloper-17.4.1.054.0712-no-jre.zip",
     "template": "ubuntu-17.10.1-amd64",
     "vm_name": "open-development-environment-devbox-build"
   }
