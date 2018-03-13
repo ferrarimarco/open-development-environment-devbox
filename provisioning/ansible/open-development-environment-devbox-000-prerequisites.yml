@@ -16,7 +16,6 @@
           - ca-certificates
           - curl
           - gzip
-          - language-pack-en
           - tar
           - unzip
       - name: Ensure additional apt packages are installed
@@ -40,9 +39,16 @@
           - nethogs
           - subversion
     roles:
-      - role: stevenharradine.locale
-        locale_locales:
+      - role: tersmitten.locales
+        locales_present:
           - en_US.UTF-8
+        locales_language_packs_present:
+          - language-pack-en
+          - language-pack-en-base
+        locales_default:
+          lang: en_US.UTF-8
+          language: en_US.UTF-8
+          lc_all: en_US.UTF-8
       - role: ferrarimarco.nano
         become: yes
       - role: ferrarimarco.bash-aliases
