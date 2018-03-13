@@ -62,7 +62,7 @@
         ferrarimarco_oracle_sql_dev_archive_path: "/tmp/sqldeveloper-no-jre.zip"
       - role: chrisevett.inspec
         become: yes
-        inspecVersion: 1.48.0
+        inspecVersion: "2.0.45"
       - role: geerlingguy.ansible-role-packer
         become: yes
         packer_version: "1.1.3"
