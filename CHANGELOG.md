@@ -6,6 +6,7 @@
 
 **Implemented enhancements:**
 
+- Add a Vagrantfile that automatically mounts config from the host [\#122](https://github.com/ferrarimarco/open-development-environment-devbox/issues/122)
 - Remove JasperSoft Studio CE [\#121](https://github.com/ferrarimarco/open-development-environment-devbox/issues/121)
 - Use infOpen.locales to configure locales [\#120](https://github.com/ferrarimarco/open-development-environment-devbox/issues/120)
 - Switch to geerlingguy.java to install java [\#119](https://github.com/ferrarimarco/open-development-environment-devbox/issues/119)
