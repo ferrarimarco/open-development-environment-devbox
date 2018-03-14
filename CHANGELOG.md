@@ -1,11 +1,11 @@
 # Change Log
 
-## [Unreleased](https://github.com/ferrarimarco/open-development-environment-devbox/tree/HEAD)
-
-[Full Changelog](https://github.com/ferrarimarco/open-development-environment-devbox/compare/1.2.0...HEAD)
+## [1.3.0](https://github.com/ferrarimarco/open-development-environment-devbox/tree/1.3.0) (2018-03-14)
+[Full Changelog](https://github.com/ferrarimarco/open-development-environment-devbox/compare/1.2.0...1.3.0)
 
 **Implemented enhancements:**
 
+- Prepare Release 1.3.0 [\#123](https://github.com/ferrarimarco/open-development-environment-devbox/issues/123)
 - Add a Vagrantfile that automatically mounts config from the host [\#122](https://github.com/ferrarimarco/open-development-environment-devbox/issues/122)
 - Remove JasperSoft Studio CE [\#121](https://github.com/ferrarimarco/open-development-environment-devbox/issues/121)
 - Use infOpen.locales to configure locales [\#120](https://github.com/ferrarimarco/open-development-environment-devbox/issues/120)
@@ -18,6 +18,7 @@
 - Upgrade to SQL Developer 17.4.1.054.0712 [\#113](https://github.com/ferrarimarco/open-development-environment-devbox/issues/113)
 - Increase disk size to 81920 [\#112](https://github.com/ferrarimarco/open-development-environment-devbox/issues/112)
 - Set locale to en\_US.UTF-8 [\#111](https://github.com/ferrarimarco/open-development-environment-devbox/issues/111)
+- Build with VirtualBox 5.2.8 [\#110](https://github.com/ferrarimarco/open-development-environment-devbox/issues/110)
 - Install pip3 [\#109](https://github.com/ferrarimarco/open-development-environment-devbox/issues/109)
 
 ## [1.2.0](https://github.com/ferrarimarco/open-development-environment-devbox/tree/1.2.0) (2018-02-28)
