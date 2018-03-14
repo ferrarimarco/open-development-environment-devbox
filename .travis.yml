@@ -12,7 +12,6 @@ env:
   - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-update-disabled"
   - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-update-enabled"
   - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-sshd"
-  - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-networking"
   - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-vagrant"
   - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-cleanup"
   - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="ansible-playbook-000-prerequisites"

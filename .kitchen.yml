@@ -34,10 +34,6 @@ suites:
     provisioner:
       name: shell
       script: ./provisioning/scripts/sshd.sh
-  - name: script-networking
-    provisioner:
-      name: shell
-      script: ./provisioning/scripts/networking.sh
   - name: script-vagrant
     provisioner:
       name: shell
