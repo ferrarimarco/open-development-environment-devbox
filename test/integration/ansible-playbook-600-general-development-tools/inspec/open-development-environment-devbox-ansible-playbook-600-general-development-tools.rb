@@ -4,7 +4,8 @@ control "open-development-environment-devbox-ansible-playbook-600-general-develo
 
 
   packages = [
-    'python-pip'
+    'python-pip',
+    'python3-pip'
   ]
 
   packages.each do |item|
