@@ -6,6 +6,7 @@
 
 **Implemented enhancements:**
 
+- Remove JasperSoft Studio CE [\#121](https://github.com/ferrarimarco/open-development-environment-devbox/issues/121)
 - Use infOpen.locales to configure locales [\#120](https://github.com/ferrarimarco/open-development-environment-devbox/issues/120)
 - Switch to geerlingguy.java to install java [\#119](https://github.com/ferrarimarco/open-development-environment-devbox/issues/119)
 - Upgrade Packer to 1.2.1 [\#118](https://github.com/ferrarimarco/open-development-environment-devbox/issues/118)
