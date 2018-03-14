@@ -3,7 +3,7 @@
 ubuntu_version="`lsb_release -r | awk '{print $2}'`";
 
 if [ "$ubuntu_version" = '17.10' ]; then
-echo "Create netplan config for eth0"
+echo "==> Create netplan config for eth0"
 cat <<EOF >/etc/netplan/01-netcfg.yaml;
 network:
   version: 2
@@ -13,6 +13,7 @@ network:
 EOF
 else
   # Set up eth0 for pre-17.10
+  echo "==> Create /etc/network/interfaces.d config for eth0"
   echo "auto eth0\niface eth0 inet dhcp" >> /etc/network/interfaces.d/eth0.cfg
   echo "==> Add delay to prevent vagrant reload from failing"
   echo "pre-up sleep 2" >>/etc/network/interfaces;
