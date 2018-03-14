@@ -116,11 +116,7 @@ If you have suggestions, please create a new GitHub issue or pull request.
 - See [`Gemfile`](Gemfile)
 
 ### Setup
-1. Install the necessary tools: [`test/scripts/ci/before-install.sh`](test/scripts/ci/before-install.sh)
-1. Install required gems from inside the root of the project: [`test/scripts/ci/install.sh`](test/scripts/ci/install.sh)
-1. Run tests: [`test/scripts/ci/script.sh`](test/scripts/ci/test-role.sh)
-
-Note that after installing the required gems you can run other Test-kitchen commands besides the ones listed in [`test/scripts/ci/script.sh`](test/scripts/ci/script.sh).
+Ssee [`.travis.yml`](.travis.yml)
 
 ### Manual Downloads
 
