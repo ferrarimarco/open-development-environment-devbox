@@ -3,10 +3,6 @@
 echo "==> Setting DEBIAN_FRONTEND"
 export DEBIAN_FRONTEND=noninteractive
 
-echo "==> Checking version of Ubuntu"
-ubuntu_version="`lsb_release -r | awk '{print $2}'`";
-ubuntu_major_version="`echo $ubuntu_version | awk -F. '{print $1}'`";
-
 # Disable release-upgrades
 echo "==> Disabling the release upgrader"
 release_upgrades_directory_path="/etc/update-manager"
@@ -42,7 +38,7 @@ EOF
 UPDATE=${UPDATE:-false}
 
 # Upgrade all installed packages incl. kernel and kernel headers
-if [ $UPDATE  = "true" ] || [ $UPDATE = 1 ] || [ $UPDATE = "yes" ]; then
+if [ "$UPDATE"  = "true" ] || [ "$UPDATE" = 1 ] || [ "$UPDATE" = "yes" ]; then
     echo "==> Performing dist-upgrade (all packages and kernel)"
     apt-get -y dist-upgrade -o Dpkg::Options::="--force-confnew";
 fi

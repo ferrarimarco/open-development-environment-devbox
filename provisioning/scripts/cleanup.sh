@@ -1,6 +1,6 @@
 #!/bin/sh -eu
 
-SSH_USER=${SSH_USERNAME:-vagrant}
+SSH_USER="${SSH_USERNAME:-vagrant}"
 DISK_USAGE_BEFORE_CLEANUP=$(df -h)
 
 # Make sure udev does not block our network - http://6.ptmc.org/?p=164
@@ -26,7 +26,7 @@ echo "==> Remove specific Linux kernels"
 dpkg --list \
     | awk '{ print $2 }' \
     | grep 'linux-image-.*-generic' \
-    | grep -v `uname -r` \
+    | grep -v "$(uname -r)" \
     | xargs apt-get -y purge;
 
 echo "==> Delete Linux source"
@@ -39,7 +39,7 @@ dpkg --list \
 echo "==> Delete unneeded packages"
 apt-get update;
 packages_to_remove="popularity-contest installation-report command-not-found command-not-found-data friendly-recovery landscape-common wireless-tools wpasupplicant";
-apt-get -y purge $packages_to_remove;
+apt-get -y purge "$packages_to_remove";
 
 # Exclude the files we don't need w/o uninstalling linux-firmware
 echo "==> Setup dpkg excludes for linux-firmware"
@@ -61,31 +61,31 @@ echo "==> Installed packages"
 dpkg --get-selections | grep -v deinstall
 
 echo "==> Removing APT files"
-find /var/lib/apt -type f | xargs rm -f
+find /var/lib/apt -type f -print0 | xargs -0 rm -f
 
 echo "==> Removing caches"
 find /var/cache -type f -exec rm -rf {} \;
 
 echo "==> Removing any logs that have built up during the install"
-find /var/log -type f | while read f; do echo -ne '' > "${f}"; done;
+find /var/log -type f | while read -r f; do truncate -s 0 "${f}"; done;
 
 echo "==> Clearing last login information"
->/var/log/lastlog
->/var/log/wtmp
->/var/log/btmp
+truncate -s 0 /var/log/lastlog
+truncate -s 0 /var/log/wtmp
+truncate -s 0 /var/log/btmp
 
-if [ $ZEROING  = "true" ] || [ $ZEROING = 1 ] || [ $ZEROING = "yes" ]; then
+if [ "$ZEROING"  = "true" ] || [ "$ZEROING" = 1 ] || [ "$ZEROING" = "yes" ]; then
 
   echo "==> Zeroing root"
   count=$(df --sync -kP / | tail -n1  | awk -F ' ' '{print $4}')
-  count=$(($count-1))
-  dd if=/dev/zero of=/root/whitespace bs=1024 count=$count
+  count=$(("$count"-1))
+  dd if=/dev/zero of=/root/whitespace bs=1024 count="$count"
   rm /root/whitespace
 
   echo "==> Zeroing boot"
   count=$(df --sync -kP /boot | tail -n1 | awk -F ' ' '{print $4}')
-  count=$(($count-1))
-  dd if=/dev/zero of=/boot/whitespace bs=1024 count=$count
+  count=$(("$count"-1))
+  dd if=/dev/zero of=/boot/whitespace bs=1024 count="$count"
   rm /boot/whitespace
 
   echo "==> Cleaning up tmp"
@@ -93,7 +93,7 @@ if [ $ZEROING  = "true" ] || [ $ZEROING = 1 ] || [ $ZEROING = "yes" ]; then
 
   echo "==> Zeroing tmp"
   count=$(df --sync -kP / | tail -n1  | awk -F ' ' '{print $4}')
-  count=$(($count-1))
+  count=$((count-1))
   dd if=/dev/zero of=/tmp/whitespace bs=1024 count=$count
   rm /tmp/whitespace
 
@@ -108,7 +108,7 @@ if [ $ZEROING  = "true" ] || [ $ZEROING = 1 ] || [ $ZEROING = "yes" ]; then
   if [ "x${swapuuid}" != "x" ]; then
       # Whiteout the swap partition to reduce box size
       # Swap is disabled till reboot
-      swappart=$(readlink -f /dev/disk/by-uuid/$swapuuid)
+      swappart=$(readlink -f /dev/disk/by-uuid/"$swapuuid")
       /sbin/swapoff "${swappart}"
       dd if=/dev/zero of="${swappart}" bs=1M || echo "dd exit code $? is suppressed"
       /sbin/mkswap -U "${swapuuid}" "${swappart}"
@@ -123,7 +123,7 @@ fi
 echo "==> Removing Bash history"
 unset HISTFILE
 rm -f /root/.bash_history
-rm -f /home/${SSH_USER}/.bash_history
+rm -f /home/"$SSH_USER"/.bash_history
 
 # Make sure we wait until all the data is written to disk, otherwise
 # Packer might quite too early before the large files are deleted
