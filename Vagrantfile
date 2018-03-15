@@ -1,6 +1,5 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "ferrarimarco/open-development-environment-devbox"
-  config.vm.network "private_network", type: "dhcp"
 
   config.vm.synced_folder File.join(Dir.home, ".ssh"), "/home/vagrant/.ssh", mount_options: ["fmode=400"]
 
