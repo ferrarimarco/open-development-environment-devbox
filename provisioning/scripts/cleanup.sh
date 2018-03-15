@@ -38,8 +38,7 @@ dpkg --list \
 # Delete oddities
 echo "==> Delete unneeded packages"
 apt-get update;
-packages_to_remove="popularity-contest installation-report command-not-found command-not-found-data friendly-recovery landscape-common wireless-tools wpasupplicant";
-apt-get -y purge "$packages_to_remove";
+apt-get -y purge popularity-contest installation-report command-not-found command-not-found-data friendly-recovery landscape-common wireless-tools wpasupplicant;
 
 # Exclude the files we don't need w/o uninstalling linux-firmware
 echo "==> Setup dpkg excludes for linux-firmware"
