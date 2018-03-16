@@ -27,7 +27,7 @@ There is a `vagrant` user already configured, password: `vagrant`
 ## What's inside the box
 This "development box" is based on Ubuntu with an XFCE Desktop environment and includes the following tools, ready to be used:
 - [Ansible](https://www.ansible.com/)
-- [Atom editor](https://atom.io/), along with the plugins listed in the [playbook](provisioning/ansible/open-development-environment-devbox.yml)
+- [Atom editor](https://atom.io/), along with the plugins listed in the [playbook](provisioning/ansible/open-development-environment-devbox-600-general-development-tools.yml)
 - [bmon](https://github.com/tgraf/bmon)
 - [Chromium](https://www.chromium.org/)
 - [cookiecutter](https://github.com/audreyr/cookiecutter)
