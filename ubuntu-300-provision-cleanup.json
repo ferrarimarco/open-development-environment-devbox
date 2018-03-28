@@ -61,7 +61,7 @@
     "name": "ubuntu-17.10.1",
     "ssh_password": "vagrant",
     "ssh_username": "vagrant",
-    "template": "ubuntu-17.10.1-amd64",
+    "template": "ubuntu-17.10-amd64",
     "vm_name": "open-development-environment-devbox-build",
     "zeroing": "true"
   }

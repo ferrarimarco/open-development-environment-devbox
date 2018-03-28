@@ -9,11 +9,6 @@ services:
 
 # matrix has to be populated by hand for now (https://github.com/travis-ci/travis-ci/issues/1519)
 env:
-  - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-update-disabled"
-  - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-update-enabled"
-  - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-sshd"
-  - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-vagrant"
-  - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="script-cleanup"
   - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="ansible-playbook-000-prerequisites"
   - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="ansible-playbook-100-desktop"
   - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="ansible-playbook-200-docker"

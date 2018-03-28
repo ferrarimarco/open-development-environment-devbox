@@ -12,36 +12,6 @@ platforms:
   - name: ubuntu-17.10
 
 suites:
-  - name: script-update-disabled
-    provisioner:
-      name: shell
-      script: ./provisioning/scripts/update.sh
-    verifier:
-      inspec_tests:
-        - path: test/integration/script-update/inspec
-      controls:
-        - open-development-environment-devbox-update
-  - name: script-update-enabled
-    provisioner:
-      name: shell
-      script: ./test/scripts/test-kitchen/script-update-enabled.sh
-    verifier:
-      inspec_tests:
-        - path: test/integration/script-update/inspec
-      controls:
-        - open-development-environment-devbox-update
-  - name: script-sshd
-    provisioner:
-      name: shell
-      script: ./provisioning/scripts/sshd.sh
-  - name: script-vagrant
-    provisioner:
-      name: shell
-      script: ./test/scripts/test-kitchen/script-vagrant-enabled.sh
-  - name: script-cleanup
-    provisioner:
-      name: shell
-      script: ./test/scripts/test-kitchen/script-cleanup-zeroing-disabled.sh
   - name: ansible-playbook-000-prerequisites
     provisioner:
       ansible_connection: local

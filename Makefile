@@ -1,7 +1,6 @@
 all: validate clean build install upload clean clean-all
 
 validate:
-	packer validate ubuntu-000-os-install.json
 	packer validate ubuntu-100-provision-install-ansible.json
 	packer validate -var 'ansible_playbook_suffix=000-prerequisites' -var 'source_path_step=provision-install-ansible' ubuntu-200-provision-ansible.json
 	packer validate -var 'ansible_playbook_suffix=100-desktop' -var 'source_path_step=provision-ansible' -var 'source_path_substep=000-prerequisites' ubuntu-200-provision-ansible.json
@@ -15,7 +14,7 @@ validate:
 	packer validate ubuntu-500-vagrant-cloud-upload.json
 
 build:
-	packer build ubuntu-000-os-install.json
+	ubuntu-000-os-install.sh
 	packer build ubuntu-100-provision-install-ansible.json
 	packer build -var 'ansible_playbook_suffix=000-prerequisites' -var 'source_path_step=provision-install-ansible' ubuntu-200-provision-ansible.json
 	packer build -var 'ansible_playbook_suffix=100-desktop' -var 'source_path_substep=000-prerequisites' ubuntu-200-provision-ansible.json

@@ -5,6 +5,7 @@
 
 **Implemented enhancements:**
 
+- Use bento/ubuntu-17.10 as a source [\#126](https://github.com/ferrarimarco/open-development-environment-devbox/issues/126)
 - Do not check for apt updates on startup [\#125](https://github.com/ferrarimarco/open-development-environment-devbox/issues/125)
 - Point changelog-generator to ferrarimarco/github-changelog-generator [\#124](https://github.com/ferrarimarco/open-development-environment-devbox/issues/124)
 - Prepare Release 1.3.0 [\#123](https://github.com/ferrarimarco/open-development-environment-devbox/issues/123)
