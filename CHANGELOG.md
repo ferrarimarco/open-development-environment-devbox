@@ -5,6 +5,7 @@
 
 **Implemented enhancements:**
 
+- Do not check for apt updates on startup [\#125](https://github.com/ferrarimarco/open-development-environment-devbox/issues/125)
 - Point changelog-generator to ferrarimarco/github-changelog-generator [\#124](https://github.com/ferrarimarco/open-development-environment-devbox/issues/124)
 - Prepare Release 1.3.0 [\#123](https://github.com/ferrarimarco/open-development-environment-devbox/issues/123)
 - Add a Vagrantfile that automatically mounts config from the host [\#122](https://github.com/ferrarimarco/open-development-environment-devbox/issues/122)

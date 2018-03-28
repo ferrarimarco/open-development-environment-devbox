@@ -22,16 +22,6 @@ fi
 echo "==> Updating list of repositories"
 apt-get -y update;
 
-# update package index on boot
-echo "==> Update package index on boot"
-mkdir -p /etc/init;
-cat <<EOF >/etc/init/refresh-apt.conf;
-description "update package index"
-start on networking
-task
-exec /usr/bin/apt-get update
-EOF
-
 # Disable systemd apt timers/services
 if [ "$major_version" -ge "16" ]; then
   systemctl stop apt-daily.timer;
