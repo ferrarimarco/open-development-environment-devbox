@@ -1,8 +1,9 @@
 #!/bin/sh -eux
 
 ubuntu_version="$(lsb_release -r | awk '{print $2}')";
+major_version="$(echo "$ubuntu_version" | awk -F. '{print $1}')";
 
-if [ "$ubuntu_version" = '17.10' ]; then
+if [ "$ubuntu_version" = '17.10' ] || [ "$major_version" -ge "18" ]; then
 echo "==> Create netplan config for eth0"
 cat <<EOF >/etc/netplan/01-netcfg.yaml;
 network:
@@ -12,13 +13,13 @@ network:
       dhcp4: true
 EOF
 else
-  # Set up eth0 for pre-17.10
-  echo "==> Create /etc/network/interfaces.d config for eth0"
-  printf "auto eth0\\niface eth0 inet dhcp" >> /etc/network/interfaces.d/eth0.cfg
   echo "==> Add delay to prevent vagrant reload from failing"
-  echo "pre-up sleep 2" >>/etc/network/interfaces;
+  echo "pre-up sleep 2" >> /etc/network/interfaces;
 fi
 
-echo "==> Disable systemd Predictable Network Interface Names"
-sed -ie 's/GRUB_CMDLINE_LINUX="\(.*\)"/GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0 \1"/g' /etc/default/grub
-update-grub
+if [ "$major_version" -ge "16" ]; then
+  # Disable Predictable Network Interface names and use eth0
+  sed -i 's/en[[:alnum:]]*/eth0/g' /etc/network/interfaces;
+  sed -ie 's/GRUB_CMDLINE_LINUX="\(.*\)"/GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0 \1"/g' /etc/default/grub;
+  update-grub;
+fi
