@@ -9,9 +9,8 @@ validate:
 	packer validate -var 'ansible_playbook_suffix=400-ruby' -var 'source_path_substep=300-java' ubuntu-200-provision-ansible.json
 	packer validate -var 'ansible_playbook_suffix=500-virtualization' -var 'source_path_substep=400-ruby' ubuntu-200-provision-ansible.json
 	packer validate -var 'ansible_playbook_suffix=600-general-development-tools' -var 'source_path_substep=500-virtualization' ubuntu-200-provision-ansible.json
-	packer validate ubuntu-300-provision-cleanup.json
-	packer validate ubuntu-400-vagrant-box.json
-	packer validate ubuntu-500-vagrant-cloud-upload.json
+	packer validate ubuntu-300-vagrant-box.json
+	packer validate ubuntu-400-vagrant-cloud-upload.json
 
 build:
 	ubuntu-000-os-install.sh
@@ -23,7 +22,6 @@ build:
 	packer build -var 'ansible_playbook_suffix=400-ruby' -var 'source_path_substep=300-java' ubuntu-200-provision-ansible.json
 	packer build -var 'ansible_playbook_suffix=500-virtualization' -var 'source_path_substep=400-ruby' ubuntu-200-provision-ansible.json
 	packer build -var 'ansible_playbook_suffix=600-general-development-tools' -var 'source_path_substep=500-virtualization' ubuntu-200-provision-ansible.json
-	packer build ubuntu-300-provision-cleanup.json
 	packer build ubuntu-400-vagrant-box.json
 
 clean:
@@ -33,9 +31,9 @@ clean-all: clean
 	rm -rf packer_cache
 
 install:
-	vagrant box add ferrarimarco/open-development-environment-devbox ./builds/vagrant/ubuntu-17.10.1-amd64.virtualbox.box --force || true
+	vagrant box add ferrarimarco/open-development-environment-devbox ./builds/vagrant/ubuntu-17.10-amd64.virtualbox.box --force || true
 	vagrant box list | grep ferrarimarco/open-development-environment-devbox
 
 upload:
-	packer build ubuntu-500-vagrant-cloud-upload.json
+	packer build ubuntu-400-vagrant-cloud-upload.json
 	@echo Box has been uploaded. Run make clean-all to reclaim disk space.
