@@ -48,6 +48,21 @@
       }
     ]
   ],
+  "provisioners": [
+    {
+      "environment_vars": [
+        "SSH_USERNAME={{user `ssh_username`}}",
+        "SSH_PASSWORD={{user `ssh_password`}}",
+        "HOME_DIR=/home/$SSH_USERNAME",
+        "ZEROING={{user `zeroing`}}"
+      ],
+      "execute_command": "echo '{{ user `ssh_password` }}' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
+      "scripts": [
+        "provisioning/scripts/cleanup.sh"
+      ],
+      "type": "shell"
+    }
+  ],
   "variables": {
     "cpus": "4",
     "disk_size": "40960",
@@ -57,6 +72,7 @@
     "ssh_password": "vagrant",
     "ssh_username": "vagrant",
     "template": "ubuntu-17.10-amd64",
-    "vm_name": "open-development-environment-devbox-build"
+    "vm_name": "open-development-environment-devbox-build",
+    "zeroing": "true"
   }
 }
