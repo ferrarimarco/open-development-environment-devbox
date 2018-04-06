@@ -22,7 +22,7 @@ build:
 	packer build -var 'ansible_playbook_suffix=400-ruby' -var 'source_path_substep=300-java' ubuntu-200-provision-ansible.json
 	packer build -var 'ansible_playbook_suffix=500-virtualization' -var 'source_path_substep=400-ruby' ubuntu-200-provision-ansible.json
 	packer build -var 'ansible_playbook_suffix=600-general-development-tools' -var 'source_path_substep=500-virtualization' ubuntu-200-provision-ansible.json
-	packer build ubuntu-400-vagrant-box.json
+	packer build ubuntu-300-vagrant-box.json
 
 clean:
 	rm -rf builds
