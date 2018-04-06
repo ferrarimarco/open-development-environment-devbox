@@ -11,8 +11,8 @@ For a list of changes, have a look at the [changelog](CHANGELOG.md)
 
 ## Dependencies
 These are the dependencies required to run the box:
-- Vagrant 2.0.2+
-- Virtualbox 5.2.6+
+- Vagrant 2.0.3+
+- Virtualbox 5.2.8+
 
 ## How to Run
 To use the box:
@@ -100,7 +100,7 @@ If you have suggestions, please create a new GitHub issue or pull request.
 ### Dependencies
 - runtime dependencies listed above
 - GNU Make 4.1+
-- Packer 1.2.0+
+- Packer 1.2.1+
 
 ### Build
 1. Install the dependencies
