@@ -48,7 +48,7 @@ This "development box" is based on Ubuntu with an XFCE Desktop environment and i
 - [Libreoffice](https://www.libreoffice.org/) Calc
 - [Liquibase](https://github.com/ferrarimarco/docker-liquibase)
 - [Maven 3](https://maven.apache.org/)
-- [Nano](https://maven.apache.org/)
+- [Nano](https://www.nano-editor.org/)
 - [Nethogs](https://github.com/raboof/nethogs)
 - [Oracle SQL Developer](http://www.oracle.com/technetwork/developer-tools/sql-developer): see note below
 - [pgAdmin4](https://www.pgadmin.org)
