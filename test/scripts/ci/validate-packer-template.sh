@@ -18,7 +18,7 @@ mktouch \
   ./builds/virtualbox-ovf/provision-ansible/400-ruby/ubuntu-17.10-amd64/open-development-environment-devbox-build.ovf \
   ./builds/virtualbox-ovf/provision-ansible/500-virtualization/ubuntu-17.10-amd64/open-development-environment-devbox-build.ovf \
   ./builds/virtualbox-ovf/provision-ansible/600-general-development-tools/ubuntu-17.10-amd64/open-development-environment-devbox-build.ovf \
-  ./builds/virtualbox-ovf/provision-cleanup/ubuntu-17.10-amd64/open-development-environment-devbox-build.ovf
+  ./builds/virtualbox-ovf/upgrade/ubuntu-17.10-amd64/open-development-environment-devbox-build.ovf
 
 # Create a dummy archive to validate its path in the template
 mktouch ./provisioning/downloads/sqldeveloper-17.4.1.054.0712-no-jre.zip

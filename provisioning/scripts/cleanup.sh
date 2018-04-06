@@ -16,19 +16,24 @@ if [ -d "/var/lib/dhcp" ]; then
     rm -f /var/lib/dhcp/*
 fi
 
-echo "==> Delete all Linux headers"
+echo "==> Current kernel version: $(uname -r)"
+
+echo "==> Delete all Linux headers except the running kernel ones"
 dpkg --list \
   | awk '{ print $2 }' \
-  | grep 'linux-headers' \
+  | grep 'linux-headers-.*-generic' \
+  | grep -v "linux-headers-generic" \
+  | grep -v "$(uname -r)" \
   | xargs apt-get -y purge;
 
 # Remove specific Linux kernels, such as linux-image-3.11.0-15-generic but
 # keeps the current kernel and does not touch the virtual packages,
 # e.g. 'linux-image-generic', etc.
-echo "==> Remove specific Linux kernels"
+echo "==> Remove old Linux kernels"
 dpkg --list \
     | awk '{ print $2 }' \
     | grep 'linux-image-.*-generic' \
+    | grep -v "linux-image-generic" \
     | grep -v "$(uname -r)" \
     | xargs apt-get -y purge;
 

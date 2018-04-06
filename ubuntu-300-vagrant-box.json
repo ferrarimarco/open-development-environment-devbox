@@ -1,5 +1,4 @@
 {
-  "_comment": "Build with `packer build ubuntu.json`",
   "builders": [
     {
       "boot_wait": "10s",
@@ -9,7 +8,7 @@
       "output_directory": "builds/{{build_type}}/{{build_name}}/{{user `template`}}",
       "post_shutdown_delay": "1m",
       "shutdown_command": "echo '{{ user `ssh_password` }}'|sudo -S shutdown -P now",
-      "source_path": "builds/virtualbox-ovf/provision-ansible/600-general-development-tools/{{user `template`}}/{{user `vm_name`}}.ovf",
+      "source_path": "builds/virtualbox-ovf/upgrade/{{user `template`}}/{{user `vm_name`}}.ovf",
       "ssh_password": "{{ user `ssh_password` }}",
       "ssh_port": 22,
       "ssh_username": "{{ user `ssh_username` }}",

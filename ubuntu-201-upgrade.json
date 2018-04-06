@@ -2,13 +2,13 @@
   "builders": [
     {
       "boot_wait": "10s",
-      "guest_additions_mode": "disable",
+      "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "headless": "{{ user `headless` }}",
-      "name": "vagrant-cloud-upload",
+      "name": "upgrade",
       "output_directory": "builds/{{build_type}}/{{build_name}}/{{user `template`}}",
       "post_shutdown_delay": "1m",
       "shutdown_command": "echo '{{ user `ssh_password` }}'|sudo -S shutdown -P now",
-      "source_path": "builds/virtualbox-ovf/upgrade/{{user `template`}}/{{user `vm_name`}}.ovf",
+      "source_path": "builds/virtualbox-ovf/provision-ansible/600-general-development-tools/{{user `template`}}/{{user `vm_name`}}.ovf",
       "ssh_password": "{{ user `ssh_password` }}",
       "ssh_port": 22,
       "ssh_username": "{{ user `ssh_username` }}",
@@ -37,34 +37,15 @@
       "vm_name": "{{ user `vm_name` }}"
     }
   ],
-  "post-processors": [
-    [
-      {
-        "keep_input_artifact": true,
-        "only": ["vagrant-cloud-upload"],
-        "output": "builds/vagrant-cloud/{{user `template`}}.{{.Provider}}.box",
-        "type": "vagrant"
-      },
-      {
-        "box_tag": "ferrarimarco/open-development-environment-devbox",
-        "only": ["vagrant-cloud-upload"],
-        "type": "vagrant-cloud",
-        "version": "{{user `version`}}",
-        "version_description": "[ferrarimarco/open-development-environment-devbox](https://github.com/ferrarimarco/open-development-environment-devbox)"
-      }
-    ]
-  ],
   "provisioners": [
     {
       "environment_vars": [
-        "SSH_USERNAME={{user `ssh_username`}}",
-        "SSH_PASSWORD={{user `ssh_password`}}",
-        "HOME_DIR=/home/$SSH_USERNAME",
-        "ZEROING={{user `zeroing`}}"
+        "HOME_DIR=/home/vagrant"
       ],
       "execute_command": "echo '{{ user `ssh_password` }}' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
       "scripts": [
-        "provisioning/scripts/cleanup.sh"
+        "provisioning/scripts/guest-additions.sh",
+        "provisioning/scripts/upgrade.sh"
       ],
       "type": "shell"
     }
@@ -78,8 +59,6 @@
     "ssh_password": "vagrant",
     "ssh_username": "vagrant",
     "template": "ubuntu-17.10-amd64",
-    "version": "1.3.0",
-    "vm_name": "open-development-environment-devbox-build",
-    "zeroing": "true"
+    "vm_name": "open-development-environment-devbox-build"
   }
 }

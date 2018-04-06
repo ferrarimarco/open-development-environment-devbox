@@ -1,5 +1,4 @@
 {
-  "_comment": "Build with `packer build ubuntu.json`",
   "builders": [
     {
       "boot_wait": "10s",
