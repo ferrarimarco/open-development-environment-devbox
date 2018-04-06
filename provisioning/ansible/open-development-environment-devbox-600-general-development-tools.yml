@@ -58,7 +58,7 @@
               - minimap
               - pigments
               - sort-lines
-        ferrarimarco_atom_atom_version: 1.24.1
+        ferrarimarco_atom_atom_version: "1.25.0"
       - role: ferrarimarco.vagrant
         become: yes
         vagrant_download_url: "https://releases.hashicorp.com/vagrant/2.0.2/vagrant_2.0.2_x86_64.deb"
