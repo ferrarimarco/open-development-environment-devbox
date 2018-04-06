@@ -5,6 +5,7 @@
 
 **Implemented enhancements:**
 
+- Upgrade Tooling (Virtualbox 5.2.8, Vagrant 2.0.3, Packer 1.2.1) [\#130](https://github.com/ferrarimarco/open-development-environment-devbox/issues/130)
 - Upgrade InSpec to 2.1.21 [\#129](https://github.com/ferrarimarco/open-development-environment-devbox/issues/129)
 - Upgrade Vagrant to 2.0.3 [\#128](https://github.com/ferrarimarco/open-development-environment-devbox/issues/128)
 - Upgrade Atom to 1.25.0 [\#127](https://github.com/ferrarimarco/open-development-environment-devbox/issues/127)
