@@ -5,6 +5,7 @@
 
 **Implemented enhancements:**
 
+- Upgrade InSpec to 2.1.21 [\#129](https://github.com/ferrarimarco/open-development-environment-devbox/issues/129)
 - Upgrade Vagrant to 2.0.3 [\#128](https://github.com/ferrarimarco/open-development-environment-devbox/issues/128)
 - Upgrade Atom to 1.25.0 [\#127](https://github.com/ferrarimarco/open-development-environment-devbox/issues/127)
 - Use bento/ubuntu-17.10 as a source [\#126](https://github.com/ferrarimarco/open-development-environment-devbox/issues/126)
