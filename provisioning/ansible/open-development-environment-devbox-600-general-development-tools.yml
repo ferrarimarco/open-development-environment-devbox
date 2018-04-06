@@ -15,12 +15,6 @@
         pip:
           name: "pip"
           version: "9.0.1"
-      - name: Upgrade pip3 before installing any other packages
-        become: yes
-        pip:
-          executable: pip3
-          name: "pip"
-          version: "9.0.1"
       - name: Install pip packages
         become: yes
         pip:
