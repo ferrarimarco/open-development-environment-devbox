@@ -1,6 +1,6 @@
 # Change Log
 
-## [1.3.0](https://github.com/ferrarimarco/open-development-environment-devbox/tree/1.3.0) (2018-03-14)
+## [1.3.0](https://github.com/ferrarimarco/open-development-environment-devbox/tree/1.3.0) (2018-04-11)
 [Full Changelog](https://github.com/ferrarimarco/open-development-environment-devbox/compare/1.2.0...1.3.0)
 
 **Implemented enhancements:**
