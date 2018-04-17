@@ -4,3 +4,4 @@
     roles:
       - role: ferrarimarco.virtualbox
         become: yes
+        virtualbox_apt_package: "virtualbox-5.2"
