@@ -58,8 +58,6 @@ This "development box" is based on Ubuntu with an XFCE Desktop environment and i
 - [Ruby](https://www.ruby-lang.org) (with [ruby-install](https://github.com/postmodern/ruby-install) and [chruby](https://github.com/postmodern/chruby))
 - [Shellcheck](https://github.com/koalaman/shellcheck)
 - [Subversion](https://subversion.apache.org/)
-- [Vagrant](https://www.vagrantup.com/)
-- [Virtualbox](https://www.virtualbox.org/)
 
 ### Bash aliases
 The following aliases are automatically set up during the provisioning process:
