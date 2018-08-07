@@ -21,8 +21,7 @@ build:
 	packer build -var 'ansible_playbook_suffix=200-docker' -var 'source_path_substep=100-desktop' ubuntu-200-provision-ansible.json
 	packer build -var 'ansible_playbook_suffix=300-java' -var 'source_path_substep=200-docker' ubuntu-200-provision-ansible.json
 	packer build -var 'ansible_playbook_suffix=400-ruby' -var 'source_path_substep=300-java' ubuntu-200-provision-ansible.json
-	packer build -var 'ansible_playbook_suffix=500-virtualization' -var 'source_path_substep=400-ruby' ubuntu-200-provision-ansible.json
-	packer build -var 'ansible_playbook_suffix=600-general-development-tools' -var 'source_path_substep=500-virtualization' ubuntu-200-provision-ansible.json
+	packer build -var 'ansible_playbook_suffix=500-general-development-tools' -var 'source_path_substep=400-ruby' ubuntu-200-provision-ansible.json
 	packer build ubuntu-201-upgrade.json
 	packer build ubuntu-300-vagrant-box.json
 
