@@ -1,27 +1,9 @@
 ---
-- src: chrisevett.inspec
-  version: master
-- src: ferrarimarco.atom
-  version: 1.2.2
 - src: ferrarimarco.bash-aliases
   version: 1.0.2
-- src: ferrarimarco.docker
-  version: 1.4.1
-- src: ferrarimarco.eclipse
-  version: 1.2.0
-- src: ferrarimarco.tomcat
-  version: 1.0.1
 - src: ferrarimarco.nano
-  version: 1.0.3
-- src: ferrarimarco.oracle-sql-developer
-  version: 1.2.0
-- src: ferrarimarco.ruby
   version: 1.0.3
 - src: ferrarimarco.xfce
   version: 1.1.0
-- src: geerlingguy.java
-  version: 1.7.6
-- src: geerlingguy.ansible-role-packer
-  version: 1.0.1
 - src: infOpen.locales
   version: 0.3.0

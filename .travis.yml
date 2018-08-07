@@ -7,35 +7,10 @@ sudo: required
 services:
   - docker
 
-# matrix has to be populated by hand for now (https://github.com/travis-ci/travis-ci/issues/1519)
-env:
-  - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="ansible-playbook-000-prerequisites"
-  - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="ansible-playbook-100-desktop"
-  - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="ansible-playbook-200-docker"
-  - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="ansible-playbook-300-java"
-  - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="ansible-playbook-400-ruby"
-  - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="ansible-playbook-500-virtualization"
-  - KITCHEN_PLATFORM="ubuntu-1710" KITCHEN_SCRIPT="ansible-playbook-600-general-development-tools"
-
-before_install: gem install bundle
-install: bundle install
-script: kitchen test "$KITCHEN_SCRIPT-$KITCHEN_PLATFORM"
-
 jobs:
   include:
     - stage: lint shell scripts
       script: find . -type f -iname "*.sh" | while read -r line; do echo "Linting $line"; docker run -v "$(pwd)":/mnt --rm koalaman/shellcheck:v0.4.7 "$line"; done
-    - stage: validate packer template
-      before_install: chmod a+x test/scripts/ci/install-packer.sh && sudo test/scripts/ci/install-packer.sh
-      script: chmod a+x test/scripts/ci/validate-packer-template.sh && test/scripts/ci/validate-packer-template.sh
-      env:
-        - PACKER_VERSION="1.2.1"
-    - stage: validate ansible role installation
-      before_install: chmod a+x provisioning/scripts/install_ansible.sh && sudo provisioning/scripts/install_ansible.sh
-      script: chmod a+x test/scripts/ci/install-ansible-roles.sh && test/scripts/ci/install-ansible-roles.sh
 
 stages:
   - lint shell scripts
-  - validate packer template
-  - validate ansible role installation
-  - test
