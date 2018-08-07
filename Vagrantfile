@@ -37,4 +37,11 @@ Vagrant.configure("2") do |config|
     # Display the VirtualBox GUI
     v.gui = true
   end
+
+  host.vm.provision "shell" do |s|
+    s.path = "scripts/install-docker.sh"
+    s.args = [
+      "--user", "vagrant"
+      ]
+  end
 end
