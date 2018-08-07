@@ -92,30 +92,3 @@ end
 
 ## Contributions
 If you have suggestions, please create a new GitHub issue or pull request.
-
-## Manual Build
-
-### Dependencies
-- runtime dependencies listed above
-- GNU Make 4.1+
-- Packer 1.2.1+
-
-### Build
-1. Install the dependencies
-1. Clone the repository
-1. Run `make`
-
-## Testing
-
-### Dependencies
-- Bundler 1.13.0+
-- Ruby 2.3.0+
-- Docker 1.12.0+
-- See [`Gemfile`](Gemfile)
-
-### Setup
-Ssee [`.travis.yml`](.travis.yml)
-
-### Manual Downloads
-
-Due to licensing reasons, we cannot include the SQL Developer setup package. Download it manually from [Oracle Website](http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html) and place it in `provisioning/downloads/` and update `sql_developer_path` value in the `variables` section of the [`template`](ubuntu.json) (or provide your own `variables` file).
