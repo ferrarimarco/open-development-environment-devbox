@@ -1,9 +1,5 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "ferrarimarco/open-development-environment-devbox"
-
-  config.vm.synced_folder File.join(Dir.home, ".ssh"), "/home/vagrant/.ssh", mount_options: ["fmode=400"]
-
-  config.vm.provision "file", source: File.join(Dir.home, ".gitconfig"), destination: "/home/vagrant/.gitconfig"
+  config.vm.box = "bento/ubuntu-18.04"
 
   host = RbConfig::CONFIG['host_os']
 
@@ -30,18 +26,20 @@ Vagrant.configure("2") do |config|
     v.customize ["modifyvm", :id, "--cpus", cpus]
     v.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
     v.customize ["modifyvm", :id, "--memory", mem]
-    v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-    v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
     v.customize ["modifyvm", :id, "--vram", "128"] # 10 MB is the minimum to enable Virtualbox seamless mode
 
     # Display the VirtualBox GUI
     v.gui = true
   end
 
-  host.vm.provision "shell" do |s|
-    s.path = "scripts/install-docker.sh"
-    s.args = [
-      "--user", "vagrant"
-      ]
+  provisioning_script_url = "https://raw.githubusercontent.com/ferrarimarco/dotfiles/master/bin/install-linux.sh"
+
+  for i in ["base", "debian-base", "scripts", "dotfiles", "golang"]
+    config.vm.provision "shell" do |s|
+      s.path = provisioning_script_url
+      s.args = [
+        "#{i}"
+        ]
+    end
   end
 end
