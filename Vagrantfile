@@ -34,7 +34,7 @@ Vagrant.configure("2") do |config|
 
   provisioning_script_url = "https://raw.githubusercontent.com/ferrarimarco/dotfiles/master/bin/install-linux.sh"
 
-  for i in ["base", "debian-base", "scripts", "dotfiles", "golang"]
+  for i in ["base", "debian-base", "user", "scripts", "dotfiles", "golang"]
     config.vm.provision "shell" do |s|
       s.path = provisioning_script_url
       s.args = [
