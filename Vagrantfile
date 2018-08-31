@@ -57,4 +57,9 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "shell",
       inline: "apt-get install -y ubuntu-desktop"
+
+  config.trigger.after :provision do |trigger|
+    trigger.info = "Restarting the VM"
+    trigger.run = {inline: "vagrant reload"}
+  end
 end
