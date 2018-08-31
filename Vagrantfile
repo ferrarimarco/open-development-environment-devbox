@@ -34,7 +34,8 @@ Vagrant.configure("2") do |config|
 
   provisioning_script_url = "https://raw.githubusercontent.com/ferrarimarco/dotfiles/master/bin/install-linux.sh"
 
-  for i in ["base", "debian-base", "user", "scripts", "dotfiles", "golang"]
+  # privileged commands
+  for i in ["base", "debian", "scripts"]
     config.vm.provision "shell" do |s|
       s.path = provisioning_script_url
       s.args = [
@@ -42,4 +43,18 @@ Vagrant.configure("2") do |config|
         ]
     end
   end
+
+  # unprivileged commands
+  for i in ["user", "dotfiles", "golang"]
+    config.vm.provision "shell" do |s|
+      s.path = provisioning_script_url
+      s.args = [
+        "#{i}"
+        ]
+      s.privileged = false
+    end
+  end
+
+  config.vm.provision "shell",
+      inline: "apt-get install -y ubuntu-desktop"
 end
